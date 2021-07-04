@@ -3,7 +3,8 @@
 # miyukisystem.alert -> Permissão para usar o comando /alerta.
 # miyukisystem.feed -> Permissão para usar o comando /feed.
 # miyukisystem.heal -> Permissão para usar o comando /heal.
-# miyukisystem.luz -> Permissão para usar o comando /luz.
+# miyukisystem.flashlight -> Permissão para usar o comando /luz.
 # miyukisystem.gamemode -> permissão para usar o comando /gamemode.
 # miyukisystem.teleport -> permissão para usar o comando /teleport.
 # miyukisystem.hat -> permissão para usar o comando /hat.
+# miyukisystem.keepxp -> permissão para manter o xp quando morrer

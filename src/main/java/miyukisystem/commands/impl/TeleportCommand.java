@@ -27,7 +27,6 @@ public class TeleportCommand extends CommandService {
             return false;
         }
 
-        // teleportar até um player
         if (args.length == 1) {
 
             if (!(sender instanceof Player)) {
@@ -43,17 +42,16 @@ public class TeleportCommand extends CommandService {
             }
 
             if (target.getName().equals(sender.getName())) {
-                sender.sendMessage("TeleportYourself");
+                sender.sendMessage("TeleportedToYourself");
                 return false;
             }
 
             Player player = (Player) sender;
             player.teleport(target);
-            player.sendMessage("TeleportSuccess"); // {player} retorna o nome do player q vc teleportou
+            player.sendMessage("TeleportedSuccess"); // {player} retorna o nome do player q vc teleportou
             return false;
         }
 
-        // teleportar um player até outro
         if (args.length == 2) {
 
             Player player = Bukkit.getPlayer(args[0]);
@@ -79,7 +77,6 @@ public class TeleportCommand extends CommandService {
 
         }
 
-        // teleportar até uma coordenada
         if (args.length == 3) {
 
             if (!(sender instanceof Player)) {
@@ -93,7 +90,7 @@ public class TeleportCommand extends CommandService {
                 y = Double.parseDouble(args[1]);
                 z = Double.parseDouble(args[2]);
             } catch (NumberFormatException exception) {
-                sender.sendMessage("InvalidNumber");
+                sender.sendMessage("InvalidCoords");
                 return false;
             }
 
@@ -102,7 +99,6 @@ public class TeleportCommand extends CommandService {
             player.teleport(locationTarget);
         }
 
-        // teleportar até uma coordenada (com mundo)
         if (args.length == 4) {
 
             if (!(sender instanceof Player)) {
@@ -119,16 +115,15 @@ public class TeleportCommand extends CommandService {
                 y = Double.parseDouble(args[2]);
                 z = Double.parseDouble(args[3]);
             } catch (NumberFormatException exception) {
-                sender.sendMessage("InvalidNumber");
+                sender.sendMessage("InvalidCoords");
                 return false;
             }
 
             Location locationTarget = new Location(world, x, y, z);
             player.teleport(locationTarget);
-            player.sendMessage("TeleportSuccessWithCoords");
+            player.sendMessage("TeleportedSuccessWithCoords");
         }
 
-        // teleportar um player até uma coordenada
         if (args.length == 5) {
 
             Player target = Bukkit.getPlayer(args[0]);
@@ -151,7 +146,7 @@ public class TeleportCommand extends CommandService {
 
             Location locationTarget = new Location(world, x, y, z);
             target.teleport(locationTarget);
-            sender.sendMessage("PlayerTeleportedSucessWithCoords"); // {player} retorna o nome do target
+            sender.sendMessage("PlayerTeleportedSuccessWithCoords"); // {player} retorna o nome do target
 
         }
 

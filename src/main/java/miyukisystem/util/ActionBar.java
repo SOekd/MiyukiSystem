@@ -38,6 +38,7 @@ import java.util.concurrent.Callable;
  * @version 3.1.0
  * @see ReflectionUtils
  */
+
 public final class ActionBar {
     /**
      * If the server is running Spigot which has an official ActionBar API.

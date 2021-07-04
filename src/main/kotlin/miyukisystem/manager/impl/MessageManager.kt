@@ -107,6 +107,13 @@ class MessageManager {
             pathList.add("HealedPlayer")
             // gamemode
             // teleport
+            pathList.add("IncorrectTeleportCommand")
+            pathList.add("TeleportedToYourself")
+            pathList.add("TeleportedSuccess")
+            pathList.add("TeleportedSucessWithCoords")
+            pathList.add("PlayerTeleportedSuccessWithCoords")
+            pathList.add("InvalidCoords")
+
             return pathList
         }
 

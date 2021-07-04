@@ -12,8 +12,6 @@ public class HealCommand extends CommandService {
         super("Heal");
     }
 
-    // ta com os path
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

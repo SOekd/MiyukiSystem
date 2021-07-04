@@ -9,4 +9,10 @@ FallIntoVoid: true
 CreatePortal: true
 # Bloquear de mobs pegarem fogo ao sol
 MobsCatchFire: true
+# Bloquear das folhas cairem
+LeavesDecay: true
+# Bloquear as bigornas cairem
+AnvilDecay: true
+# Bloquear a chuva
+RainCancel: true
 

@@ -43,11 +43,11 @@ InvalidHat: '&cChápeu inválido.'
 # Teleport Command
 
 IncorrectTeleportCommand: '&cComando incorreto. Use: /teleport <player> <x, y, z>'
-TeleportToYourself: '&cVocê não pode teleportar a si mesmo.'
-TeleportSuccess: '&aVocê foi teleportado com sucesso até o {player}'
-TeleportSuccessWithCoords: '&aVocê foi teleportado com sucesso.'
-PlayerTeleportedSucessWithCoords: '&aO {player} foi teleportado com sucesso.'
-InvalidNumber: '&cCoordenadas inválidas.'
+TeleportedToYourself: '&cVocê não pode teleportar a si mesmo.'
+TeleportedSuccess: '&aVocê foi teleportado com sucesso até o {player}'
+TeleportedSuccessWithCoords: '&aVocê foi teleportado com sucesso.'
+PlayerTeleportedSuccessWithCoords: '&aO {player} foi teleportado com sucesso.'
+InvalidCoords: '&cCoordenadas inválidas.'
 
 
 
