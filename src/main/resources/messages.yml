@@ -29,11 +29,26 @@ FullFoodPlayer: '&cO jogador especificado já está com a fome saciada.'
 Feeded: '&aVocê se saciou com sucesso.'
 FeededPlayer: '&aVocê saciou o jogador {player} com sucesso.'
 
-# Luz Command
+# FlashLight Command
 
-IncorrectLuzCommand: '&cComando incorreto. Use: /luz.'
-LuzActivated: '&aLuz ativada com sucesso.'
-LuzDisabled: '&cLuz desativada com sucesso.'
+IncorrectFlashLightCommand: '&cComando incorreto. Use: /luz.'
+FlashLightActivated: '&aLuz ativada com sucesso.'
+FlashLightDisabled: '&cLuz desativada com sucesso.'
+
+# Hat Command
+
+HatPlaced: '&aChápeu colocado.'
+InvalidHat: '&cChápeu inválido.'
+
+# Teleport Command
+
+IncorrectTeleportCommand: '&cComando incorreto. Use: /teleport <player> <x, y, z>'
+TeleportToYourself: '&cVocê não pode teleportar a si mesmo.'
+TeleportSuccess: '&aVocê foi teleportado com sucesso até o {player}'
+TeleportSuccessWithCoords: '&aVocê foi teleportado com sucesso.'
+PlayerTeleportedSucessWithCoords: '&aO {player} foi teleportado com sucesso.'
+InvalidNumber: '&cCoordenadas inválidas.'
+
 
 
 

@@ -7,10 +7,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
-public class LuzCommand extends CommandService {
+public class FlashLightCommand extends CommandService {
 
-    public LuzCommand() {
-        super("Luz");
+    public FlashLightCommand() {
+        super("FlashLight");
     }
 
     @Override
@@ -27,7 +27,7 @@ public class LuzCommand extends CommandService {
         }
 
         if (args.length > 0) {
-            sender.sendMessage("IncorrectLuzCommand");
+            sender.sendMessage("IncorrectFlashLightCommand");
             return false;
         }
 

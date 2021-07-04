@@ -7,16 +7,19 @@ class ConfigManager {
 
     companion object : ManagerService {
 
+        val config = Config("config.yml")
         val messages = Config("messages.yml")
         val commands = Config("commands.yml")
 
         override fun load() {
+            config.saveDefaultConfig()
             messages.saveDefaultConfig()
             commands.saveDefaultConfig()
             reload()
         }
 
         override fun reload() {
+            config.reloadConfig()
             messages.reloadConfig()
             commands.reloadConfig()
         }

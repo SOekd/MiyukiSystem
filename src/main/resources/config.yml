@@ -1,0 +1,12 @@
+# true -> bloqueado
+# false -> não bloqueado
+
+# Bloquear de transformar a agua em gelo.
+FreezeWater: true
+# Bloquear de cair no void.
+FallIntoVoid: true
+# Bloquear de criar portal.
+CreatePortal: true
+# Bloquear de mobs pegarem fogo ao sol
+MobsCatchFire: true
+

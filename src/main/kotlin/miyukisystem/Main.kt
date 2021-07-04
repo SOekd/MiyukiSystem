@@ -18,7 +18,7 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         instance = this
         if (!Vault.setupEconomy()) {
-            cs.sendMessage("§9§lMiyukiSystem  §cO Vault nao foi encontrado no servidor.")
+            cs.sendMessage("§9§lMiyukiSystem §cO vault nao foi encontrado no servidor.")
             pm.disablePlugin(this)
             return
         }

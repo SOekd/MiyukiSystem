@@ -8,7 +8,6 @@
 #   Command: 'comando' (nome do comando)
 #   Aliases: ['command'] (aliases do comando, para botar mais de um: ['teste', 'teste2']
 
-
 Alerta:
   Enabled: true
   Command: 'alerta'
@@ -24,13 +23,22 @@ Feed:
   Command: 'feed'
   Aliases: []
 
-Luz:
+FlashLight:
   Enabled: true
-  Command: 'luz'
-  Aliases: ['lanterna']
+  Command: 'flashlight'
+  Aliases: ['lanterna', 'luz']
 
 Gamemode:
   Enabled: true
   Command: 'gamemode'
   Aliases: ['gm']
 
+Teleport:
+  Enabled: true
+  Command: 'teleport'
+  Aliases: ['tp']
+
+Hat:
+  Enabled: true
+  Command: 'hat'
+  Aliases: ['chapeu']

@@ -83,24 +83,30 @@ class MessageManager {
             pathList.add("NoConsole")
             pathList.add("Offline")
             // alert
-            // heal
-            pathList.add("IncorrectHealCommand")
-            pathList.add("FullLife")
-            pathList.add("FullLifePlayer")
-            pathList.add("Healed")
-            pathList.add("HealedPlayer")
+            pathList.add("IncorrectAlertCommand");
+            pathList.add("AlertSent")
             // feed
             pathList.add("IncorrectFeedCommand")
             pathList.add("FullFood")
             pathList.add("FullFoodPlayer")
             pathList.add("Feeded")
             pathList.add("FeededPlayer")
+            // flashlight
+            pathList.add("IncorrectFlashLightCommand")
+            pathList.add("FlashLightActivated")
+            pathList.add("FlashLightDisabled")
             // gamemode
-
-            // luz
-            pathList.add("IncorrectLuzCommand")
-            pathList.add("LuzAtivada")
-            pathList.add("LuzDesativada")
+            // hat
+            pathList.add("HatPlaced")
+            pathList.add("InvalidHat")
+            // heal
+            pathList.add("IncorrectHealCommand")
+            pathList.add("FullLife")
+            pathList.add("FullLifePlayer")
+            pathList.add("Healed")
+            pathList.add("HealedPlayer")
+            // gamemode
+            // teleport
             return pathList
         }
 

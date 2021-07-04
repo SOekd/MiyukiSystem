@@ -37,17 +37,17 @@ public class FeedCommand extends CommandService {
                 return false;
             }
 
-            if (player.getHealth() >= 20.0) {
+            if (player.getFoodLevel() >= 20) {
                 sender.sendMessage("FullFoodPlayer");
                 return false;
             }
 
-            sender.sendMessage("&cVocê saciou o jogador " + player.getName() + " com sucesso.");
+            sender.sendMessage("FeededPlayer"); // {player} -> retorna o nick da pessoa q foi saciada
         } else {
 
             player = (Player) sender;
 
-            if (player.getHealth() >= 20.0) {
+            if (player.getFoodLevel() >= 20) {
                 player.sendMessage("FullFood");
                 return false;
             }
