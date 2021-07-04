@@ -1,0 +1,6 @@
+main: miyukisystem.Main
+version: 1.14.16
+name: System
+load: POSTWORLD
+authors: [RUSH, SOekd, xMattNice_, Kroxy_]
+softdepend: [Legendchat, mcMMO, MassiveCore, Factions, Vault]

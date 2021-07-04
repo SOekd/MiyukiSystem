@@ -1,0 +1,7 @@
+
+
+Broadcast:
+  Enabled: true
+  Name: 'broadcast'
+  Permission:
+  Aliases: ['bc', 'aviso']
