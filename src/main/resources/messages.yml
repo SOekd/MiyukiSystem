@@ -1,6 +1,39 @@
-#
-#
-#
-NoPermission: '&cVocê não tem permissão para executar este comando.'
+# Para pesquisar um comando especifico, aperte CTRL+F e digite o comando que você queira.
+# Exemplo: Heal
+# E para reiniciar as mensagens, apenas digitar /miyukisystem reload ou reiniciar o servidor.
 
-Console: 'msg'
+# Geral
+
+NoPermission: '&cVocê não tem permissão para executar este comando.'
+NoConsole: '&cSomente jogadores podem executar esse comando.'
+Offline: '&cO jogador especificado não está online.'
+
+# Alert Command
+
+IncorrectAlertCommand: '&cComando incorreto. Use: /alerta <aviso>'
+AlertSent: '&aAlerta enviado para todos os players.'
+
+# Heal Command
+
+IncorrectHealCommand: '&cComando incorreto. Use: /heal <player>.'
+FullLife: '&cVocê já esta com a vida cheia.'
+FullLifePlayer: '&cO jogador especificado já está com a vida cheia.'
+Healed: '&aVocê se curou com sucesso.'
+HealedPlayer: '&aVocê curou o jogador {player} com sucesso.'
+
+# Feed Command
+
+IncorrectFeedCommand: '&cComando incorreto. Use: /feed <player>.'
+FullFood: '&cVocê já está com a fome saciada.'
+FullFoodPlayer: '&cO jogador especificado já está com a fome saciada.'
+Feeded: '&aVocê se saciou com sucesso.'
+FeededPlayer: '&aVocê saciou o jogador {player} com sucesso.'
+
+# Luz Command
+
+IncorrectLuzCommand: '&cComando incorreto. Use: /luz.'
+LuzActivated: '&aLuz ativada com sucesso.'
+LuzDisabled: '&cLuz desativada com sucesso.'
+
+
+

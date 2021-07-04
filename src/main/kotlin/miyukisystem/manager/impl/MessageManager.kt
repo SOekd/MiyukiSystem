@@ -78,7 +78,29 @@ class MessageManager {
 
         private fun getPathList(): Set<String> {
             val pathList = HashSet<String>()
+            // geral
             pathList.add("NoPermission")
+            pathList.add("NoConsole")
+            pathList.add("Offline")
+            // alert
+            // heal
+            pathList.add("IncorrectHealCommand")
+            pathList.add("FullLife")
+            pathList.add("FullLifePlayer")
+            pathList.add("Healed")
+            pathList.add("HealedPlayer")
+            // feed
+            pathList.add("IncorrectFeedCommand")
+            pathList.add("FullFood")
+            pathList.add("FullFoodPlayer")
+            pathList.add("Feeded")
+            pathList.add("FeededPlayer")
+            // gamemode
+
+            // luz
+            pathList.add("IncorrectLuzCommand")
+            pathList.add("LuzAtivada")
+            pathList.add("LuzDesativada")
             return pathList
         }
 
@@ -171,7 +193,6 @@ class MessageManager {
 
     }
 }
-
 
 fun CommandSender.sendCustomMessage(path: String) {
     val message = MessageManager.getMessage(path)

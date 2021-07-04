@@ -1,7 +1,36 @@
+# Para pesquisar um comando especifico, aperte CTRL+F e digite o comando que você queira.
+# Exemplo: Heal
+
+# Modelo:
+
+# NomeDoComando:
+#   Enabled: true/false (ativar/desativar o comando)
+#   Command: 'comando' (nome do comando)
+#   Aliases: ['command'] (aliases do comando, para botar mais de um: ['teste', 'teste2']
 
 
-Broadcast:
+Alerta:
   Enabled: true
-  Name: 'broadcast'
-  Permission:
-  Aliases: ['bc', 'aviso']
+  Command: 'alerta'
+  Aliases: ['broadcast', 'aviso', 'bc']
+
+Heal:
+  Enabled: true
+  Command: 'heal'
+  Aliases: []
+
+Feed:
+  Enabled: true
+  Command: 'feed'
+  Aliases: []
+
+Luz:
+  Enabled: true
+  Command: 'luz'
+  Aliases: ['lanterna']
+
+Gamemode:
+  Enabled: true
+  Command: 'gamemode'
+  Aliases: ['gm']
+

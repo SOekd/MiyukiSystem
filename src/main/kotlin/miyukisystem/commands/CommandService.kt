@@ -64,7 +64,7 @@ abstract class CommandService(
             execute(sender, args)
         } catch (exception: Exception) {
             exception.printStackTrace()
-            sender.sendMessage("§9§lMiyukiSystem  §cOcorreu um erro ao tentar executar o comando. Contate o administrador.")
+            sender.sendMessage("§dMiyukiSystem ➡ §cOcorreu um erro ao tentar executar o comando. Contate o administrador.")
             false;
         }
     }
