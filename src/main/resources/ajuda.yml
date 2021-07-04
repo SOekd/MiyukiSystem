@@ -7,4 +7,7 @@
 # miyukisystem.gamemode -> permissão para usar o comando /gamemode.
 # miyukisystem.teleport -> permissão para usar o comando /teleport.
 # miyukisystem.hat -> permissão para usar o comando /hat.
-# miyukisystem.keepxp -> permissão para manter o xp quando morrer
+# miyukisystem.keepxp -> permissão para manter o xp quando morrer.
+# miyukisystem.fly -> permissão para usar o comando /fly.
+# miyukisystem.clearchat -> permissão para usar o comando /clearchat.
+# miyukisystem.vanish -> permissão para usar o comando /vanish.

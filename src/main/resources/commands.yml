@@ -42,3 +42,18 @@ Hat:
   Enabled: true
   Command: 'hat'
   Aliases: ['chapeu']
+
+ClearChat:
+  Enabled: true
+  Command: 'clearchat'
+  Aliases: []
+
+Fly:
+  Enabled: true
+  Command: 'fly'
+  Aliases: ['voar']
+
+Vanish:
+  Enabled: true
+  Command: 'vanish'
+  Aliases: ['v']

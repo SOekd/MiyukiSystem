@@ -49,6 +49,19 @@ TeleportedSuccessWithCoords: '&aVocê foi teleportado com sucesso.'
 PlayerTeleportedSuccessWithCoords: '&aO {player} foi teleportado com sucesso.'
 InvalidCoords: '&cCoordenadas inválidas.'
 
+# ClearChat Command
+
+ClearedChat: '&aO chat foi limpo com sucesso.'
+
+# Fly Command
+
+FlyActivated: '&aO modo voar foi ativado.'
+FlyDisabled: '&cO modo voar foi desabilitado.'
+
+# Vanish Command
+
+VanishLeaved: '&cVocê saiu do modo vanish.'
+VanishJoined: '&aVocê entrou em modo vanish.'
 
 
 

@@ -105,7 +105,6 @@ class MessageManager {
             pathList.add("FullLifePlayer")
             pathList.add("Healed")
             pathList.add("HealedPlayer")
-            // gamemode
             // teleport
             pathList.add("IncorrectTeleportCommand")
             pathList.add("TeleportedToYourself")
@@ -113,6 +112,14 @@ class MessageManager {
             pathList.add("TeleportedSucessWithCoords")
             pathList.add("PlayerTeleportedSuccessWithCoords")
             pathList.add("InvalidCoords")
+            // clearchat
+            pathList.add("ClearedChat")
+            // fly
+            pathList.add("FlyActivated")
+            pathList.add("FlyDisabled")
+            // vanish
+            pathList.add("VanishLeaved")
+            pathList.add("VanishJoined")
 
             return pathList
         }
