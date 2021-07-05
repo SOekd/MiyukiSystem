@@ -27,6 +27,8 @@ public class TeleportCommand extends CommandService {
             return false;
         }
 
+        double x, y, z;
+
         if (args.length == 1) {
 
             if (!(sender instanceof Player)) {
@@ -84,7 +86,6 @@ public class TeleportCommand extends CommandService {
                 return false;
             }
 
-            double x, y, z;
             try {
                 x = Double.parseDouble(args[0]);
                 y = Double.parseDouble(args[1]);
@@ -109,7 +110,6 @@ public class TeleportCommand extends CommandService {
             Player player = (Player) sender;
 
             World world = Bukkit.getWorld(args[0]);
-            double x, y, z;
             try {
                 x = Double.parseDouble(args[1]);
                 y = Double.parseDouble(args[2]);
@@ -134,7 +134,6 @@ public class TeleportCommand extends CommandService {
             }
 
             World world = Bukkit.getWorld(args[1]);
-            double x, y, z;
             try {
                 x = Double.parseDouble(args[2]);
                 y = Double.parseDouble(args[3]);

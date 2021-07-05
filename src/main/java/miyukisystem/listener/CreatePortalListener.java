@@ -11,7 +11,7 @@ public class CreatePortalListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onCreatingPortal(PortalCreateEvent event) {
 
-        if (!ConfigManager.Companion.getConfig().config.getBoolean("CreatePortal")) return;
+        if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.CreatePortal")) return;
 
         event.setCancelled(true);
     }

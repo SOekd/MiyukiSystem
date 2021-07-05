@@ -1,19 +1,15 @@
 package miyukisystem.commands.impl;
 
-import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
-import org.bukkit.Bukkit;
+import miyukisystem.util.ActionBar;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.Set;
+public class CraftCommand extends CommandService {
 
-public class VanishCommand extends CommandService {
-
-    public VanishCommand() {
-        super("Vanish");
+    public CraftCommand() {
+        super("craft");
     }
 
     @Override
@@ -24,12 +20,15 @@ public class VanishCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.vanish"))) {
+        if (!(sender.hasPermission("miyukisystem.craft"))) {
             sender.sendMessage("NoPermission");
             return false;
         }
 
         Player player = (Player) sender;
+        ActionBar.sendActionBar(player,"OpeningWorkbench");
+        player.closeInventory();
+        player.openWorkbench(player.getLocation(), true);
 
         return false;
     }

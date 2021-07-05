@@ -17,7 +17,7 @@ public class AnvilDecayListener implements Listener {
     @EventHandler(ignoreCancelled = true)
     public void onAnvilDecay(EntityChangeBlockEvent event) {
 
-        if (!ConfigManager.Companion.getConfig().config.getBoolean("AnvilDecay")) return;
+        if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.AnvilDecay")) return;
 
         if (event.getEntityType() == EntityType.FALLING_BLOCK && event.getTo() == Material.AIR) {
             if (event.getBlock().getType() == Material.ANVIL) {

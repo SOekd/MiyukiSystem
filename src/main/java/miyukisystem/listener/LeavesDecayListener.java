@@ -10,7 +10,7 @@ public class LeavesDecayListener implements Listener {
     @EventHandler
     public void onLeafFall(LeavesDecayEvent event) {
 
-        if (!ConfigManager.Companion.getConfig().config.getBoolean("LeavesDecay")) return;
+        if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.LeavesDecay")) return;
 
         event.setCancelled(true);
 

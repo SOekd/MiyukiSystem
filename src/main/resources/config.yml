@@ -1,18 +1,25 @@
 # true -> bloqueado
 # false -> não bloqueado
 
-# Bloquear de transformar a agua em gelo.
-FreezeWater: true
-# Bloquear de cair no void.
-FallIntoVoid: true
-# Bloquear de criar portal.
-CreatePortal: true
-# Bloquear de mobs pegarem fogo ao sol
-MobsCatchFire: true
-# Bloquear das folhas cairem
-LeavesDecay: true
-# Bloquear as bigornas cairem
-AnvilDecay: true
-# Bloquear a chuva
-RainCancel: true
+# Para pesquisar, veja aqui na lista abaixo os bloqueadores e de um CTRL+F para pesquisar.
+# Exemplo: CTRL + F, LeavesDecay
+
+# BLOCKERS
+
+# FreezeWater -> Bloqueia de transformar a água em gelo.
+# FallIntoVoid -> Bloquia de cair no void (teleporta pro spawn).
+# CreatePortal -> Bloqueia de criar portal do nether.
+# MobsCatchFire -> Bloqueia dos mobs pegarem fogo pro sol.
+# LeavesDecay -> Bloqueia de folhas cairem.
+# AnvilDecay -> Bloqueia a gravidade da bigorna.
+# RainCancel -> Cancela a chuva quando comecar.
+
+Blockers:
+  FreezeWater: true
+  FallIntoVoid: true
+  CreatePortal: true
+  MobsCatchFire: true
+  LeavesDecay: true
+  AnvilDecay: true
+  RainCancel: true
 

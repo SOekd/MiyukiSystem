@@ -12,7 +12,7 @@ public class FreezeWaterListener implements Listener {
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onFreeze(BlockFormEvent event) {
 
-        if (!ConfigManager.Companion.getConfig().config.getBoolean("FreezeWater")) return;
+        if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.FreezeWater")) return;
 
         if (event.getBlock().getType() == Material.WATER) {
             event.setCancelled(true);

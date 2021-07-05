@@ -57,3 +57,18 @@ Vanish:
   Enabled: true
   Command: 'vanish'
   Aliases: ['v']
+
+Ping:
+  Enabled: true
+  Command: 'ping'
+  Aliases: []
+
+Trash:
+  Enabled: true
+  Command: 'trash'
+  Aliases: ['lixo', 'lixeiro']
+
+InvSee:
+  Enabled: true
+  Command: 'invsee'
+  Aliases: ['inv']

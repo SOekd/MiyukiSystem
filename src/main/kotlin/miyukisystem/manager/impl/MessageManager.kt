@@ -120,6 +120,11 @@ class MessageManager {
             // vanish
             pathList.add("VanishLeaved")
             pathList.add("VanishJoined")
+            // ping
+            pathList.add("Ping")
+            pathList.add("Pong")
+            // craft
+            pathList.add("OpeningWorkbench")
 
             return pathList
         }

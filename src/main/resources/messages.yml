@@ -63,5 +63,27 @@ FlyDisabled: '&cO modo voar foi desabilitado.'
 VanishLeaved: '&cVocê saiu do modo vanish.'
 VanishJoined: '&aVocê entrou em modo vanish.'
 
+# Ping Command
+
+Ping: '&aO seu ping é de: &e{ping}&a.'
+Pong: '&aPong!'
+
+# Craft Command
+
+OpeningWorkbench: '&aAbrindo a mesa de trabalho...' # ActionBar
+
+# Trash Command
+
+OpeningTrash: '&aAbrindo o lixeiro...'
+
+# EnderChest Command
+
+OpeningEnderChestPlayer: '&aAbrindo enderchest de {player}...' # ActionBar
+OpeningEnderChest: '&aAbrindo enderchest...' # ActionBar
+
+# InvSee Command
+
+IncorrectInvSeeCommand: '&cUso incorreto. Use: /invsee <player>'
+OpeningInventory: '&aAbrindo inventário de {player}...' # ActionBar
 
 

@@ -12,7 +12,7 @@ public class FallIntoVoidListener implements Listener {
     @EventHandler
     public void onFallVoid(EntityDamageEvent event) {
 
-        if (!ConfigManager.Companion.getConfig().config.getBoolean("FallIntoVoid")) return;
+        if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.FallIntoVoid")) return;
 
         if (event.getCause() == DamageCause.VOID && event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();

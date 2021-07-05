@@ -1,19 +1,17 @@
 package miyukisystem.commands.impl;
 
-import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
+import miyukisystem.util.ActionBar;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.Set;
+public class TrashCommand extends CommandService {
 
-public class VanishCommand extends CommandService {
-
-    public VanishCommand() {
-        super("Vanish");
+    public TrashCommand() {
+        super("Trash");
     }
 
     @Override
@@ -24,13 +22,15 @@ public class VanishCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.vanish"))) {
+        if (!(sender.hasPermission("miyukisystem.trash"))) {
             sender.sendMessage("NoPermission");
             return false;
         }
 
         Player player = (Player) sender;
-
+        Inventory trash = Bukkit.createInventory(null, 54, "Lixeiro");
+        ActionBar.sendActionBar(player, "OpeningTrash");
+        player.openInventory(trash);
         return false;
     }
 }

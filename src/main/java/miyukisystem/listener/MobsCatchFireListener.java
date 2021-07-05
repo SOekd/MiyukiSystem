@@ -12,7 +12,7 @@ public class MobsCatchFireListener implements Listener {
     @EventHandler
     public void onCatchFire(EntityCombustEvent event) {
 
-        if (!ConfigManager.Companion.getConfig().config.getBoolean("MobsCatchFire")) return;
+        if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.MobsCatchFire")) return;
 
         if (!(event instanceof EntityCombustByEntityEvent) && !(event instanceof EntityCombustByBlockEvent)) {
             event.setCancelled(true);
