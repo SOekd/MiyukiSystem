@@ -7,10 +7,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
+import java.util.List;
+
 public class FlashLightCommand extends CommandService {
 
     public FlashLightCommand() {
-        super("FlashLight");
+        super("FlashLight", "miyukisystem.flaslight");
     }
 
     @Override
@@ -21,10 +24,6 @@ public class FlashLightCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.luz"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
 
         if (args.length > 0) {
             sender.sendMessage("IncorrectFlashLightCommand");
@@ -41,6 +40,12 @@ public class FlashLightCommand extends CommandService {
             player.sendMessage("LuzActivated");
         }
 
-        return false;
+        return true;
+    }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        return Collections.emptyList();
     }
 }

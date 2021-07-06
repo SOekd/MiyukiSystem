@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -8,19 +9,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public class TeleportCommand extends CommandService {
 
     public TeleportCommand() {
-        super("teleport");
+        super("teleport", "miyukisystem.teleport");
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
-
-        if (!(sender.hasPermission("miyukisystem.teleport"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
 
         if (args.length < 1 || args.length > 5) {
             sender.sendMessage("IncorrectTeleportCommand");
@@ -85,7 +83,6 @@ public class TeleportCommand extends CommandService {
                 sender.sendMessage("NoConsole");
                 return false;
             }
-
             try {
                 x = Double.parseDouble(args[0]);
                 y = Double.parseDouble(args[1]);
@@ -150,5 +147,11 @@ public class TeleportCommand extends CommandService {
         }
 
         return false;
+    }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        return null;
     }
 }

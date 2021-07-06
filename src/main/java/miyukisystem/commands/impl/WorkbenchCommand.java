@@ -6,10 +6,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class CraftCommand extends CommandService {
+import java.util.ArrayList;
+import java.util.List;
 
-    public CraftCommand() {
-        super("craft");
+public class WorkbenchCommand extends CommandService {
+
+    public WorkbenchCommand() {
+        super("Workbench", "miyukisystem.workbench");
     }
 
     @Override
@@ -20,16 +23,17 @@ public class CraftCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.craft"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
-
         Player player = (Player) sender;
         ActionBar.sendActionBar(player,"OpeningWorkbench");
         player.closeInventory();
         player.openWorkbench(player.getLocation(), true);
 
         return false;
+    }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        return new ArrayList<>();
     }
 }

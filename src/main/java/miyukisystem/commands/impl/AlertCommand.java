@@ -5,19 +5,18 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class AlertCommand extends CommandService {
 
     public AlertCommand() {
-        super("Alerta");
+        super("Alerta", "miyukisystem.alert");
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
-
-        if (!(sender.hasPermission("miyukisystem.alert"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
 
         if (args.length < 1) {
             sender.sendMessage("IncorrectAlertCommand");
@@ -29,6 +28,13 @@ public class AlertCommand extends CommandService {
         Bukkit.broadcastMessage(warn);
         sender.sendMessage("AlertSent");
 
-        return false;
+        return true;
     }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        return Collections.emptyList();
+    }
+
 }

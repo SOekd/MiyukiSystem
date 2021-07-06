@@ -8,10 +8,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
+import java.util.List;
+
 public class HatCommand extends CommandService {
 
     public HatCommand() {
-        super("hat");
+        super("hat", "miyukisystem.hat");
     }
 
     @Override
@@ -19,11 +22,6 @@ public class HatCommand extends CommandService {
 
         if (!(sender instanceof Player)) {
             sender.sendMessage("NoConsole");
-            return false;
-        }
-
-        if (!(sender.hasPermission("miyukisystem.hat"))) {
-            sender.sendMessage("NoPerm");
             return false;
         }
 
@@ -41,5 +39,11 @@ public class HatCommand extends CommandService {
         }
 
         return false;
+    }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        return Collections.emptyList();
     }
 }

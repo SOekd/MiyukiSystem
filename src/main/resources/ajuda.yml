@@ -6,18 +6,21 @@
 
 # miyukisystem.alert -> Permissão para usar o comando /alerta.
 # miyukisystem.feed -> Permissão para usar o comando /feed.
+# miyukisystem.feed.other -> Permissão para usar o /feed em jogadores.
 # miyukisystem.heal -> Permissão para usar o comando /heal.
+# miyukisystem.heal.other -> Permissão para usar o comando /heal em jogadores.
 # miyukisystem.flashlight -> Permissão para usar o comando /luz.
 # miyukisystem.gamemode -> permissão para usar o comando /gamemode.
 # miyukisystem.teleport -> permissão para usar o comando /teleport.
 # miyukisystem.hat -> permissão para usar o comando /hat.
 # miyukisystem.fly -> permissão para usar o comando /fly.
+# miyukisystem.fly -> permissão para usar o comando /fly em outros jogadores.
 # miyukisystem.clearchat -> permissão para usar o comando /clearchat.
 # miyukisystem.vanish -> permissão para usar o comando /vanish.
 # miyukisystem.ping -> permissão para usar o comando /ping.
 # miyukisystem.trash -> permissão para usar o comando /trash.
 # miyukisystem.enderchest -> permissão para usar o comando /enderchest.
-# miyukisystem.enderchest.admin -> permissão para ver ender chest de outros players.
+# miyukisystem.enderchest.other -> permissão para ver ender chest de outros players.
 # miyukisystem.invsee -> permissão para usar o comando /invsee.
 
 # Gerais

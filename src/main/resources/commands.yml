@@ -8,7 +8,7 @@
 #   Command: 'comando' (nome do comando)
 #   Aliases: ['command'] (aliases do comando, para botar mais de um: ['teste', 'teste2']
 
-Alerta:
+Alert:
   Enabled: true
   Command: 'alerta'
   Aliases: ['broadcast', 'aviso', 'bc']

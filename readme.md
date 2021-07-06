@@ -15,7 +15,7 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 
 # Usando o plugin:
 
-* Baixe o plugin na versão mais recente  clicando [aqui](https://github.com/SOekd/MiyukiSystem/releases/latest). (EM BREVE!)
+* Baixe o plugin na versão mais recente  clicando [aqui](https://github.com/SOekd/MiyukiSystem/releases/latest). `EM BREVE!`
 * O plugin suporta as versões: 1.8.8 ~ 1.17.
 * Para mudar qualquer nome de comando, aliases, clique [aqui](https://github.com/SOekd/MiyukiSystem/blob/master/src/main/resources/commands.yml).
 * Caso tenha algum problema, sugestões, abrir uma issue clicando [aqui](https://github.com/SOekd/MiyukiSystem/issues).
@@ -23,4 +23,4 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 
 ## Contribuidores:
 
-[SOekd](https://github.com/SOekd) [mattnicee7](https://github.com/mattnicee7) [kroxyyy](https://github.com/kroxyyy)
+[SOekd](https://github.com/SOekd) [mattnicee7](https://github.com/mattnicee7) [Kroxyyy](https://github.com/kroxyyy)

@@ -3,13 +3,18 @@ package miyukisystem.commands.impl;
 import miyukisystem.commands.CommandService;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class HealCommand extends CommandService {
 
     public HealCommand() {
-        super("Heal");
+        super("Heal", "miyukisystem.heal");
     }
 
     @Override
@@ -20,14 +25,15 @@ public class HealCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.heal"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
-
         Player player;
 
         if (args.length > 0) {
+
+            if (!(sender.hasPermission("miyukisystem.heal.other"))) {
+                sender.sendMessage("NoPermission");
+                return false;
+            }
+
             player = Bukkit.getPlayer(args[0]);
 
             if (player == null) {
@@ -56,5 +62,16 @@ public class HealCommand extends CommandService {
         player.setHealth(20.0);
 
         return false;
+    }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        Player player = sender instanceof Player ? (Player) sender : null;
+        if (player == null || !player.hasPermission("miyukisystem.heal.other")) return Collections.emptyList();
+        return Bukkit.getOnlinePlayers().stream()
+                .filter(player::canSee)
+                .map(HumanEntity::getName)
+                .collect(Collectors.toList());
     }
 }
