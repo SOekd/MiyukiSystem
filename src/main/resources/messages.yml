@@ -74,7 +74,7 @@ OpeningWorkbench: '&aAbrindo a mesa de trabalho...' # ActionBar
 
 # Trash Command
 
-OpeningTrash: '&aAbrindo o lixeiro...'
+OpeningTrash: '&aAbrindo o lixeiro...' # ActionBar
 
 # EnderChest Command
 

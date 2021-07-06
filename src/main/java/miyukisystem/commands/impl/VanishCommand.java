@@ -8,12 +8,13 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class VanishCommand extends CommandService {
 
     public VanishCommand() {
-        super("Vanish");
+        super("Vanish", "miyukisystem.vanish");
     }
 
     @Override
@@ -32,5 +33,11 @@ public class VanishCommand extends CommandService {
         Player player = (Player) sender;
 
         return false;
+    }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        return null;
     }
 }

@@ -23,7 +23,7 @@ public class PingCommand extends CommandService {
         }
 
         Player player = (Player) sender;
-        player.sendMessage("Ping".replace("{ping}", String.valueOf(player.getPing())));
+        player.sendMessage("Ping"); // {ping} retorna o player.getPing();
 
         return false;
     }

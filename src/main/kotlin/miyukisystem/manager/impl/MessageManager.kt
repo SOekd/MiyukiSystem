@@ -125,7 +125,14 @@ class MessageManager {
             pathList.add("Pong")
             // craft
             pathList.add("OpeningWorkbench")
-
+            // trash
+            pathList.add("OpeningTrash")
+            // enderchest
+            pathList.add("OpeningEnderChestPlayer")
+            pathList.add("OpeningEnderChest")
+            // invsee
+            pathList.add("IncorrectInvSeeCommand")
+            pathList.add("OpeningInventory")
             return pathList
         }
 

@@ -8,10 +8,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public class TrashCommand extends CommandService {
 
     public TrashCommand() {
-        super("Trash");
+        super("Trash", "miyukisystem.trash");
     }
 
     @Override
@@ -32,5 +34,11 @@ public class TrashCommand extends CommandService {
         ActionBar.sendActionBar(player, "OpeningTrash");
         player.openInventory(trash);
         return false;
+    }
+
+    @NotNull
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
+        return null;
     }
 }

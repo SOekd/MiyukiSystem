@@ -7,8 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ClearChatCommand extends CommandService {
@@ -28,12 +26,12 @@ public class ClearChatCommand extends CommandService {
 
         Bukkit.broadcastMessage("ChatCleared");
 
-        return true;
+        return false;
     }
 
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return Collections.emptyList();
+        return null;
     }
 }
