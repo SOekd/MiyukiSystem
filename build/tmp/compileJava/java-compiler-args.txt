@@ -30,9 +30,16 @@ C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\com
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\HealCommand.java
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\InvSeeCommand.java
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\PingCommand.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\spawn\\SetSpawnCommand.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\spawn\\SpawnCommand.java
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\TeleportCommand.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\tpa\\PlayerQuitTpaListener.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\tpa\\TpAcceptCommand.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\tpa\\TpCommand.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\tpa\\TpDenyCommand.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\TpAllCommand.java
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\TrashCommand.java
-C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\VanishCommand.java
+C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\vanish\\VanishCommand.java
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\commands\\impl\\WorkbenchCommand.java
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\listener\\AnvilDecayListener.java
 C:\\Users\\mathe\\IdeaProjects\\MiyukiSystem\\src\\main\\java\\miyukisystem\\listener\\CreatePortalListener.java

@@ -12,125 +12,125 @@ Alert:
   Enabled: true
   Command: 'alerta'
   Aliases: ['broadcast', 'aviso', 'bc']
-  Description: 'sla'
+  Description: 'Comando para dar um aviso geral no servidor.'
 
 Heal:
   Enabled: true
   Command: 'heal'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para curar a vida.'
 
 Feed:
   Enabled: true
   Command: 'feed'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para saciar a fome.'
 
 FlashLight:
   Enabled: true
   Command: 'flashlight'
   Aliases: ['lanterna', 'luz']
-  Description: 'sla'
+  Description: 'Comando para iluminar seu caminho.'
 
 Gamemode:
   Enabled: true
   Command: 'gamemode'
   Aliases: ['gm']
-  Description: 'sla'
+  Description: 'Comando para alterar seu modo de jogo.'
 
 Teleport:
   Enabled: true
   Command: 'teleport'
   Aliases: ['tp']
-  Description: 'sla'
+  Description: 'Comando para se teleportar.'
 
 Hat:
   Enabled: true
   Command: 'hat'
   Aliases: ['chapeu']
-  Description: 'sla'
+  Description: 'Comando para botar um bloco/qualquer coisa na cabeça'
 
 ClearChat:
   Enabled: true
   Command: 'clearchat'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para limpar o chat.'
 
 Fly:
   Enabled: true
   Command: 'fly'
   Aliases: ['voar']
-  Description: 'sla'
+  Description: 'Comando para poder voar.'
 
 Vanish:
   Enabled: true
   Command: 'vanish'
   Aliases: ['v']
-  Description: 'sla'
+  Description: 'Comando para se esconder dos jogadores.'
 
 Ping:
   Enabled: true
   Command: 'ping'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para você ver seu ping.'
 
 Trash:
   Enabled: true
   Command: 'trash'
   Aliases: ['lixo', 'lixeiro']
-  Description: 'sla'
+  Description: 'Comando para você poder usar o lixo.'
 
 EnderChest:
   Enabled: true
   Command: 'enderchest'
   Aliases: ['ec']
-  Description: 'sla'
+  Description: 'Comando para você poder usar o enderchest de qualquer lugar'
 
 Workbench:
   Enabled: true
   Command: 'workbench'
   Aliases: ['craft', 'wc']
-  Description: 'sla'
+  Description: 'Comando para você poder usar a workbench de qualquer lugar'
 
 InvSee:
   Enabled: true
   Command: 'invsee'
   Aliases: ['inv']
-  Description: 'sla'
+  Description: 'Comando para ver o inventário dos outros.'
 
 TpAll:
   Enabled: true
   Command: 'tpall'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para teleportar todos players até você'
 
 Spawn:
   Enabled: true
   Command: 'spawn'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para ir até o spawn'
 
 SetSpawn:
   Enabled: true
   Command: 'setspawn'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para setar o spawn.'
 
 Tpa:
   Enabled: true
   Command: 'tpa'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para enviar uma solicitacao de teleporte para uma pessoa.'
 
 TpAccept:
   Enabled: true
   Command: 'tpaccept'
   Aliases: []
-  Description: 'sla'
+  Description: 'Comando para aceitar a solicitação de teleporte'
 
 TpDeny:
   Enabled: true
   Command: 'tpdeny'
-  Aliases: []
-  Description: 'sla'
+  Aliases: ['tpadeny']
+  Description: 'Comando para recusar a solicitação de teleporte'
 

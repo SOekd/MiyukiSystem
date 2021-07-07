@@ -4,7 +4,7 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 
 # Por quê usar MiyukiSystem?
 
-* Uma [wiki]("miyukisystem.gitbook.io/wiki/introducao") completa para você. (Em breve)
+* Uma [wiki]("https://github.com/SOekd/MiyukiSystem/wiki") completa para você. (Em breve)
 * Código aberto a toda comunidade.
 * Código super otimizado.
 * Atualizado constantemente.
@@ -21,6 +21,11 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 * Caso tenha algum problema, sugestões abrir uma issue clicando [aqui](https://github.com/SOekd/MiyukiSystem/issues).
 Se for uma dúvida, antes de tudo veja a nossa wiki clicando [aqui]("miyukisystem.gitbook.io/wiki/introducao").
 
+## Wiki:
+
+* [Tópico I - Comandos e Permissões]("https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Comandos").
+* [Tópico II - Bloqueadores]("https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Bloqueadores").
+* [Tópico III - Diversos]("https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Diversos").
 
 ## Desenvolvedores:
 
@@ -28,11 +33,10 @@ Se for uma dúvida, antes de tudo veja a nossa wiki clicando [aqui]("miyukisyste
 
 ## Contribuidores:
 
-- Contribuidores, seja com a ideia inicial, ajuda em alguma parte do  código, etc.
+Contribuidores, seja com a ideia inicial, ajuda em alguma parte do  código, etc.
 
-* Nevisk
-* Alexandre
+* Nevisk, Alexandre.
 
 
-* Obrigado a todos. =)
+Obrigado a todos. =)
 
