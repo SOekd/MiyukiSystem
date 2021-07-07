@@ -4,7 +4,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "6.1.0"
 }
 
-group = "rush"
+group = "miyukisystem"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -29,20 +29,15 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:1.5.21")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
-    implementation("co.aikar:acf-paper:0.5.0-SNAPSHOT")
     annotationProcessor("org.projectlombok:lombok:1.18.20")
 }
 
 tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
-        kotlinOptions.javaParameters = true
     }
     withType<JavaCompile> {
         options.encoding = "UTF-8"
-        options.compilerArgs.add("-parameters")
-        options.isFork = true
-        options.forkOptions.executable = "javac"
     }
 
     shadowJar {
@@ -52,8 +47,6 @@ tasks {
 //            exclude(dependency("com.github.shynixn.*:.*"))
         }
         relocate("kotlin", "miyukisystem.kotlin")
-        relocate("co.aikar.commands", "miyukisystem.acf")
-        relocate("co.aikar.locales", "miyukisystem.locales")
         classifier = null
     }
 }
