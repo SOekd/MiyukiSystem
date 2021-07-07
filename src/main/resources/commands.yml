@@ -10,8 +10,8 @@
 
 Alert:
   Enabled: true
-  Command: 'alerta'
-  Aliases: ['broadcast', 'aviso', 'bc']
+  Command: 'alert'
+  Aliases: ['broadcast', 'aviso', 'bc', 'alerta']
   Description: 'Comando para dar um aviso geral no servidor.'
 
 Heal:
@@ -133,4 +133,10 @@ TpDeny:
   Command: 'tpdeny'
   Aliases: ['tpadeny']
   Description: 'Comando para recusar a solicitação de teleporte'
+
+EditItem:
+  Enabled: true
+  Command: 'edititem'
+  Aliases: ['editaritem']
+  Description: 'Comando para editar o item em sua mão.'
 

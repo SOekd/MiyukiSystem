@@ -1,42 +1,44 @@
-# Permissões do plugin:
+# Permissï¿½es do plugin:
 
 # Comandos
 
 # ------------------------------------------------------------------------------------------------
 
-# miyukisystem.commands.* -> Permissão para usar todos comandos.
+# miyukisystem.commands.* -> Permissï¿½o para usar todos comandos.
 
-# miyukisystem.alert -> Permissão para usar o comando /alerta.
+# miyukisystem.alert -> Permissï¿½o para usar o comando /alerta.
 
-# miyukisystem.feed -> Permissão para usar o comando /feed.
-# miyukisystem.feed.other -> Permissão para usar o /feed em jogadores.
+# miyukisystem.feed -> Permissï¿½o para usar o comando /feed.
+# miyukisystem.feed.other -> Permissï¿½o para usar o /feed em jogadores.
 
-# miyukisystem.heal -> Permissão para usar o comando /heal.
-# miyukisystem.heal.other -> Permissão para usar o comando /heal em jogadores.
+# miyukisystem.heal -> Permissï¿½o para usar o comando /heal.
+# miyukisystem.heal.other -> Permissï¿½o para usar o comando /heal em jogadores.
 
-# miyukisystem.flashlight -> Permissão para usar o comando /luz.
-# miyukisystem.gamemode -> permissão para usar o comando /gamemode.
-# miyukisystem.teleport -> permissão para usar o comando /teleport.
-# miyukisystem.hat -> permissão para usar o comando /hat.
+# miyukisystem.flashlight -> Permissï¿½o para usar o comando /luz.
+# miyukisystem.gamemode -> permissï¿½o para usar o comando /gamemode.
+# miyukisystem.teleport -> permissï¿½o para usar o comando /teleport.
+# miyukisystem.hat -> permissï¿½o para usar o comando /hat.
 
-# miyukisystem.fly -> permissão para usar o comando /fly.
-# miyukisystem.fly.other -> permissão para usar o comando /fly em outros jogadores.
+# miyukisystem.fly -> permissï¿½o para usar o comando /fly.
+# miyukisystem.fly.other -> permissï¿½o para usar o comando /fly em outros jogadores.
 
-# miyukisystem.clearchat -> permissão para usar o comando /clearchat.
-# miyukisystem.vanish -> permissão para usar o comando /vanish.
-# miyukisystem.ping -> permissão para usar o comando /ping.
-# miyukisystem.trash -> permissão para usar o comando /trash.
+# miyukisystem.clearchat -> permissï¿½o para usar o comando /clearchat.
+# miyukisystem.vanish -> permissï¿½o para usar o comando /vanish.
+# miyukisystem.ping -> permissï¿½o para usar o comando /ping.
+# miyukisystem.trash -> permissï¿½o para usar o comando /trash.
 
-# miyukisystem.enderchest -> permissão para usar o comando /enderchest.
-# miyukisystem.enderchest.other -> permissão para ver ender chest de outros players.
+# miyukisystem.enderchest -> permissï¿½o para usar o comando /enderchest.
+# miyukisystem.enderchest.other -> permissï¿½o para ver ender chest de outros players.
 
-# miyukisystem.invsee -> permissão para usar o comando /invsee.
-# miyukisystem.tpall -> permissão para usar o comando /tpall.
-# miyukisystem.workbench -> permissão para usar o comando /workbench.
-# miyukisystem.setspawn -> permissão para usar o comando /setspawn.
+# miyukisystem.invsee -> permissï¿½o para usar o comando /invsee.
+# miyukisystem.tpall -> permissï¿½o para usar o comando /tpall.
+# miyukisystem.workbench -> permissï¿½o para usar o comando /workbench.
+# miyukisystem.setspawn -> permissï¿½o para usar o comando /setspawn.
+# miyukisystem.spawn.other -> permissÃ£o para usar o comando /spawn <player>.
+# miyukisystem.edititem -> permissÃ£o para usar o comando /edititem.
 
 # ------------------------------------------------------------------------------------------------
 
 # Gerais
 
-# miyukisystem.keepxp -> permissão para manter o xp quando morrer.
+# miyukisystem.keepxp -> permissï¿½o para manter o xp quando morrer.

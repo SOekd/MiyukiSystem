@@ -97,7 +97,10 @@ ForcedTpAll: '&aTodos os jogadores foram teleportados até a localização de &e
 # Spawn Command
 
 IncorrectSpawnCommand: '&cUso incorreto. Use: /spawn.'
+IncorrectSpawnAdminCommand: '&cUso incorreto. Use: /spawn <player>.'
 TeleportedSpawnSuccess: '&aVocê foi teleportado para o spawn com sucesso.'
+SentToSpawn: '&aVocê enviou o player {player} pro spawn.'
+ForcedTeleportSpawn: '&aVocê foi forçado a ser teleportado pro spawn.'
 
 # SetSpawn Command
 

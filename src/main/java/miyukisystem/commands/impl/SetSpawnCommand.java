@@ -1,9 +1,11 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.ConfigManager;
 import miyukisystem.util.LocationUtilKt;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,10 +28,19 @@ public class SetSpawnCommand extends CommandService {
             return false;
         }
 
+        if (args.length != 0) {
+            sender.sendMessage("IncorrectSetSpawnCommand");
+            return false;
+        }
+
         Player player = (Player) sender;
 
         Location spawn = player.getLocation();
-        // seta no locationmanager
+        YamlConfiguration config = ConfigManager.Companion.getLocations().config;
+        config.set("Spawn", LocationUtilKt.toCustomString(spawn));
+        ConfigManager.Companion.getLocations().saveConfig();
+
+        player.sendMessage("SettedSpawn");
 
         return false;
     }
