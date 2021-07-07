@@ -3,11 +3,13 @@ package miyukisystem.commands.impl;
 import miyukisystem.commands.CommandService;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FlyCommand extends CommandService {
 
@@ -53,6 +55,11 @@ public class FlyCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return Collections.emptyList();
+        Player player = sender instanceof Player ? (Player) sender : null;
+        if (player == null || !player.hasPermission("miyukisystem.fly.other")) return Collections.emptyList();
+        return Bukkit.getOnlinePlayers().stream()
+                .filter(player::canSee)
+                .map(HumanEntity::getName)
+                .collect(Collectors.toList());
     }
 }

@@ -1,4 +1,4 @@
-package miyukisystem.listener;
+package miyukisystem.listener.impl;
 
 import miyukisystem.manager.impl.ConfigManager;
 import org.bukkit.entity.Player;
@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
-public class FallIntoVoidListener implements Listener {
+public class BlockFallIntoVoid implements Listener {
 
     @EventHandler
     public void onFallVoid(EntityDamageEvent event) {

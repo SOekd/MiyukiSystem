@@ -1,4 +1,4 @@
-package miyukisystem.listener;
+package miyukisystem.listener.impl;
 
 import miyukisystem.manager.impl.ConfigManager;
 import org.bukkit.Material;
@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
 
-public class AnvilDecayListener implements Listener {
+public class BlockAnvilDecay implements Listener {
 
     /*
      * Código criado por iPyronic
@@ -15,7 +15,7 @@ public class AnvilDecayListener implements Listener {
      */
 
     @EventHandler(ignoreCancelled = true)
-    public void onAnvilDecay(EntityChangeBlockEvent event) {
+    public void onEntityChangeBlock(EntityChangeBlockEvent event) {
 
         if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.AnvilDecay")) return;
 

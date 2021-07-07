@@ -2,7 +2,9 @@ package miyukisystem
 
 import miyukisystem.commands.CommandService
 import miyukisystem.hook.Vault
+import miyukisystem.listener.ListenerService
 import miyukisystem.manager.impl.ConfigManager
+import miyukisystem.manager.impl.UserManager
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -26,10 +28,11 @@ class Main : JavaPlugin() {
         }
         ConfigManager.load()
         CommandService.CommandRegistry.load()
+        ListenerService.ListenerRegistry.load()
     }
 
     override fun onDisable() {
-
+        UserManager.getAll().forEach { it.saveFile() }
     }
 
     fun registerEvents() {

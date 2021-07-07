@@ -11,7 +11,7 @@ class Vault {
 
         lateinit var economy: Economy
 
-        public fun setupEconomy(): Boolean {
+        fun setupEconomy(): Boolean {
             if (getServer().pluginManager.getPlugin("Vault") == null)
                 return false
             val rsp = getServer().servicesManager.getRegistration(Economy::class.java) ?: return false

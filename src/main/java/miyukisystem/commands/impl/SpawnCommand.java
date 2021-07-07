@@ -1,23 +1,18 @@
-package miyukisystem.commands.impl.vanish;
+package miyukisystem.commands.impl;
 
-import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
-public class VanishCommand extends CommandService {
+public class SpawnCommand extends CommandService {
 
-    public VanishCommand() {
-        super("Vanish", "miyukisystem.vanish");
+    public SpawnCommand() {
+        super("Spawn", ""); // não precisa de perm.
     }
-
-    // SOekd
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
@@ -27,12 +22,9 @@ public class VanishCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.vanish"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
-
         Player player = (Player) sender;
+
+        // se n tiver localizacao no locationmanager(yml), leva pro o spawn padrão, 0 60 0, do mundo padrão.
 
         return false;
     }
@@ -40,6 +32,6 @@ public class VanishCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return null;
+        return Collections.emptyList();
     }
 }

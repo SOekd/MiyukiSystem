@@ -1,4 +1,4 @@
-package miyukisystem.commands.impl.tpa;
+package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
 import miyukisystem.util.AsyncUtil;

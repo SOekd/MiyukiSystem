@@ -1,6 +1,8 @@
-package miyukisystem.commands.impl.spawn;
+package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.util.LocationUtilKt;
+import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -8,10 +10,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.util.List;
 
-public class SpawnCommand extends CommandService {
+public class SetSpawnCommand extends CommandService {
 
-    public SpawnCommand() {
-        super("Spawn", ""); // não precisa de perm.
+    // 0 60 0 > location padrão (setada por padrão)
+
+    public SetSpawnCommand() {
+        super("SetSpawn", "miyukisystem.setspawn");
     }
 
     @Override
@@ -24,7 +28,8 @@ public class SpawnCommand extends CommandService {
 
         Player player = (Player) sender;
 
-        // se n tiver localizacao no locationmanager(yml), leva pro o spawn padrão, 0 60 0, do mundo padrão.
+        Location spawn = player.getLocation();
+        // seta no locationmanager
 
         return false;
     }

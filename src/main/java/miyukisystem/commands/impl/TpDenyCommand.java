@@ -1,4 +1,4 @@
-package miyukisystem.commands.impl.tpa;
+package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
 import org.bukkit.Bukkit;
@@ -8,10 +8,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class TpAcceptCommand extends CommandService {
+public class TpDenyCommand extends CommandService {
 
-    public TpAcceptCommand() {
-        super("TpAccept", "miyukisystem.tpaccept"); // talvez deixar sem a perm de tpa pra esses comandos de tpa.
+    public TpDenyCommand() {
+        super("TpDeny", "miyukisystem.tpdeny"); // talvez deixar sem a perm de tpa pra esses comandos de tpa.
     }
 
     @Override
@@ -29,7 +29,7 @@ public class TpAcceptCommand extends CommandService {
 
             for(String str : TpCommand.tps.get(pn)) {
                 Player target = Bukkit.getPlayer(str);
-                // SOekd
+// SOekd
                 if(target == null) {
                     TpCommand.tps.get(player.getName()).remove(str);
                 }
@@ -45,9 +45,8 @@ public class TpAcceptCommand extends CommandService {
 
             if(target == null) return false;
 
-            player.sendMessage("AcceptTpaOther");
-            target.sendMessage("AcceptTpaPlayer");
-            target.teleport(player.getLocation());
+            player.sendMessage("DenyTpaOther");
+            target.sendMessage("DenyTpaPlayer");
         } else {
 
             if(args[0].equals(pn)) {
@@ -67,14 +66,13 @@ public class TpAcceptCommand extends CommandService {
                 return false;
             }
 
-            if(!TpCommand.tps.get(player.getName()).contains(target.getName())) {
+            if(!TpCommand.tps.get(player.getName()).contains(player.getName())) {
                 player.sendMessage("NoHaveRequests");
                 return false;
             }
 
-            player.sendMessage("AcceptTpaOther");
-            target.sendMessage("AcceptTpaPlayer");
-            target.teleport(player.getLocation());
+            player.sendMessage("DenyTpaOther");
+            player.sendMessage("DenyTpaPlayer");
 
         }
 

@@ -1,14 +1,14 @@
-package miyukisystem.listener;
+package miyukisystem.listener.impl;
 
 import miyukisystem.manager.impl.ConfigManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.LeavesDecayEvent;
 
-public class LeavesDecayListener implements Listener {
+public class BlockLeaveDecay implements Listener {
 
     @EventHandler
-    public void onLeafFall(LeavesDecayEvent event) {
+    public void onLeavesDecay(LeavesDecayEvent event) {
 
         if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.LeavesDecay")) return;
 

@@ -20,17 +20,20 @@ abstract class CommandService(
 
         override fun load() {
             val classPath = ClassPath.from(Main.instance.javaClass.classLoader)
+            var i = 0
             classPath.getTopLevelClassesRecursive("miyukisystem.commands.impl").forEach { classInfo ->
                 try {
-                    val cmd = classInfo.load().newInstance()
-                    if (cmd is CommandService && cmd.canRegister()) {
+                    val command = classInfo.load().newInstance()
+                    if (command is CommandService && command.canRegister()) {
                         val field = Bukkit.getPluginManager().javaClass.getDeclaredField("commandMap")
                         field.isAccessible = true
                         val commandMap = field.get(Bukkit.getPluginManager()) as CommandMap
-                        commandMap.register("miyukisystem", cmd)
+                        commandMap.register("miyukisystem", command)
+                        i++
                     }
                 } catch (exception: Exception) {  }
             }
+            Bukkit.getConsoleSender().sendMessage("§9§lMiyukiSystem  §aForam registrados §7$i §acomandos.")
         }
 
         override fun reload() { }

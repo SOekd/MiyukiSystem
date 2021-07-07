@@ -1,14 +1,14 @@
-package miyukisystem.listener;
+package miyukisystem.listener.impl;
 
 import miyukisystem.manager.impl.ConfigManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
-public class RainListener implements Listener {
+public class BlockRain implements Listener {
 
     @EventHandler(ignoreCancelled = true)
-    public void onStartRain(WeatherChangeEvent event) {
+    public void onWeatherChange(WeatherChangeEvent event) {
 
         if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.RainCancel")) return;
 

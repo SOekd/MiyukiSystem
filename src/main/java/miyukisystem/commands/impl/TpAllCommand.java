@@ -32,11 +32,10 @@ public class TpAllCommand extends CommandService {
                 return false;
             }
 
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                if (player != target) {
-                    player.teleport(target);
-                }
-            }
+            Bukkit.getOnlinePlayers().forEach(it -> {
+                if (it != target)
+                    it.teleport(target);
+            });
 
             target.sendMessage("AllPlayersTeleportedToYou");
             sender.sendMessage("ForcedTpAll"); // {player} retorna o target.getName
