@@ -96,6 +96,7 @@ public class TeleportCommand extends CommandService {
             Player player = (Player) sender;
             Location locationTarget = new Location(player.getWorld(), x, y, z);
             player.teleport(locationTarget);
+            player.sendMessage("TeleportedSuccess");
         }
 
         if (args.length == 4) {

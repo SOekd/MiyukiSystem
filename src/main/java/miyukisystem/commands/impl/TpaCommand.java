@@ -16,7 +16,7 @@ public class TpaCommand extends CommandService {
 
     public static HashMap<String, List<String>> tps = new HashMap<>();
 
-    public TpaCommand(@NotNull String name, @NotNull String perm) {
+    public TpaCommand() {
         super("tpa", "miyukisystem.tpa");
     }
 
@@ -76,6 +76,6 @@ public class TpaCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return Collections.emptyList();
+        return null;
     }
 }

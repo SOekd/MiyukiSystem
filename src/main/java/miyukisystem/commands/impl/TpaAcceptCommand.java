@@ -6,11 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.List;
 
-public class TpAcceptCommand extends CommandService {
+public class TpaAcceptCommand extends CommandService {
 
-    public TpAcceptCommand(@NotNull String name, @NotNull String perm) {
+    public TpaAcceptCommand() {
         super("tpaccept", "miyukisystem.tpaccept");
     }
 
@@ -29,7 +30,7 @@ public class TpAcceptCommand extends CommandService {
 
             for(String str : TpaCommand.tps.get(pn)) {
                 Player target = Bukkit.getPlayer(str);
-// SOekd
+                // SOekd
                 if(target == null) {
                     TpaCommand.tps.get(player.getName()).remove(str);
                 }

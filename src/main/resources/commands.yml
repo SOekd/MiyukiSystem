@@ -91,3 +91,15 @@ InvSee:
   Command: 'invsee'
   Aliases: ['inv']
   Description: 'sla'
+
+Tpa:
+  Enabled: true
+  Command: 'tpa'
+  Aliases: []
+  Description: 'sla'
+
+TpAll:
+  Enabled: true
+  Command: 'tpall'
+  Aliases: []
+  Description: 'sla'

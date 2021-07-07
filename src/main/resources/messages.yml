@@ -86,4 +86,8 @@ OpeningEnderChest: '&aAbrindo enderchest...' # ActionBar
 IncorrectInvSeeCommand: '&cUso incorreto. Use: /invsee <player>'
 OpeningInventory: '&aAbrindo inventário de {player}...' # ActionBar
 
+# TpAll Command
+
+IncorrectTpAllCommand: '&cUso incorreto. Use: /tpall <Player>'
+
 
