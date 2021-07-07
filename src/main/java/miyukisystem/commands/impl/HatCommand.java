@@ -14,7 +14,7 @@ import java.util.List;
 public class HatCommand extends CommandService {
 
     public HatCommand() {
-        super("hat", "miyukisystem.hat");
+        super("Hat", "miyukisystem.hat");
     }
 
     @Override

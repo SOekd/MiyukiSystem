@@ -6,12 +6,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.List;
 
 public class FlyCommand extends CommandService {
 
     public FlyCommand() {
-        super("fly", "miyukisystem.fly");
+        super("Fly", "miyukisystem.fly");
     }
 
     @Override
@@ -52,6 +53,6 @@ public class FlyCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return null;
+        return Collections.emptyList();
     }
 }

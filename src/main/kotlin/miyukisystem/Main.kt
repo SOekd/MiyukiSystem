@@ -1,6 +1,8 @@
 package miyukisystem
 
+import miyukisystem.commands.CommandService
 import miyukisystem.hook.Vault
+import miyukisystem.manager.impl.ConfigManager
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -22,6 +24,8 @@ class Main : JavaPlugin() {
             pm.disablePlugin(this)
             return
         }
+        ConfigManager.load()
+        CommandService.CommandRegistry.load()
     }
 
     override fun onDisable() {
@@ -32,8 +36,5 @@ class Main : JavaPlugin() {
 
     }
 
-    fun registerCommands() {
-
-    }
 
 }

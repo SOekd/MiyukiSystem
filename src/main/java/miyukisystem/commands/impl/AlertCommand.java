@@ -12,7 +12,7 @@ import java.util.List;
 public class AlertCommand extends CommandService {
 
     public AlertCommand() {
-        super("Alerta", "miyukisystem.alert");
+        super("Alert", "miyukisystem.alert");
     }
 
     @Override

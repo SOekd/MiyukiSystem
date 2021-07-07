@@ -7,12 +7,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.List;
 
 public class ClearChatCommand extends CommandService {
 
     public ClearChatCommand() {
-        super("clearchat", "miyukisystem.clearchat");
+        super("ClearChat", "miyukisystem.clearchat");
     }
 
     @Override
@@ -29,9 +30,10 @@ public class ClearChatCommand extends CommandService {
         return false;
     }
 
+
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return null;
+        return Collections.emptyList();
     }
 }

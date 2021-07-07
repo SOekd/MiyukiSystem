@@ -9,7 +9,6 @@ import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandMap
 import org.bukkit.command.CommandSender
-import org.bukkit.command.TabCompleter
 
 
 abstract class CommandService(
@@ -20,15 +19,17 @@ abstract class CommandService(
     object CommandRegistry : ManagerService {
 
         override fun load() {
-            val classPath = ClassPath.from(Main.javaClass.classLoader)
+            val classPath = ClassPath.from(Main.instance.javaClass.classLoader)
             classPath.getTopLevelClassesRecursive("miyukisystem.commands.impl").forEach { classInfo ->
-                val obj = Class.forName(classInfo.name).newInstance()
-                if (obj is CommandService && obj.canRegister()) {
-                    val field = Bukkit.getPluginManager().javaClass.getDeclaredField("commandMap")
-                    field.isAccessible = true
-                    val commandMap = field.get(Bukkit.getPluginManager()) as CommandMap
-                    commandMap.register("system", obj)
-                }
+                try {
+                    val cmd = classInfo.load().newInstance()
+                    if (cmd is CommandService && cmd.canRegister()) {
+                        val field = Bukkit.getPluginManager().javaClass.getDeclaredField("commandMap")
+                        field.isAccessible = true
+                        val commandMap = field.get(Bukkit.getPluginManager()) as CommandMap
+                        commandMap.register("miyukisystem", cmd)
+                    }
+                } catch (exception: Exception) {  }
             }
         }
 
@@ -47,7 +48,7 @@ abstract class CommandService(
     init {
         val section = commandConfig.getConfigurationSection(name)!!
         enabled = section.getBoolean("Enabled")
-        commandName = section.getString("Name")!!
+        commandName = section.getString("Command")!!
         commandAliases = section.getStringList("Aliases")
         commandDescription = section.getString("Description")!!
     }

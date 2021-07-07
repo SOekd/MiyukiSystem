@@ -12,63 +12,82 @@ Alert:
   Enabled: true
   Command: 'alerta'
   Aliases: ['broadcast', 'aviso', 'bc']
+  Description: 'sla'
 
 Heal:
   Enabled: true
   Command: 'heal'
   Aliases: []
+  Description: 'sla'
 
 Feed:
   Enabled: true
   Command: 'feed'
   Aliases: []
+  Description: 'sla'
 
 FlashLight:
   Enabled: true
   Command: 'flashlight'
   Aliases: ['lanterna', 'luz']
+  Description: 'sla'
 
 Gamemode:
   Enabled: true
   Command: 'gamemode'
   Aliases: ['gm']
+  Description: 'sla'
 
 Teleport:
   Enabled: true
   Command: 'teleport'
   Aliases: ['tp']
+  Description: 'sla'
 
 Hat:
   Enabled: true
   Command: 'hat'
   Aliases: ['chapeu']
+  Description: 'sla'
 
 ClearChat:
   Enabled: true
   Command: 'clearchat'
   Aliases: []
+  Description: 'sla'
 
 Fly:
   Enabled: true
   Command: 'fly'
   Aliases: ['voar']
+  Description: 'sla'
 
 Vanish:
   Enabled: true
   Command: 'vanish'
   Aliases: ['v']
+  Description: 'sla'
 
 Ping:
   Enabled: true
   Command: 'ping'
   Aliases: []
+  Description: 'sla'
 
 Trash:
   Enabled: true
   Command: 'trash'
   Aliases: ['lixo', 'lixeiro']
+  Description: 'sla'
+
+EnderChest:
+  Enabled: true
+  Command: 'enderchest'
+  Aliases: ['ec']
+  Description: 'sla'
 
 InvSee:
   Enabled: true
   Command: 'invsee'
   Aliases: ['inv']
+  Description: 'sla'

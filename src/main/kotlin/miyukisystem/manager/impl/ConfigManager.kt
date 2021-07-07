@@ -7,6 +7,7 @@ class ConfigManager {
 
     companion object : ManagerService {
 
+        val ajuda = Config("ajuda.yml")
         val config = Config("config.yml")
         val messages = Config("messages.yml")
         val commands = Config("commands.yml")
