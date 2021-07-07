@@ -1,4 +1,4 @@
-package miyukisystem.commands.impl;
+package miyukisystem.commands.impl.tpa;
 
 import miyukisystem.commands.CommandService;
 import org.bukkit.Bukkit;
@@ -6,13 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
 import java.util.List;
 
-public class TpaAcceptCommand extends CommandService {
+public class TpAcceptCommand extends CommandService {
 
-    public TpaAcceptCommand() {
-        super("tpaccept", "miyukisystem.tpaccept");
+    public TpAcceptCommand() {
+        super("TpAccept", "miyukisystem.tpaccept"); // talvez deixar sem a perm de tpa pra esses comandos de tpa.
     }
 
     @Override
@@ -28,21 +27,21 @@ public class TpaAcceptCommand extends CommandService {
 
         if(args.length < 1) {
 
-            for(String str : TpaCommand.tps.get(pn)) {
+            for(String str : TpCommand.tps.get(pn)) {
                 Player target = Bukkit.getPlayer(str);
                 // SOekd
                 if(target == null) {
-                    TpaCommand.tps.get(player.getName()).remove(str);
+                    TpCommand.tps.get(player.getName()).remove(str);
                 }
             }
 
-            if(TpaCommand.tps.get(player.getName()).isEmpty()) {
+            if(TpCommand.tps.get(player.getName()).isEmpty()) {
                 player.sendMessage("NoHaveRequests");
-                TpaCommand.tps.remove(player.getName());
+                TpCommand.tps.remove(player.getName());
                 return false;
             }
 
-            Player target = Bukkit.getPlayer(TpaCommand.tps.get(pn).get(0));
+            Player target = Bukkit.getPlayer(TpCommand.tps.get(pn).get(0));
 
             if(target == null) return false;
 
@@ -60,15 +59,15 @@ public class TpaAcceptCommand extends CommandService {
 
             if(target == null) {
                 player.sendMessage("OfflinePlayer");
-                if(TpaCommand.tps.get(player.getName()).contains(args[0])) {
+                if(TpCommand.tps.get(player.getName()).contains(args[0])) {
                     player.sendMessage("NoHaveRequests");
-                    TpaCommand.tps.get(player.getName()).remove(args[0]);
+                    TpCommand.tps.get(player.getName()).remove(args[0]);
                     return false;
                 }
                 return false;
             }
 
-            if(!TpaCommand.tps.get(player.getName()).contains(target.getName())) {
+            if(!TpCommand.tps.get(player.getName()).contains(target.getName())) {
                 player.sendMessage("NoHaveRequests");
                 return false;
             }

@@ -38,7 +38,8 @@ public class TpAllCommand extends CommandService {
                 }
             }
 
-            // mensagem de sucesso
+            target.sendMessage("AllPlayersTeleportedToYou");
+            sender.sendMessage("ForcedTpAll"); // {player} retorna o target.getName
         }
 
         if (args.length == 0) {
@@ -51,7 +52,7 @@ public class TpAllCommand extends CommandService {
                 }
             }
 
-            // mensagem de sucesso
+            p.sendMessage("AllPlayersTeleportedToYou");
         }
 
 

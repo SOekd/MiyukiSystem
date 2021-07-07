@@ -1,20 +1,17 @@
-package miyukisystem.commands.impl;
+package miyukisystem.commands.impl.spawn;
 
 import miyukisystem.commands.CommandService;
-import miyukisystem.util.ActionBar;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
 
-public class TrashCommand extends CommandService {
+public class SpawnCommand extends CommandService {
 
-    public TrashCommand() {
-        super("Trash", "miyukisystem.trash");
+    public SpawnCommand() {
+        super("Spawn", ""); // não precisa de perm.
     }
 
     @Override
@@ -25,15 +22,10 @@ public class TrashCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.trash"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
-
         Player player = (Player) sender;
-        Inventory trash = Bukkit.createInventory(null, 54, "TrashTitleMenu"); // ta na config.
-        ActionBar.sendActionBar(player, "OpeningTrash"); // pufavo nao tire.
-        player.openInventory(trash);
+
+        // se n tiver localizacao no locationmanager(yml), leva pro o spawn padrão, 0 60 0, do mundo padrão.
+
         return false;
     }
 

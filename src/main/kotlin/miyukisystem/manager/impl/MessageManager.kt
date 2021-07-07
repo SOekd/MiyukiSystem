@@ -133,6 +133,18 @@ class MessageManager {
             // invsee
             pathList.add("IncorrectInvSeeCommand")
             pathList.add("OpeningInventory")
+            // TpAll
+            pathList.add("IncorrectTpAllCommand")
+            pathList.add("AllPlayersTeleportedToYou")
+            pathList.add("ForcedTpAll")
+            // TPA (KROXY)
+
+            // Spawn
+            pathList.add("IncorrectSpawnCommand")
+            pathList.add("TeleportedSpawnSuccess")
+            // SetSpawn
+            pathList.add("IncorrectSetSpawnCommand")
+            pathList.add("SetSpawnSuccess")
             return pathList
         }
 

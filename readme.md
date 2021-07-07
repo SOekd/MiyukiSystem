@@ -2,9 +2,9 @@
 
 Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/System).
 
-
 # Por quê usar MiyukiSystem?
 
+* Uma [wiki]("miyukisystem.gitbook.io/wiki/introducao") completa para você. (Em breve)
 * Código aberto a toda comunidade.
 * Código super otimizado.
 * Atualizado constantemente.
@@ -15,12 +15,24 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 
 # Usando o plugin:
 
-* Baixe o plugin na versão mais recente  clicando [aqui](https://github.com/SOekd/MiyukiSystem/releases/latest). `EM BREVE!`
+* Baixe o plugin na versão mais recente  clicando [aqui](https://github.com/SOekd/MiyukiSystem/releases/latest). (Em breve)
 * O plugin suporta as versões: 1.8.8 ~ 1.17.
 * Para mudar qualquer nome de comando, aliases, clique [aqui](https://github.com/SOekd/MiyukiSystem/blob/master/src/main/resources/commands.yml).
-* Caso tenha algum problema, sugestões, abrir uma issue clicando [aqui](https://github.com/SOekd/MiyukiSystem/issues).
+* Caso tenha algum problema, sugestões abrir uma issue clicando [aqui](https://github.com/SOekd/MiyukiSystem/issues).
+Se for uma dúvida, antes de tudo veja a nossa wiki clicando [aqui]("miyukisystem.gitbook.io/wiki/introducao").
 
+
+## Desenvolvedores:
+
+[SOekd](https://github.com/SOekd) [mattnicee7](https://github.com/mattnicee7) [Kroxyyy](https://github.com/kroxyyy)
 
 ## Contribuidores:
 
-[SOekd](https://github.com/SOekd) [mattnicee7](https://github.com/mattnicee7) [Kroxyyy](https://github.com/kroxyyy)
+- Contribuidores, seja com a ideia inicial, ajuda em alguma parte do  código, etc.
+
+* Nevisk
+* Alexandre
+
+
+* Obrigado a todos. =)
+

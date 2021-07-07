@@ -1,4 +1,4 @@
-package miyukisystem.listener;
+package miyukisystem.commands.impl.tpa;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

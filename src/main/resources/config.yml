@@ -23,3 +23,7 @@ Blockers:
   AnvilDecay: true
   RainCancel: true
 
+# Nome do menu do lixeiro!
+
+TrashTitleMenu: 'Lixeiro'
+

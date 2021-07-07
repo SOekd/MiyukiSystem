@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class InvSeeCommand extends CommandService {
 
     public InvSeeCommand() {
-        super("Invsee", "miyukisystem.invsee");
+        super("InvSee", "miyukisystem.invsee");
     }
 
     // adicionar para aparecer a armadura

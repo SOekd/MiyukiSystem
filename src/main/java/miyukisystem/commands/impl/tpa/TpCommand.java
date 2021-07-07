@@ -1,4 +1,4 @@
-package miyukisystem.commands.impl;
+package miyukisystem.commands.impl.tpa;
 
 import miyukisystem.commands.CommandService;
 import miyukisystem.util.AsyncUtil;
@@ -12,13 +12,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class TpaCommand extends CommandService {
+public class TpCommand extends CommandService {
 
     public static HashMap<String, List<String>> tps = new HashMap<>();
 
-    public TpaCommand() {
-        super("tpa", "miyukisystem.tpa");
-    }
+    public TpCommand() {
+        super("Tpa", "miyukisystem.tpa");
+    } // talvez deixar sem a perm tpaccept pra esses comandos de tpa.
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {

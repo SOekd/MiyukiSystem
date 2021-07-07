@@ -86,10 +86,34 @@ EnderChest:
   Aliases: ['ec']
   Description: 'sla'
 
+Workbench:
+  Enabled: true
+  Command: 'workbench'
+  Aliases: ['craft', 'wc']
+  Description: 'sla'
+
 InvSee:
   Enabled: true
   Command: 'invsee'
   Aliases: ['inv']
+  Description: 'sla'
+
+TpAll:
+  Enabled: true
+  Command: 'tpall'
+  Aliases: []
+  Description: 'sla'
+
+Spawn:
+  Enabled: true
+  Command: 'spawn'
+  Aliases: []
+  Description: 'sla'
+
+SetSpawn:
+  Enabled: true
+  Command: 'setspawn'
+  Aliases: []
   Description: 'sla'
 
 Tpa:
@@ -98,8 +122,15 @@ Tpa:
   Aliases: []
   Description: 'sla'
 
-TpAll:
+TpAccept:
   Enabled: true
-  Command: 'tpall'
+  Command: 'tpaccept'
   Aliases: []
   Description: 'sla'
+
+TpDeny:
+  Enabled: true
+  Command: 'tpdeny'
+  Aliases: []
+  Description: 'sla'
+

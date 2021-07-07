@@ -88,6 +88,23 @@ OpeningInventory: '&aAbrindo inventário de {player}...' # ActionBar
 
 # TpAll Command
 
-IncorrectTpAllCommand: '&cUso incorreto. Use: /tpall <Player>'
+IncorrectTpAllCommand: '&cUso incorreto. Use: /tpall <player>.'
+AllPlayersTeleportedToYou: '&aTodos os jogadores foram teleportados até sua localização.'
+ForcedTpAll: '&aTodos os jogadores foram teleportados até a localização de &e{player}.'
+
+# Tpa Command (FAÇA AQUI KROXY)
+
+# Spawn Command
+
+IncorrectSpawnCommand: '&cUso incorreto. Use: /spawn.'
+TeleportedSpawnSuccess: '&aVocê foi teleportado para o spawn com sucesso.'
+
+# SetSpawn Command
+
+IncorrectSetSpawnCommand: '&cUso incorreto. Use: /setspawn.'
+SetSpawnSuccess: '&aO spawn foi setado em sua localização com sucesso.'
+
+
+
 
 

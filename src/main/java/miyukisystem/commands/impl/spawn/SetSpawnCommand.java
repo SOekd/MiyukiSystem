@@ -1,20 +1,21 @@
-package miyukisystem.commands.impl;
+package miyukisystem.commands.impl.spawn;
 
-import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
-import org.bukkit.Bukkit;
+import miyukisystem.util.LocationUtilKt;
+import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
-public class VanishCommand extends CommandService {
+public class SetSpawnCommand extends CommandService {
 
-    public VanishCommand() {
-        super("Vanish", "miyukisystem.vanish");
+    // 0 60 0 > location padrão (setada por padrão)
+
+    public SetSpawnCommand() {
+        super("SetSpawn", "miyukisystem.setspawn");
     }
 
     @Override
@@ -25,12 +26,10 @@ public class VanishCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.vanish"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
-
         Player player = (Player) sender;
+
+        Location spawn = player.getLocation();
+        // seta no locationmanager
 
         return false;
     }
@@ -38,6 +37,6 @@ public class VanishCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return null;
+        return Collections.emptyList();
     }
 }

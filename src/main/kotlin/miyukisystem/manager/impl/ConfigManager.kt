@@ -13,6 +13,7 @@ class ConfigManager {
         val commands = Config("commands.yml")
 
         override fun load() {
+            ajuda.saveDefaultConfig()
             config.saveDefaultConfig()
             messages.saveDefaultConfig()
             commands.saveDefaultConfig()
@@ -20,6 +21,7 @@ class ConfigManager {
         }
 
         override fun reload() {
+            ajuda.reloadConfig()
             config.reloadConfig()
             messages.reloadConfig()
             commands.reloadConfig()

@@ -1,21 +1,23 @@
-package miyukisystem.commands.impl;
+package miyukisystem.commands.impl.vanish;
 
+import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
-import miyukisystem.util.ActionBar;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-public class TrashCommand extends CommandService {
+public class VanishCommand extends CommandService {
 
-    public TrashCommand() {
-        super("Trash", "miyukisystem.trash");
+    public VanishCommand() {
+        super("Vanish", "miyukisystem.vanish");
     }
+
+    // SOekd
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
@@ -25,21 +27,19 @@ public class TrashCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.trash"))) {
+        if (!(sender.hasPermission("miyukisystem.vanish"))) {
             sender.sendMessage("NoPermission");
             return false;
         }
 
         Player player = (Player) sender;
-        Inventory trash = Bukkit.createInventory(null, 54, "TrashTitleMenu"); // ta na config.
-        ActionBar.sendActionBar(player, "OpeningTrash"); // pufavo nao tire.
-        player.openInventory(trash);
+
         return false;
     }
 
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return Collections.emptyList();
+        return null;
     }
 }
