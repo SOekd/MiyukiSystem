@@ -1,7 +1,6 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -9,31 +8,21 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.util.List;
 
-public class TitleCommand extends CommandService {
+public class RepairCommand extends CommandService {
 
-    public TitleCommand() {
-        super("Title", "miyukisystem.title");
+    public RepairCommand() {
+        super("Repair", "miyukisystem.repair");
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (args.length < 1) {
-            sender.sendMessage("IncorrectTitleCommand");
+        if (!(sender instanceof Player)) {
+            sender.sendMessage("NoConsole");
             return false;
         }
 
-        String msg = String.join(" ", args).replace('&', '§');
 
-        String[] txt = msg.split("<nl>");
-
-        if (!(msg.contains("<nl>"))) {
-            // envia o title pra todos os players
-        } else {
-            // envia o title para todos os players
-        }
-
-        sender.sendMessage("TitleSent");
 
         return false;
     }

@@ -43,6 +43,9 @@
 # miyukisystem.clear.other -> permissão para usar o comando /clear em outras pessoas.
 
 # miyukisystem.title -> permissão para usar o comando /title.
+# miyukisystem.repair -> permissão para usar o comando /repair.
+# miyukisystem.speed -> permissão para usar o comando /speed.
+# miyukisystem.back -> permissão para usar o comando /back.
 
 # ------------------------------------------------------------------------------------------------
 

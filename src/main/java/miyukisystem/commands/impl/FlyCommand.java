@@ -20,7 +20,7 @@ public class FlyCommand extends CommandService {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (!(sender instanceof Player) ) {
+        if (!(sender instanceof Player) && args.length != 1) {
             sender.sendMessage("NoConsole");
             return false;
         }

@@ -7,6 +7,13 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class PlayerQuitTPA implements Listener {
 
+    /*
+    *
+    * Listener dedicado a classe TpCommand.
+    *
+    * */
+
+
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerQuit(PlayerQuitEvent e) {
 

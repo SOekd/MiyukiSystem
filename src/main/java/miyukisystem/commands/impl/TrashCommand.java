@@ -25,11 +25,6 @@ public class TrashCommand extends CommandService {
             return false;
         }
 
-        if (!(sender.hasPermission("miyukisystem.trash"))) {
-            sender.sendMessage("NoPermission");
-            return false;
-        }
-
         Player player = (Player) sender;
         Inventory trash = Bukkit.createInventory(null, 54, "TrashTitleMenu"); // ta na config.
         ActionBar.sendActionBar(player, "OpeningTrash"); // pufavo nao tire.

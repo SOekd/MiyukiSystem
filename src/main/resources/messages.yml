@@ -8,6 +8,10 @@ NoPermission: '&cVocê não tem permissão para executar este comando.'
 NoConsole: '&cSomente jogadores podem executar esse comando.'
 Offline: '&cO jogador especificado não está online.'
 
+# Diversos
+
+ImproperNick: '&cEsse nickname foi bloqueado no servidor.'
+
 # Alert Command
 
 IncorrectAlertCommand: '&cComando incorreto. Use: /alerta <aviso>'
@@ -119,6 +123,15 @@ AlreadyCleared: '&cO seu inventário já está limpo.'
 
 IncorrectTitleCommand: '&cUso incorreto. Use: /title msg <nl> msg.'
 TitleSent: '&aO seu title foi enviado.'
+
+# Anvil Command
+
+IncorrectAnvilCommand: '&cUso incorreto. Use: /anvil.'
+
+# Speed Command
+
+IncorrectSpeedCommand: '&cUso incorreto. Use: /speed <1/20>'
+
 
 
 

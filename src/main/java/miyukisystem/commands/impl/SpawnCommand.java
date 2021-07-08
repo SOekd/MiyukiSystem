@@ -43,18 +43,10 @@ public class SpawnCommand extends CommandService {
         // se o cara apertar tab no primeiro argumento, vir a lista de players (SOekd) pra teleportar o cara pro spawn (se o cara tiver a perm miyukisystem.spawn.other)
 
         Player player = (Player) sender;
-        YamlConfiguration config = ConfigManager.Companion.getLocations().config;
-        Location spawn = LocationUtilKt.toLocation(config.getString("Spawn"));
 
         if (args.length == 0) {
 
-            if (config.contains("Spawn")) {
-                player.teleport(spawn);
-            } else {
-                World world = Bukkit.getWorld("world");
-                Location notSpawn = new Location(world, 0, 60, 0);
-                player.teleport(notSpawn);
-            }
+            teleportToSpawn(player);
 
             player.sendMessage("TeleportedSpawnSuccess");
             player.playSound(player.getLocation(), Sound.valueOf("LEVEL_UP"), 1.0f, 1.0f);
@@ -63,7 +55,7 @@ public class SpawnCommand extends CommandService {
 
         if (args.length == 1) {
 
-            if (!(sender.hasPermission("miyukisystem.sendspawn"))) {
+            if (!(sender.hasPermission("miyukisystem.spawn.other"))) {
                 sender.sendMessage("NoPermission");
                 return false;
             }
@@ -75,12 +67,26 @@ public class SpawnCommand extends CommandService {
                 return false;
             }
 
-            target.teleport(spawn);
+            teleportToSpawn(target);
             player.sendMessage("SentToSpawn"); // {player} retorna o target.getName()
             target.sendMessage("ForcedTeleportSpawn");
         }
 
         return false;
+    }
+
+    public static void teleportToSpawn(Player player) {
+
+        YamlConfiguration config = ConfigManager.Companion.getLocations().config;
+
+        if (config.contains("Spawn")) {
+            Location spawn = LocationUtilKt.toLocation(config.getString("Spawn"));
+            player.teleport(spawn);
+        } else {
+            Location spawn = new Location(Bukkit.getWorld("world"), 0, 60, 0);
+            player.teleport(spawn);
+        }
+
     }
 
     @NotNull

@@ -152,3 +152,27 @@ Title:
   Aliases: []
   Description: 'Comando para enviar titles aos jogadores.'
 
+Anvil:
+  Enabled: true
+  Command: 'anvil'
+  Aliases: ['bigorna']
+  Description: 'Comando para abrir uma bigorna virtual.'
+
+Repair:
+  Enabled: true
+  Command: 'repair'
+  Aliases: ['fix', 'reparar']
+  Description: 'Comando para reparar seus itens.'
+
+Speed:
+  Enabled: true
+  Command: 'speed'
+  Aliases: ['velocidade']
+  Description: 'Comando para alterar a sua velocidade.'
+
+Back:
+  Enabled: true
+  Command: 'back'
+  Aliases: ['voltar']
+  Description: 'Comando para voltar a seu ultimo lugar'
+

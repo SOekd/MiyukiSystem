@@ -4,26 +4,29 @@
 # Para pesquisar, veja aqui na lista abaixo os bloqueadores e de um CTRL+F para pesquisar.
 # Exemplo: CTRL + F, LeavesDecay
 
-# BLOCKERS
-
-# FreezeWater -> Bloqueia de transformar a água em gelo.
-# FallIntoVoid -> Bloquia de cair no void (teleporta pro spawn).
-# CreatePortal -> Bloqueia de criar portal do nether.
-# MobsCatchFire -> Bloqueia dos mobs pegarem fogo pro sol.
-# LeavesDecay -> Bloqueia de folhas cairem.
-# AnvilDecay -> Bloqueia a gravidade da bigorna.
-# RainCancel -> Cancela a chuva quando comecar.
-
 Blockers:
+  # Bloqueia de transformar a água em gelo.
   FreezeWater: true
+  # Bloqueia de cair no void (teleporta pro spawn).
   FallIntoVoid: true
+  # Bloqueia de criar portal do nether.
   CreatePortal: true
+  # Bloqueia dos mobs pegarem fogo para o sol.
   MobsCatchFire: true
+  # Bloqueia das folhas cairem.
   LeavesDecay: true
+  # Bloqueia das bigornas cairem.
   AnvilDecay: true
+  # Cancela a chuva quando comecar.
   RainCancel: true
+  # Cancela o player de entrar na cama.
+  Sleep: true
 
 # Nome do menu do lixeiro!
 
 TrashTitleMenu: 'Lixeiro'
+
+BlockedNickNames:
+  - 'teste1'
+  - 'teste2'
 

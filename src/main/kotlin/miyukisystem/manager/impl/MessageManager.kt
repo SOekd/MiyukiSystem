@@ -154,6 +154,13 @@ class MessageManager {
             pathList.add("TargetCleared")
             pathList.add("Cleared")
             pathList.add("AlreadyCleared")
+            // title
+            pathList.add("IncorrectTitleCommand")
+            pathList.add("TitleSent")
+            // anvil
+            pathList.add("IncorrectAnvilCommand")
+            // speed
+            pathList.add("IncorrectSpeedCommand")
             return pathList
         }
 
