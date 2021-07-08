@@ -2,7 +2,7 @@
 
 Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/System).
 
-![](https://tenor.com/view/miyuki-gif-20132999)
+![](https://media.giphy.com/media/WbanOzR9wjAjddGtLf/giphy.gif)
 
 # Por quê usar MiyukiSystem?
 
