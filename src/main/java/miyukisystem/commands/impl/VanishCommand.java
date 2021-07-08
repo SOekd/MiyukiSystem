@@ -1,15 +1,11 @@
 package miyukisystem.commands.impl;
 
-import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class VanishCommand extends CommandService {
 

@@ -34,8 +34,15 @@
 # miyukisystem.tpall -> permiss�o para usar o comando /tpall.
 # miyukisystem.workbench -> permiss�o para usar o comando /workbench.
 # miyukisystem.setspawn -> permiss�o para usar o comando /setspawn.
+
 # miyukisystem.spawn.other -> permissão para usar o comando /spawn <player>.
+
 # miyukisystem.edititem -> permissão para usar o comando /edititem.
+
+# miyukisystem.clear -> permissão para usar o comando /clear.
+# miyukisystem.clear.other -> permissão para usar o comando /clear em outras pessoas.
+
+# miyukisystem.title -> permissão para usar o comando /title.
 
 # ------------------------------------------------------------------------------------------------
 

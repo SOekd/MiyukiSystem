@@ -107,6 +107,18 @@ ForcedTeleportSpawn: '&aVocê foi forçado a ser teleportado pro spawn.'
 IncorrectSetSpawnCommand: '&cUso incorreto. Use: /setspawn.'
 SetSpawnSuccess: '&aO spawn foi setado em sua localização com sucesso.'
 
+# Clear Command
+
+IncorrectClearCommand: '&cUso incorreto. Use: /clear.'
+AlreadyTargetCleared: '&cO inventário de {player} já está limpo.'
+TargetCleared: '&aVocê limpou o inventário de {player} com sucesso.'
+Cleared: '&aO seu inventário foi limpo com sucesso.'
+AlreadyCleared: '&cO seu inventário já está limpo.'
+
+# Title Command
+
+IncorrectTitleCommand: '&cUso incorreto. Use: /title msg <nl> msg.'
+TitleSent: '&aO seu title foi enviado.'
 
 
 

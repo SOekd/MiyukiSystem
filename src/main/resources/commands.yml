@@ -140,3 +140,15 @@ EditItem:
   Aliases: ['editaritem']
   Description: 'Comando para editar o item em sua mão.'
 
+Clear:
+  Enabled: true
+  Command: 'clear'
+  Aliases: []
+  Description: 'Comando para limpar o inventário.'
+
+Title:
+  Enabled: true
+  Command: 'title'
+  Aliases: []
+  Description: 'Comando para enviar titles aos jogadores.'
+

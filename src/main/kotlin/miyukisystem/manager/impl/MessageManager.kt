@@ -141,10 +141,19 @@ class MessageManager {
 
             // Spawn
             pathList.add("IncorrectSpawnCommand")
+            pathList.add("IncorrectSpawnAdminCommand")
             pathList.add("TeleportedSpawnSuccess")
+            pathList.add("SentToSpawn")
+            pathList.add("ForcedTeleportSpawn")
             // SetSpawn
             pathList.add("IncorrectSetSpawnCommand")
             pathList.add("SetSpawnSuccess")
+            // Clear
+            pathList.add("IncorrectClearCommand")
+            pathList.add("AlreadyTargetCleared")
+            pathList.add("TargetCleared")
+            pathList.add("Cleared")
+            pathList.add("AlreadyCleared")
             return pathList
         }
 
