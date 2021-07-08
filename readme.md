@@ -2,6 +2,8 @@
 
 Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/System).
 
+![](https://tenor.com/view/miyuki-gif-20132999)
+
 # Por quê usar MiyukiSystem?
 
 * Uma [wiki]("https://github.com/SOekd/MiyukiSystem/wiki") completa para você. (Em breve)
