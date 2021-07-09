@@ -26,6 +26,16 @@ Blockers:
 
 TrashTitleMenu: 'Lixeiro'
 
+Motd:
+  # Motd quando está em WHITELIST (Use \n para pular linha);
+  WhitelistMotd: ''
+  # Jogadores máximos quando está em WHITELIST. (Apenas estático);
+  WhitelistMaxPlayers: 1
+  # Motd normal (Use \n para pular linha);
+  NormalMotd: ''
+  # Jogadores máximos com a motd normal. (Apenas estático);
+  NormalMaxPlayers: 200
+
 # Tempo para expirar o TPA (em segundos)
 TpaExpire: 30
 
