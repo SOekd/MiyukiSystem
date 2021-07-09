@@ -29,6 +29,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:1.5.21")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
+    compileOnly("org.projectlombok:lombok:1.18.20")
     annotationProcessor("org.projectlombok:lombok:1.18.20")
 }
 

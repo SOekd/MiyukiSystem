@@ -10,6 +10,8 @@ interface DataService<V : Cacheable> {
 
     fun set(vararg value: V)
 
+    fun remove(key: String)
+
     fun getAll(): List<V>
 
 }

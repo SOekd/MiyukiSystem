@@ -1,13 +1,18 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TpAcceptCommand extends CommandService {
 
@@ -24,30 +29,39 @@ public class TpAcceptCommand extends CommandService {
         }
 
         Player player = (Player) sender;
-        String pn = player.getName();
 
         if(args.length < 1) {
 
-            // SOekd (Stream)
+            val targetTPA = TpaManager.Companion.lastReceived(player.getName());
 
-            Player target = Bukkit.getPlayer(TpCommand.tps.get(pn).get(0));
+            if (targetTPA == null) {
+                // mensagem que não recebeu nenhum tpa.
+                return false;
+            }
 
-            if(target == null) return false;
+            val targetName = targetTPA.getFrom();
+            val target = Bukkit.getPlayer(targetName);
+
+            if (target == null) {
+                // aviso que expirou pq o cara deslogou.
+                return false;
+            }
 
             player.sendMessage("AcceptTpaOther");
             target.sendMessage("AcceptTpaPlayer");
             target.teleport(player.getLocation());
-        } else {
 
-            if(args[0].equals(pn)) {
-                player.sendMessage("Yourself");
-                return false;
-            }
+        } else {
 
             Player target = Bukkit.getPlayer(args[0]);
 
             if(target == null) {
                 player.sendMessage("OfflinePlayer");
+                return false;
+            }
+
+            if(target.equals(player)) {
+                player.sendMessage("Yourself");
                 return false;
             }
 
@@ -68,6 +82,11 @@ public class TpAcceptCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return null;
+        Player player = sender instanceof Player ? (Player) sender : null;
+        if (player == null || !player.hasPermission("miyukisystem.tpaccept")) return Collections.emptyList();
+        return TpaManager.Companion.getAll().stream()
+                .filter(it -> it.getTo().equalsIgnoreCase(player.getName()))
+                .map(TPA::getFrom)
+                .collect(Collectors.toList());
     }
 }

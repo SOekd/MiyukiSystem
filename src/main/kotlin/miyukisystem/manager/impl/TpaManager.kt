@@ -27,6 +27,18 @@ class TpaManager {
 
         override fun getAll(): List<TPA> = cached.asMap().values.toList()
 
+        override fun remove(key: String) {
+            cached.asMap().remove(key)
+        }
+
+        fun lastReceived(key: String): TPA? {
+            return try {
+                cached.asMap().values.last { it.to.equals(key, ignoreCase = true) }
+            } catch (exception: NoSuchElementException) {
+                null
+            }
+        }
+
         override fun load() {
             val expireTime = ConfigManager.config.config.getLong("TpaExpire")
             cached = CacheBuilder.newBuilder()
@@ -37,6 +49,7 @@ class TpaManager {
         override fun reload() {
             load()
         }
+
 
     }
 

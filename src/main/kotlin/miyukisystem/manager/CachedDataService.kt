@@ -16,6 +16,10 @@ abstract class CachedDataService<V : Cacheable> : DataService<V> {
         value.forEach { cached[it.getKey()] = it }
     }
 
+    override fun remove(key: String) {
+        cached.remove(key)
+    }
+
     override fun getAll(): List<V> = cached.values.toList()
 
 
