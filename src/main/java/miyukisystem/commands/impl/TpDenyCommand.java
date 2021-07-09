@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.TpaManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -27,19 +28,7 @@ public class TpDenyCommand extends CommandService {
 
         if(args.length < 1) {
 
-            for(String str : TpCommand.tps.get(pn)) {
-                Player target = Bukkit.getPlayer(str);
-// SOekd
-                if(target == null) {
-                    TpCommand.tps.get(player.getName()).remove(str);
-                }
-            }
-
-            if(TpCommand.tps.get(player.getName()).isEmpty()) {
-                player.sendMessage("NoHaveRequests");
-                TpCommand.tps.remove(player.getName());
-                return false;
-            }
+            // SOekd (Stream)
 
             Player target = Bukkit.getPlayer(TpCommand.tps.get(pn).get(0));
 
@@ -58,21 +47,12 @@ public class TpDenyCommand extends CommandService {
 
             if(target == null) {
                 player.sendMessage("OfflinePlayer");
-                if(TpCommand.tps.get(player.getName()).contains(args[0])) {
-                    player.sendMessage("NoHaveRequests");
-                    TpCommand.tps.get(player.getName()).remove(args[0]);
-                    return false;
-                }
                 return false;
             }
 
-            if(!TpCommand.tps.get(player.getName()).contains(player.getName())) {
-                player.sendMessage("NoHaveRequests");
-                return false;
-            }
-
+            // TpaManager.Companion.unSet(target.getName());
             player.sendMessage("DenyTpaOther");
-            player.sendMessage("DenyTpaPlayer");
+            target.sendMessage("DenyTpaPlayer");
 
         }
 

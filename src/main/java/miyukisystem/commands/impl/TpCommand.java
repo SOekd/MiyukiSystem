@@ -1,6 +1,8 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.TPA;
+import miyukisystem.manager.impl.TpaManager;
 import miyukisystem.util.AsyncUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -47,28 +49,11 @@ public class TpCommand extends CommandService {
             return false;
         }
 
-        if(tps.containsKey(player.getName())) {
-            tps.get(target.getName()).add(player.getName());
-            return false;
-        }
+        TPA tpa = new TPA(player.getName(), target.getName());
 
-        List<String> tpsPlayers = new ArrayList<>();
-
-        tpsPlayers.add(player.getName());
-        tps.put(target.getName(), tpsPlayers);
+        TpaManager.Companion.set(tpa);
         target.sendMessage("TpaOther");
         player.sendMessage("TpaPlayer");
-
-        AsyncUtil.Companion.runAsyncLater(20L * 60, () -> {
-            tps.get(player.getName()).remove(player.getName());
-
-            if(tps.get(target.getName()).isEmpty()) {
-                tps.remove(target.getName());
-            }
-
-            target.sendMessage("ExpiredTpaOther");
-            player.sendMessage("ExpiredTpaPlayer");
-        });
 
         return true;
     }
