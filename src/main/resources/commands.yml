@@ -10,104 +10,87 @@
 
 Alert:
   Enabled: true
-  Command: 'alert'
-  Aliases: ['broadcast', 'aviso', 'bc', 'alerta']
+  Command: 'alert|broadcast|aviso|bc|alerta'
   Description: 'Comando para dar um aviso geral no servidor.'
 
 Heal:
   Enabled: true
   Command: 'heal'
-  Aliases: []
   Description: 'Comando para curar a vida.'
 
 Feed:
   Enabled: true
   Command: 'feed'
-  Aliases: []
   Description: 'Comando para saciar a fome.'
 
 FlashLight:
   Enabled: true
-  Command: 'flashlight'
-  Aliases: ['lanterna', 'luz']
+  Command: 'flashlight|lanterna|luz'
   Description: 'Comando para iluminar seu caminho.'
 
 Gamemode:
   Enabled: true
-  Command: 'gamemode'
-  Aliases: ['gm']
+  Command: 'gamemode|gm'
   Description: 'Comando para alterar seu modo de jogo.'
 
 Teleport:
   Enabled: true
-  Command: 'teleport'
-  Aliases: ['tp']
+  Command: 'teleport|tp'
   Description: 'Comando para se teleportar.'
 
 Hat:
   Enabled: true
-  Command: 'hat'
-  Aliases: ['chapeu']
+  Command: 'hat|chapeu'
   Description: 'Comando para botar um bloco/qualquer coisa na cabeça'
 
 ClearChat:
   Enabled: true
   Command: 'clearchat'
-  Aliases: []
   Description: 'Comando para limpar o chat.'
 
 Fly:
   Enabled: true
-  Command: 'fly'
-  Aliases: ['voar']
+  Command: 'fly|voar'
   Description: 'Comando para poder voar.'
 
 Vanish:
   Enabled: true
-  Command: 'vanish'
-  Aliases: ['v']
+  Command: 'vanish|v'
   Description: 'Comando para se esconder dos jogadores.'
 
 Ping:
   Enabled: true
   Command: 'ping'
-  Aliases: []
   Description: 'Comando para você ver seu ping.'
 
 Trash:
   Enabled: true
-  Command: 'trash'
-  Aliases: ['lixo', 'lixeiro']
+  Command: 'trash|lixo|lixeiro'
   Description: 'Comando para você poder usar o lixo.'
 
 EnderChest:
   Enabled: true
-  Command: 'enderchest'
-  Aliases: ['ec']
+  Command: 'enderchest|ec'
   Description: 'Comando para você poder usar o enderchest de qualquer lugar'
 
 Workbench:
   Enabled: true
-  Command: 'workbench'
-  Aliases: ['craft', 'wc']
+  Command: 'workbench|craft|craftingtable|wc'
   Description: 'Comando para você poder usar a workbench de qualquer lugar'
 
 InvSee:
   Enabled: true
-  Command: 'invsee'
-  Aliases: ['inv']
+  Command: 'invsee|inv'
   Description: 'Comando para ver o inventário dos outros.'
 
 TpAll:
   Enabled: true
   Command: 'tpall'
-  Aliases: []
   Description: 'Comando para teleportar todos players até você'
 
 Spawn:
   Enabled: true
   Command: 'spawn'
-  Aliases: []
   Description: 'Comando para ir até o spawn'
 
 SetSpawn:
@@ -119,60 +102,50 @@ SetSpawn:
 Tpa:
   Enabled: true
   Command: 'tpa'
-  Aliases: []
   Description: 'Comando para enviar uma solicitacao de teleporte para uma pessoa.'
 
 TpAccept:
   Enabled: true
   Command: 'tpaccept'
-  Aliases: []
   Description: 'Comando para aceitar a solicitação de teleporte'
 
 TpDeny:
   Enabled: true
-  Command: 'tpdeny'
-  Aliases: ['tpadeny']
+  Command: 'tpdeny|tpadeny'
   Description: 'Comando para recusar a solicitação de teleporte'
 
 EditItem:
   Enabled: true
-  Command: 'edititem'
-  Aliases: ['editaritem']
+  Command: 'edititem|editaritem'
   Description: 'Comando para editar o item em sua mão.'
 
 Clear:
   Enabled: true
   Command: 'clear'
-  Aliases: []
   Description: 'Comando para limpar o inventário.'
 
 Title:
   Enabled: true
   Command: 'title'
-  Aliases: []
   Description: 'Comando para enviar titles aos jogadores.'
 
 Anvil:
   Enabled: true
-  Command: 'anvil'
-  Aliases: ['bigorna']
+  Command: 'anvil|bigorna'
   Description: 'Comando para abrir uma bigorna virtual.'
 
 Repair:
   Enabled: true
-  Command: 'repair'
-  Aliases: ['fix', 'reparar']
+  Command: 'repair|fix|reparar'
   Description: 'Comando para reparar seus itens.'
 
 Speed:
   Enabled: true
-  Command: 'speed'
-  Aliases: ['velocidade']
+  Command: 'speed|velocidade'
   Description: 'Comando para alterar a sua velocidade.'
 
 Back:
   Enabled: true
-  Command: 'back'
-  Aliases: ['voltar']
+  Command: 'back|voltar'
   Description: 'Comando para voltar a seu ultimo lugar'
 

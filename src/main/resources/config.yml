@@ -26,6 +26,9 @@ Blockers:
 
 TrashTitleMenu: 'Lixeiro'
 
+# Tempo para expirar o TPA (em segundos)
+TpaExpire: 30
+
 BlockedNickNames:
   - 'teste1'
   - 'teste2'

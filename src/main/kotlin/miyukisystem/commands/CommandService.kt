@@ -13,7 +13,7 @@ import org.bukkit.command.CommandSender
 
 abstract class CommandService(
     name: String,
-    val perm: String
+    private val perm: String
 ) : Command(name) {
 
     object CommandRegistry : ManagerService {
@@ -45,22 +45,27 @@ abstract class CommandService(
 
     private val enabled: Boolean
     private val commandName: String
-    private val commandAliases: List<String>
     private val commandDescription: String
 
     init {
         val section = commandConfig.getConfigurationSection(name)!!
         enabled = section.getBoolean("Enabled")
         commandName = section.getString("Command")!!
-        commandAliases = section.getStringList("Aliases")
         commandDescription = section.getString("Description")!!
     }
 
     fun canRegister() : Boolean {
-        var register: Boolean = setName(commandName)
+        if (!enabled) return false
+        val commands: Array<String> =
+            if(commandName.contains("|"))
+                commandName.split("|").toTypedArray()
+            else
+                arrayOf(commandName)
+        if (commands.isNullOrEmpty()) return false;
         setDescription(description)
-        setAliases(commandAliases)
-        return register && enabled
+        val register = setName(commands[0])
+        aliases = commands.drop(1)
+        return register
     }
 
     abstract fun execute(sender: CommandSender, args: Array<String>): Boolean

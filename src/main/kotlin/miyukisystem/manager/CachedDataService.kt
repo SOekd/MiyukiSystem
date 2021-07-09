@@ -2,7 +2,7 @@ package miyukisystem.manager
 
 abstract class CachedDataService<V : Cacheable> : DataService<V> {
 
-    private val cached = hashMapOf<String, V>()
+    open val cached = hashMapOf<String, V>()
 
     override fun has(key: String): Boolean = cached.containsKey(key)
 

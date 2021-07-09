@@ -1,32 +1,36 @@
 package miyukisystem.manager
 
+import com.google.common.reflect.ClassPath
+import miyukisystem.Main
 import miyukisystem.manager.impl.ConfigManager
 import miyukisystem.manager.impl.MessageManager
 import miyukisystem.manager.impl.UserManager
+import org.bukkit.Bukkit
+import org.bukkit.event.Listener
 
 interface ManagerService {
 
-    companion object {
+    companion object : ManagerService {
 
-        private val managerList = mutableListOf<ManagerService>()
 
-        init {
-            managerList.addAll(
-                arrayOf(
-                    ConfigManager,
-                    MessageManager,
-                    UserManager
-                )
-            )
+        // Provavelmente irá quebrar o plugin, mas vale a pena tentar
+        override fun load() {
+            val classPath = ClassPath.from(Main.instance.javaClass.classLoader)
+            var i = 0
+            classPath.getTopLevelClassesRecursive("miyukisystem.manager.impl").forEach { classInfo ->
+                try {
+                    val manager = Class.forName(classInfo.name).getDeclaredField("INSTANCE").get(null)
+                    if (manager is ManagerService) {
+                        manager.load()
+                        i++
+                    }
+                } catch (exception: Exception) {  }
+            }
+            Bukkit.getConsoleSender().sendMessage("§9§lMiyukiSystem  §aForam carregados §7$i §amodulos.")
         }
 
-        fun loadAll() {
-            managerList.forEach { it.load() }
-        }
+        override fun reload() { }
 
-        fun reloadAll() {
-            managerList.forEach { it.reload() }
-        }
 
     }
 
