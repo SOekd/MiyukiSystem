@@ -5,6 +5,7 @@ import miyukisystem.Main
 import miyukisystem.manager.ManagerService
 import miyukisystem.manager.impl.ConfigManager
 import miyukisystem.manager.impl.sendCustomMessage
+import miyukisystem.util.async
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandMap
@@ -13,7 +14,8 @@ import org.bukkit.command.CommandSender
 
 abstract class CommandService(
     name: String,
-    private val perm: String
+    private val perm: String,
+    private val async: Boolean = true
 ) : Command(name) {
 
     object CommandRegistry : ManagerService {
@@ -82,7 +84,13 @@ abstract class CommandService(
             return false
         }
         return try {
-            execute(sender, args)
+            if (async) {
+                async {
+                    execute(sender, args)
+                }
+                return true
+            }
+            else execute(sender, args)
         } catch (exception: Exception) {
             exception.printStackTrace()
             sender.sendMessage("§dMiyukiSystem ➡ §cOcorreu um erro ao tentar executar o comando. Contate o administrador.")

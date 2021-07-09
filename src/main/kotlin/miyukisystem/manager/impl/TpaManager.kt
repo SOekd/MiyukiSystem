@@ -28,7 +28,7 @@ class TpaManager {
         override fun getAll(): List<TPA> = cached.asMap().values.toList()
 
         override fun remove(key: String) {
-            cached.asMap().remove(key)
+            cached.invalidate(key)
         }
 
         fun lastReceived(key: String): TPA? {

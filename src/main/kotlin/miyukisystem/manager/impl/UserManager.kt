@@ -27,52 +27,12 @@ class UserManager {
 
                 @EventHandler
                 fun onPlayerJoin(event: PlayerJoinEvent) {
-                    async {
-                        val player = event.player
-                        if (has(player.name)) return@async
-                        val config = Config("playerdata${File.separator}${player.name.toLowerCase()}.yml")
-                        config.saveDefaultConfig()
-                        config.reloadConfig()
-                        val playerConfig = config.config
-                        val user = User(
-                            player.name,
-                            if (playerConfig.contains("Kits") && playerConfig.isConfigurationSection("Kits")) {
-                                val kits = HashMap<String, Long>()
-                                playerConfig.getConfigurationSection("Kits")!!.getKeys(false).forEach {
-                                    val time = playerConfig.getLong("Kits.$it")
-                                    if (time > System.currentTimeMillis())
-                                        kits[it] = time
-                                    else {
-                                        playerConfig.set("Kits.$it", null)
-                                        config.saveConfig()
-                                    }
-                                }
-                                kits
-                            } else HashMap(),
-                            if (playerConfig.contains("TpaEnabled")) playerConfig.getBoolean("TpaEnabled")
-                            else false,
-                            if (playerConfig.contains("Vanish") && player.hasPermission("miyukisystem.vanish"))
-                                playerConfig.getBoolean("Vanish")
-                            else false,
-                            if (playerConfig.contains("Homes") && playerConfig.isConfigurationSection("Homes")) {
-                                val homes = HashMap<String, Location>()
-                                playerConfig.getConfigurationSection("Homes")!!.getKeys(false).forEach {
-                                    homes[it] = it.toLocation()!!
-                                }
-                                homes
-                            } else HashMap()
-                        )
-                        sync {
-                            set(user)
-                        }
-                    }
+                    // terminar o mysql antes.
                 }
 
                 @EventHandler
                 fun onPlayerQuit(event: PlayerQuitEvent) {
-                    val player = event.player
-                    if (!has(player.name)) return
-                    get(player.name).save()
+
                 }
 
             }, Main.instance)

@@ -97,7 +97,7 @@ class UserMySQL : DataSourceProvider<User> {
                     var kits: Map<String, Long> = HashMap()
                     kits = gson.fromJson(rs.getString("kits"), kits.javaClass)
                         .filter { it.value > System.currentTimeMillis() }
-                    var homes: Map<String, Location> = HashMap()
+                    val homes: Map<String, Location> = HashMap()
                     if (rs.next()) {
                         User(
                             rs.getString("name"),

@@ -47,6 +47,8 @@ public class TpAcceptCommand extends CommandService {
                 return false;
             }
 
+            TpaManager.Companion.remove(target.getName());
+
             player.sendMessage("AcceptTpaOther");
             target.sendMessage("AcceptTpaPlayer");
             target.teleport(player.getLocation());
@@ -69,6 +71,8 @@ public class TpAcceptCommand extends CommandService {
                 player.sendMessage("NoHaveRequests");
                 return false;
             }
+
+            TpaManager.Companion.remove(target.getName());
 
             player.sendMessage("AcceptTpaOther");
             target.sendMessage("AcceptTpaPlayer");
