@@ -5,7 +5,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-public class PlayerQuitTPA implements Listener {
+public class PlayerQuitTpa implements Listener {
 
     /*
     *

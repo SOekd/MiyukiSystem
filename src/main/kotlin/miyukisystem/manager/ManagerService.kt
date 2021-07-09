@@ -2,11 +2,7 @@ package miyukisystem.manager
 
 import com.google.common.reflect.ClassPath
 import miyukisystem.Main
-import miyukisystem.manager.impl.ConfigManager
-import miyukisystem.manager.impl.MessageManager
-import miyukisystem.manager.impl.UserManager
 import org.bukkit.Bukkit
-import org.bukkit.event.Listener
 
 interface ManagerService {
 
@@ -18,8 +14,9 @@ interface ManagerService {
             val classPath = ClassPath.from(Main.instance.javaClass.classLoader)
             var i = 0
             classPath.getTopLevelClassesRecursive("miyukisystem.manager.impl").forEach { classInfo ->
+                println(classInfo.name)
                 try {
-                    val manager = Class.forName(classInfo.name).getDeclaredField("INSTANCE").get(null)
+                    val manager = Class.forName(classInfo.name).getDeclaredField("Companion").get(null)
                     if (manager is ManagerService) {
                         manager.load()
                         i++

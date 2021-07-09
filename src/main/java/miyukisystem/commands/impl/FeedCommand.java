@@ -17,8 +17,6 @@ public class FeedCommand extends CommandService {
         super("Feed", "miyukisystem.feed");
     }
 
-    // ta com os path
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

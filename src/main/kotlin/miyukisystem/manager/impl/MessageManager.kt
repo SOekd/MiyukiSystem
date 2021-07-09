@@ -109,7 +109,7 @@ class MessageManager {
             pathList.add("IncorrectTeleportCommand")
             pathList.add("TeleportedToYourself")
             pathList.add("TeleportedSuccess")
-            pathList.add("TeleportedSucessWithCoords")
+            pathList.add("TeleportedSuccessWithCoords")
             pathList.add("PlayerTeleportedSuccessWithCoords")
             pathList.add("InvalidCoords")
             // clearchat

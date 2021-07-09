@@ -24,7 +24,6 @@ public class FlashLightCommand extends CommandService {
             return false;
         }
 
-
         if (args.length > 0) {
             sender.sendMessage("IncorrectFlashLightCommand");
             return false;
@@ -33,7 +32,7 @@ public class FlashLightCommand extends CommandService {
         Player player = (Player) sender;
 
         if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) { // adicionar verificacao de amplifier e tempo
-            if(player.getPotionEffect(PotionEffectType.NIGHT_VISION).getDuration() < 480) { // a poção não é nula, temos a verificação acima
+            if (player.getPotionEffect(PotionEffectType.NIGHT_VISION).getDuration() < 480) { // a poção não é nula, temos a verificação acima
                 player.sendMessage("OnNightVisionPotion");
             } else {
                 player.removePotionEffect(PotionEffectType.NIGHT_VISION);

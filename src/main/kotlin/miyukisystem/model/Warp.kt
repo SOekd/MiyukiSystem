@@ -1,7 +1,6 @@
 package miyukisystem.model
 
 import miyukisystem.manager.Cacheable
-import miyukisystem.manager.impl.translateColorCodes
 import miyukisystem.util.ActionBar
 import org.bukkit.Location
 import org.bukkit.entity.Player

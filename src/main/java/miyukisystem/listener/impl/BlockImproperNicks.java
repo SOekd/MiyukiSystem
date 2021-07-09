@@ -1,6 +1,7 @@
 package miyukisystem.listener.impl;
 
 import miyukisystem.manager.impl.ConfigManager;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,9 +14,10 @@ public class BlockImproperNicks implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
 
-        for (String name : config.getStringList("BlockedNicks")) {
-            if (name.equals(event.getPlayer().getName())) {
+        for (String nickName : config.getStringList("BlockedNicks")) {
+            if (nickName.equals(event.getPlayer().getName())) {
                 event.getPlayer().kickPlayer("ImproperNick");
+                Bukkit.getConsoleSender().sendMessage("ImproperNickLogged"); // {player} retorna o event.getPlayer().getName();
             }
         }
 

@@ -3,4 +3,5 @@ version: 1.14.16
 name: MiyukiSystem
 load: POSTWORLD
 authors: [RUSH, SOekd, mattnicee7, Kroxy_]
+website: github.com/SOekd/MiyukiSystem
 softdepend: [Legendchat, mcMMO, MassiveCore, Factions, Vault]

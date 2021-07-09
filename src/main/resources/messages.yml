@@ -8,9 +8,10 @@ NoPermission: '&cVocê não tem permissão para executar este comando.'
 NoConsole: '&cSomente jogadores podem executar esse comando.'
 Offline: '&cO jogador especificado não está online.'
 
-# Diversos
+# ImproperNick Listener
 
 ImproperNick: '&cEsse nickname foi bloqueado no servidor.'
+ImproperNickLogged: '&cO player {player} foi kickado por ser um nick bloqueado.'
 
 # Alert Command
 

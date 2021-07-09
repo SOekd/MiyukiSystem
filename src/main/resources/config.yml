@@ -39,7 +39,12 @@ Motd:
 # Tempo para expirar o TPA (em segundos)
 TpaExpire: 30
 
-BlockedNickNames:
+BlockedNicks:
   - 'teste1'
   - 'teste2'
+
+# Lista de materiais 1.8: https://helpch.at/docs/1.8/org/bukkit/Material.html
+# Lista de materiais 1.12:
+BlockedCrafts:
+  -
 

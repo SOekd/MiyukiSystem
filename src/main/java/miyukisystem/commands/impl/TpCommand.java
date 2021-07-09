@@ -56,7 +56,7 @@ public class TpCommand extends CommandService {
 
         tpsPlayers.add(player.getName());
         tps.put(target.getName(), tpsPlayers);
-        player.sendMessage("TpaOther");
+        target.sendMessage("TpaOther");
         player.sendMessage("TpaPlayer");
 
         AsyncUtil.Companion.runAsyncLater(20L * 60, () -> {
