@@ -27,7 +27,7 @@ public class TrashCommand extends CommandService {
 
         Player player = (Player) sender;
         Inventory trash = Bukkit.createInventory(null, 54, "TrashTitleMenu"); // ta na config.
-        ActionBar.sendActionBar(player, "OpeningTrash"); // pufavo nao tire.
+        ActionBar.sendActionBar(player, "OpeningTrash"); // ai matt, aviso pra ti, essa porra fica mt cringe.
         player.openInventory(trash);
         return false;
     }
