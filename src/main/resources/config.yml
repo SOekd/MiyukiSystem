@@ -71,6 +71,9 @@ TpaExpire: 30
 BlockedNicks:
   - 'teste1'
   - 'teste2'
+BlockedCommands: # Use "/".
+  - ''
+  - ''
 
 # Lista de materiais 1.8: https://helpch.at/docs/1.8/org/bukkit/Material.html
 # Lista de materiais 1.12:

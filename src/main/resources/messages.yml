@@ -133,6 +133,10 @@ IncorrectAnvilCommand: '&cUso incorreto. Use: /anvil.'
 
 IncorrectSpeedCommand: '&cUso incorreto. Use: /speed <1/20>'
 
+# BlockedCommands
+
+BlockedCommand: '&cComando bloqueado por um administrador.'
+
 
 
 
