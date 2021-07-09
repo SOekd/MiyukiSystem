@@ -1,5 +1,5 @@
 main: miyukisystem.Main
-version: 1.14.16
+version: 1.0.0-SNAPSHOT
 name: MiyukiSystem
 load: POSTWORLD
 authors: [RUSH, SOekd, mattnicee7, Kroxy_]

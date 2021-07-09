@@ -1,3 +1,32 @@
+
+Database:
+  # Modos disponíveis: HIKARICP, MYSQL e SQLITE.
+  Mode: SQLITE
+  Host: localhost
+  Port: 3306
+  Database: SOPlugins
+  Username: 'Username'
+  Password: 'Password'
+  # Caso dê algum erro ao tentar conectar com o MySQL ou HIKARI, coloque 'com.mysql.cj.jdbc.Driver' no driver!
+  MySQLDriver: 'com.mysql.jdbc.Driver'
+  HikariConfiguration:
+    PoolName: 'SOPluginsPool'
+    MiniumIdle: 10
+    MaximumPoolSize: 10
+    ConnectionTimeout: 30000
+    CachePrepStmts: true
+    PrepStmtCacheSize: 250
+    PrepStmtCacheSqlLimit: 2048
+    UseServerPrepStmts: true
+    UseLocalSessionState: true
+    RewriteBatchedStatements: true
+    CacheResultSetMetadata: true
+    CacheServerConfiguration: true
+    ElideSetAutoCommits: true
+    MaintainTimeStats: false
+
+
+
 # true -> bloqueado
 # false -> não bloqueado
 

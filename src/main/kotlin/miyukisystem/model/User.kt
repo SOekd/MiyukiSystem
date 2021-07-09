@@ -9,10 +9,9 @@ import java.io.File
 
 class User(
     val playerName: String,
-    val kits: HashMap<String, Long>,
     val tpaEnabled: Boolean,
-    val vanish: Boolean,
-    val homes: HashMap<String, Location>,
+    val homes: MutableMap<String, Location>,
+    val kits: MutableMap<String, Long>
 ) : Cacheable {
 
 
@@ -26,14 +25,6 @@ class User(
     }
 
     fun saveFile() {
-            val config = Config("playerdata${File.separator}${getKey()}.yml")
-            val playerConfig = config.config
-            playerConfig.set("PlayerName", playerName)
-            kits.forEach { (name, time) -> if (time > System.currentTimeMillis()) playerConfig.set("Kits.$name", time) }
-            homes.forEach { (name, location) -> playerConfig.set("Homes.$name", location) }
-            playerConfig.set("TpaEnabled", tpaEnabled)
-            playerConfig.set("Vanish", vanish)
-            config.saveConfig()
     }
 
     override fun getKey(): String = playerName.toLowerCase()

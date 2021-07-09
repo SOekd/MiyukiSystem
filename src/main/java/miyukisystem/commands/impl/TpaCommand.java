@@ -1,11 +1,13 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import miyukisystem.util.AsyncUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -13,12 +15,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class TpCommand extends CommandService {
+public class TpaCommand extends CommandService {
 
     public static HashMap<String, List<String>> tps = new HashMap<>();
 
-    public TpCommand() {
+    public TpaCommand() {
         super("Tpa", "miyukisystem.tpa");
     } // talvez deixar sem a perm tpaccept pra esses comandos de tpa.
 
@@ -44,12 +47,12 @@ public class TpCommand extends CommandService {
             return false;
         }
 
-        if(args[0].equals(sender.getName())) {
+        if(target == player) {
             player.sendMessage("Yourself");
             return false;
         }
 
-        TPA tpa = new TPA(player.getName(), target.getName());
+        val tpa = new TPA(player.getName(), target.getName());
 
         TpaManager.Companion.set(tpa);
         target.sendMessage("TpaOther");
@@ -61,6 +64,11 @@ public class TpCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return null;
+        Player player = sender instanceof Player ? (Player) sender : null;
+        if (player == null || !player.hasPermission("miyukisystem.tpa")) return Collections.emptyList();
+        return Bukkit.getOnlinePlayers().stream()
+                .filter(player::canSee)
+                .map(HumanEntity::getName)
+                .collect(Collectors.toList());
     }
 }
