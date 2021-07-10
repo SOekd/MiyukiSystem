@@ -1,7 +1,5 @@
 package miyukisystem.database
 
-import miyukisystem.model.User
-import java.sql.Connection
 import java.util.concurrent.CompletableFuture
 
 interface DataSourceProvider<T> {
@@ -14,9 +12,9 @@ interface DataSourceProvider<T> {
 
     fun insertOrUpdateAll(value: List<T>)
 
-    fun get(key: String) : CompletableFuture<User>
+    fun get(key: String) : CompletableFuture<T>
 
-    fun getAll() : List<T>
+    fun getAll() : CompletableFuture<List<T>>
 
     fun truncate()
 

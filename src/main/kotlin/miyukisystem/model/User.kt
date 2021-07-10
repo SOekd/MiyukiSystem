@@ -1,5 +1,6 @@
 package miyukisystem.model
 
+import miyukisystem.database.Database
 import miyukisystem.manager.Cacheable
 import miyukisystem.manager.impl.UserManager
 import miyukisystem.util.Config
@@ -15,17 +16,15 @@ class User(
 ) : Cacheable {
 
 
-    fun save(saveFile: Boolean = true) {
+    fun save() {
         UserManager.set(this)
-        if (saveFile) {
-            async {
-                saveFile()
-            }
+
+        // Testar para ver se irá funcionar corretamente.
+        async {
+            Database.USERS.insertOrUpdate(this)
         }
     }
 
-    fun saveFile() {
-    }
 
     override fun getKey(): String = playerName.toLowerCase()
 

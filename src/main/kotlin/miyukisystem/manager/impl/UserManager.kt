@@ -1,6 +1,7 @@
 package miyukisystem.manager.impl
 
 import miyukisystem.Main
+import miyukisystem.database.Database
 import miyukisystem.manager.CachedDataService
 import miyukisystem.manager.DataService
 import miyukisystem.manager.ManagerService
@@ -27,12 +28,32 @@ class UserManager {
 
                 @EventHandler
                 fun onPlayerJoin(event: PlayerJoinEvent) {
-                    // terminar o mysql antes.
+                    val player = event.player
+
+                    "{player}".formatPlaceholder {
+                        this["{player}"] = player.name
+                    }
+
+                    Database.USERS.has(player.name).thenAccept { hasUser ->
+                        if (hasUser) {
+                            Database.USERS.get(player.name).thenAccept { set(it) }
+                        } else {
+                            val user = User(
+                                player.name,
+                                true,
+                                HashMap(),
+                                HashMap()
+                            )
+                            set(user)
+                        }
+                    }
                 }
 
                 @EventHandler
                 fun onPlayerQuit(event: PlayerQuitEvent) {
-
+                    val player = event.player
+                    if (has(player.name))
+                        remove(player.name)
                 }
 
             }, Main.instance)

@@ -31,6 +31,8 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
     compileOnly("org.projectlombok:lombok:1.18.20")
     annotationProcessor("org.projectlombok:lombok:1.18.20")
+    implementation("com.zaxxer:HikariCP:3.4.5")
+    implementation("org.slf4j:slf4j-api:1.7.25")
 }
 
 tasks {
@@ -48,6 +50,8 @@ tasks {
 //            exclude(dependency("com.github.shynixn.*:.*"))
         }
         relocate("kotlin", "miyukisystem.kotlin")
+        relocate("com.zaxxer", "miyukisystem.database.hikari")
+        relocate("org.slf4j", "miyukisystem.util.slf4j")
         classifier = null
     }
 }

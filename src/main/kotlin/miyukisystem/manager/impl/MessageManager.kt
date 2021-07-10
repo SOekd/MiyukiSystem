@@ -276,6 +276,7 @@ fun CommandSender.sendCustomMessage(path: String) {
     }
 }
 
+
 fun CommandSender.sendCustomMessage(path: String, editor: MutableMap<String, String>.() -> Unit) {
     val message = MessageManager.getMessage(path)
     when {
@@ -295,6 +296,28 @@ fun CommandSender.sendCustomMessage(path: String, editor: MutableMap<String, Str
             (this as Player).spigot().sendMessage(textComponent)
         }
         else -> sendMessage(message.map { it.formatPlaceholder(editor) }.toTypedArray())
+    }
+}
+
+fun CommandSender.sendCustomMessage(path: String, placeHolders: MutableMap<String, String>) {
+    val message = MessageManager.getMessage(path)
+    when {
+        this !is Player && message[0] == "json" ->
+            sendMessage("§9§lMiyukiSystem  §cA mensagem com path §7json/$path.json §cnao pode ser usada em json.")
+        message[0] == "json" -> {
+            val textComponent = TextComponent("")
+            val json = MessageManager.getJson(path)
+            if (json.startsWith("§9§lMiyukiSystem"))
+                textComponent.addExtra(json)
+            else {
+                MessageManager.gson.fromJson(
+                    MessageManager.getJson(path, placeHolders),
+                    Array<BaseComponent>::class.java
+                ).forEach { textComponent.addExtra(it) }
+            }
+            (this as Player).spigot().sendMessage(textComponent)
+        }
+        else -> sendMessage(message.map { it.formatPlaceholder(placeHolders) }.toTypedArray())
     }
 }
 
@@ -342,10 +365,38 @@ fun CommandSender.sendCustomMessage(path: String, user: User, editor: MutableMap
     }
 }
 
+fun CommandSender.sendCustomMessage(path: String, user: User, placeholders: MutableMap<String, String>) {
+    val message = MessageManager.getMessage(path)
+    when {
+        this !is Player && message[0] == "json" ->
+            sendMessage("§9§lMiyukiSystem  §cA mensagem com path §7json/$path.json §cnao pode ser usada em json.")
+        message[0] == "json" -> {
+            val textComponent = TextComponent("")
+            val json = MessageManager.getJson(path)
+            if (json.startsWith("§9§lMiyukiSystem"))
+                textComponent.addExtra(json)
+            else {
+                MessageManager.gson.fromJson(
+                    MessageManager.getJson(path, user, placeholders),
+                    Array<BaseComponent>::class.java
+                ).forEach { textComponent.addExtra(it) }
+            }
+            (this as Player).spigot().sendMessage(textComponent)
+        }
+        else -> sendMessage(message.map { it.formatPlaceholder(placeholders) }.toTypedArray())
+    }
+}
+
 
 fun String.formatPlaceholder(editor: MutableMap<String, String>.() -> Unit): String {
     var msg = this
     mutableMapOf<String, String>().apply(editor).forEach { (key, value) -> msg = msg.replace(key, value) }
+    return msg.translateColorCodes()
+}
+
+fun String.formatPlaceholder(placeholders: MutableMap<String, String>): String {
+    var msg = this
+    placeholders.forEach { (key, value) -> msg = msg.replace(key, value) }
     return msg.translateColorCodes()
 }
 
@@ -357,7 +408,8 @@ fun String.translateColorCodes(): String {
         while (matcher.find()) {
             try {
                 matcher.appendReplacement(buffer, net.md_5.bungee.api.ChatColor.of("#" + matcher.group(1)).toString())
-            } catch (ignored: Exception) { }
+            } catch (ignored: Exception) {
+            }
         }
         msg = matcher.appendTail(buffer).toString()
     }

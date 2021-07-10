@@ -34,6 +34,7 @@ class UserMySQL : DataSourceProvider<User> {
             .create()
     }
 
+    @Synchronized
     override fun createTable() {
         connection
             .prepareStatement("""
@@ -69,7 +70,7 @@ class UserMySQL : DataSourceProvider<User> {
                 `name` = VALUES(`name`), 
                 `tpa` = VALUES(`tpa`), 
                 `homes` = VALUES(`homes`), 
-                `kits` = VALUES(`kits`), 
+                `kits` = VALUES(`kits`)
             """.trimIndent()).use {
                     it.setString(1, value.playerName.toLowerCase())
                     it.setString(2, value.playerName)
@@ -94,32 +95,60 @@ class UserMySQL : DataSourceProvider<User> {
             .use { stm ->
                 stm.setString(1, key.toLowerCase())
                 stm.executeQuery().use { rs ->
-                    var kits: Map<String, Long> = HashMap()
-                    kits = gson.fromJson(rs.getString("kits"), kits.javaClass)
-                        .filter { it.value > System.currentTimeMillis() }
-                    val homes: Map<String, Location> = HashMap()
                     if (rs.next()) {
+                        var kits: Map<String, Long> = HashMap()
+                        kits = gson.fromJson(rs.getString("kits"), kits.javaClass)
+                            .filter { it.value > System.currentTimeMillis() }
+                        var homes: Map<String, Location> = HashMap()
+                        homes = gson.fromJson(rs.getString("homes"), homes.javaClass)
                         User(
                             rs.getString("name"),
                             rs.getInt("tpa") != 0,
-                            gson.fromJson(rs.getString("homes"), homes.javaClass).toMutableMap(),
-                            gson.fromJson(rs.getString("kits"), kits.javaClass).toMutableMap(),
+                            homes.toMutableMap(),
+                            kits.toMutableMap(),
                         )
                     } else null
                 }
             }
     }
 
-    override fun getAll(): List<User> {
-        TODO("Not yet implemented")
+    override fun getAll(): CompletableFuture<List<User>> = CompletableFuture.supplyAsync {
+        val users = mutableListOf<User>()
+        connection
+            .prepareStatement("SELECT * FROM `miyukisystem_users`")
+            .use { stm ->
+                stm.executeQuery().use { rs ->
+                    while (rs.next()) {
+                        var kits: Map<String, Long> = HashMap()
+                        kits = gson.fromJson(rs.getString("kits"), kits.javaClass)
+                            .filter { it.value > System.currentTimeMillis() }
+                        var homes: Map<String, Location> = HashMap()
+                        homes = gson.fromJson(rs.getString("homes"), homes.javaClass)
+                        User(
+                            rs.getString("name"),
+                            rs.getInt("tpa") != 0,
+                            homes.toMutableMap(),
+                            kits.toMutableMap(),
+                        )
+                    }
+                }
+            }
+        users.toList()
     }
 
+    @Synchronized
     override fun truncate() {
-        TODO("Not yet implemented")
+        connection
+            .prepareStatement("TRUNCATE TABLE `miyukisystem_users`")
+            .use { stm ->
+                stm.executeUpdate()
+            }
     }
 
+    @Synchronized
     override fun close() {
-        TODO("Not yet implemented")
+        if(!connection.isClosed)
+            connection.close()
     }
 
 }
