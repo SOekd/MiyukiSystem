@@ -1,6 +1,8 @@
 package miyukisystem.commands.impl;
 
+import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.util.ActionBar;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -14,20 +16,21 @@ import java.util.List;
 public class TrashCommand extends CommandService {
 
     public TrashCommand() {
-        super("Trash", "miyukisystem.trash");
+        super("Trash", "miyukisystem.trash", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
         Player player = (Player) sender;
-        Inventory trash = Bukkit.createInventory(null, 54, "TrashTitleMenu"); // ta na config.
-        ActionBar.sendActionBar(player, "OpeningTrash"); // ai matt, aviso pra ti, essa porra fica mt cringe.
+        String titleMenu = Main.instance.getConfig().getString("TrashTitleMenu");
+        int sizeMenu = Main.instance.getConfig().getInt("TrashSize");
+        Inventory trash = Bukkit.createInventory(null, sizeMenu, titleMenu); // ta na config.
         player.openInventory(trash);
         return false;
     }

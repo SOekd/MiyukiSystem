@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class TpDenyCommand extends CommandService {
 
     public TpDenyCommand() {
-        super("TpDeny", "miyukisystem.tpdeny"); // talvez deixar sem a perm de tpa pra esses comandos de tpa.
+        super("TpDeny", "miyukisystem.tpa", false);
     }
 
     @Override

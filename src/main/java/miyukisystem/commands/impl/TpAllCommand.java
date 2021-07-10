@@ -12,7 +12,7 @@ import java.util.List;
 public class TpAllCommand extends CommandService {
 
     public TpAllCommand() {
-        super("TpAll", "miyukisystem.tpall");
+        super("TpAll", "miyukisystem.tpall", false);
     }
 
     @Override
@@ -45,16 +45,13 @@ public class TpAllCommand extends CommandService {
 
             Player p = (Player) sender;
 
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                if (player != p) {
-                    player.teleport(p);
-                }
-            }
+            Bukkit.getOnlinePlayers().forEach(it -> {
+                if (it != p)
+                    it.teleport(p);
+            });
 
             p.sendMessage("AllPlayersTeleportedToYou");
         }
-
-
 
         return false;
     }

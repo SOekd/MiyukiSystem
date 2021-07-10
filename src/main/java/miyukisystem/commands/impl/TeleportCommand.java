@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -15,18 +16,18 @@ import java.util.List;
 public class TeleportCommand extends CommandService {
 
     public TeleportCommand() {
-        super("Teleport", "miyukisystem.teleport");
+        super("Teleport", "miyukisystem.teleport", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (args.length < 1 || args.length > 5) {
-            sender.sendMessage("IncorrectTeleportCommand");
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectTeleportCommand");
             return false;
         }
 
-        double x, y, z;
+        /*double x, y, z;
 
         if (args.length == 1) {
 
@@ -146,7 +147,7 @@ public class TeleportCommand extends CommandService {
             target.teleport(locationTarget);
             sender.sendMessage("PlayerTeleportedSuccessWithCoords"); // {player} retorna o nome do target
 
-        }
+        }*/
 
         return false;
     }

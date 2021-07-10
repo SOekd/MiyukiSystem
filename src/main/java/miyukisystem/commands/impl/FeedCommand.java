@@ -1,6 +1,8 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -8,20 +10,21 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class FeedCommand extends CommandService {
 
     public FeedCommand() {
-        super("Feed", "miyukisystem.feed");
+        super("Feed", "miyukisystem.feed", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player) && args.length != 1) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
@@ -29,33 +32,35 @@ public class FeedCommand extends CommandService {
         if (args.length > 0) {
 
             if (!(sender.hasPermission("miyukisystem.feed.other"))) {
-                sender.sendMessage("NoPermission");
+                MessageManagerKt.sendCustomMessage(sender, "NoPermission");
                 return false;
             }
 
             player = Bukkit.getPlayer(args[0]);
 
             if (player == null) {
-                sender.sendMessage("Offline");
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
             if (player.getFoodLevel() >= 20) {
-                sender.sendMessage("FullFoodPlayer");
+                MessageManagerKt.sendCustomMessage(sender, "FullFoodPlayer");
                 return false;
             }
 
-            sender.sendMessage("FeededPlayer"); // {player} -> retorna o nick da pessoa q foi saciada
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{player}", player.getName());
+            MessageManagerKt.sendCustomMessage(sender, "FeededPlayer", placeHolders);
         } else {
 
             player = (Player) sender;
 
             if (player.getFoodLevel() >= 20) {
-                player.sendMessage("FullFood");
+                MessageManagerKt.sendCustomMessage(player, "FullFood");
                 return false;
             }
 
-            player.sendMessage("Feeded");
+            MessageManagerKt.sendCustomMessage(player, "Feeded");
 
         }
 

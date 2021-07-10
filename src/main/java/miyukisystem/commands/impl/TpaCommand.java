@@ -22,8 +22,8 @@ public class TpaCommand extends CommandService {
     public static HashMap<String, List<String>> tps = new HashMap<>();
 
     public TpaCommand() {
-        super("Tpa", "miyukisystem.tpa");
-    } // talvez deixar sem a perm tpaccept pra esses comandos de tpa.
+        super("Tpa", "miyukisystem.tpa", false);
+    }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {

@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -12,14 +13,14 @@ import java.util.List;
 public class EditItemCommand extends CommandService {
 
     public EditItemCommand() {
-        super("EditItem", "miyukisystem.edititem");
+        super("EditItem", "miyukisystem.edititem", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 

@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
@@ -13,23 +14,25 @@ import java.util.List;
 public class FlashLightCommand extends CommandService {
 
     public FlashLightCommand() {
-        super("FlashLight", "miyukisystem.flaslight");
+        super("FlashLight", "miyukisystem.flaslight", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
         if (args.length > 0) {
-            sender.sendMessage("IncorrectFlashLightCommand");
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectFlashLightCommand");
             return false;
         }
 
         Player player = (Player) sender;
+
+        // sei la o que o kroxy fez aqui ele que arrume
 
         if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) { // adicionar verificacao de amplifier e tempo
             if (player.getPotionEffect(PotionEffectType.NIGHT_VISION).getDuration() < 480) { // a poção não é nula, temos a verificação acima

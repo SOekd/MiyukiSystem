@@ -1,29 +1,34 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class PingCommand extends CommandService {
 
     public PingCommand() {
-        super("Ping", "miyukisystem.ping");
+        super("Ping", "miyukisystem.ping", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
         Player player = (Player) sender;
-        player.sendMessage("Ping"); // {ping} retorna o player.getPing();
+        val placeHolders = new HashMap<String, String>();
+        placeHolders.put("{ping}", String.valueOf(player.getPing()));
+        MessageManagerKt.sendCustomMessage(player, "Ping", placeHolders);
 
         return false;
     }

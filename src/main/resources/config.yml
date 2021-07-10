@@ -51,8 +51,9 @@ Blockers:
   # Cancela o player de entrar na cama.
   Sleep: true
 
-# Nome do menu do lixeiro!
+# Lixeiro
 
+TrashSize: 54
 TrashTitleMenu: 'Lixeiro'
 
 Motd:

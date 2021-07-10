@@ -2,6 +2,7 @@ package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.ConfigManager;
+import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.util.LocationUtilKt;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
@@ -14,22 +15,20 @@ import java.util.List;
 
 public class SetSpawnCommand extends CommandService {
 
-    // 0 60 0 > location padrão (setada por padrão)
-
     public SetSpawnCommand() {
-        super("SetSpawn", "miyukisystem.setspawn");
+        super("SetSpawn", "miyukisystem.setspawn", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
         if (args.length != 0) {
-            sender.sendMessage("IncorrectSetSpawnCommand");
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectSetSpawnCommand");
             return false;
         }
 
@@ -40,7 +39,7 @@ public class SetSpawnCommand extends CommandService {
         config.set("Spawn", LocationUtilKt.toCustomString(spawn));
         ConfigManager.Companion.getLocations().saveConfig();
 
-        player.sendMessage("SettedSpawn");
+        MessageManagerKt.sendCustomMessage(player, "SettedPlayer");
 
         return false;
     }

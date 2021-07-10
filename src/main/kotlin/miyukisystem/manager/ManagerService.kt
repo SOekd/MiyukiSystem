@@ -9,7 +9,6 @@ interface ManagerService {
     companion object : ManagerService {
 
 
-        // Provavelmente irá quebrar o plugin, mas vale a pena tentar
         override fun load() {
             val classPath = ClassPath.from(Main.instance.javaClass.classLoader)
             var i = 0

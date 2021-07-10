@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 public class InvSeeCommand extends CommandService {
 
     public InvSeeCommand() {
-        super("InvSee", "miyukisystem.invsee");
+        super("InvSee", "miyukisystem.invsee", false);
     }
 
     // adicionar para aparecer a armadura
@@ -24,12 +25,12 @@ public class InvSeeCommand extends CommandService {
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
         if (args.length != 1) {
-            sender.sendMessage("IncorrectInvSeeCommand");
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectInvSeeCommand");
             return false;
         }
 
@@ -37,7 +38,7 @@ public class InvSeeCommand extends CommandService {
         Player target = Bukkit.getPlayer(args[0]);
 
         if (target == null) {
-            sender.sendMessage("Offline");
+            MessageManagerKt.sendCustomMessage(sender, "Offline");
             return false;
         }
 

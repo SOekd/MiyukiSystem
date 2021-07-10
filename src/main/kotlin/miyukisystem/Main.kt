@@ -34,7 +34,7 @@ class Main : JavaPlugin() {
     }
 
     override fun onDisable() {
-        UserManager.getAll().forEach { it.saveFile() }
+
     }
 
 

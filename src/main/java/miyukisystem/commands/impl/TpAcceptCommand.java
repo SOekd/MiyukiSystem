@@ -6,7 +6,6 @@ import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 public class TpAcceptCommand extends CommandService {
 
     public TpAcceptCommand() {
-        super("TpAccept", "miyukisystem.tpaccept"); // talvez deixar sem a perm de tpa pra esses comandos de tpa.
+        super("TpAccept", "miyukisystem.tpa", false);
     }
 
     @Override

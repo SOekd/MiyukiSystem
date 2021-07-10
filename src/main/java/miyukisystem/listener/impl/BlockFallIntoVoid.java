@@ -1,7 +1,7 @@
 package miyukisystem.listener.impl;
 
-import miyukisystem.commands.impl.SpawnCommand;
 import miyukisystem.manager.impl.ConfigManager;
+import miyukisystem.manager.impl.PlayerManager1;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,7 +20,7 @@ public class BlockFallIntoVoid implements Listener {
             if (player.getLocation().getBlockY() < 0) {
                 event.setCancelled(true);
                 player.setFallDistance(1);
-                SpawnCommand.teleportToSpawn(player);
+                PlayerManager1.teleportToSpawn(player);
             }
         }
     }

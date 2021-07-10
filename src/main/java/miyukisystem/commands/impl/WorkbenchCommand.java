@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.util.ActionBar;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -12,22 +13,20 @@ import java.util.List;
 public class WorkbenchCommand extends CommandService {
 
     public WorkbenchCommand() {
-        super("Workbench", "miyukisystem.workbench");
+        super("Workbench", "miyukisystem.workbench", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
         Player player = (Player) sender;
-        ActionBar.sendActionBar(player,"OpeningWorkbench");
         player.closeInventory();
         player.openWorkbench(player.getLocation(), true);
-
         return false;
     }
 

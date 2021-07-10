@@ -3,10 +3,8 @@ package miyukisystem.model
 import miyukisystem.database.Database
 import miyukisystem.manager.Cacheable
 import miyukisystem.manager.impl.UserManager
-import miyukisystem.util.Config
 import miyukisystem.util.async
 import org.bukkit.Location
-import java.io.File
 
 class User(
     val playerName: String,

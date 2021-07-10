@@ -1,7 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
-import miyukisystem.util.ActionBar;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -16,14 +16,14 @@ import java.util.stream.Collectors;
 public class EnderChestCommand extends CommandService {
 
     public EnderChestCommand() {
-        super("EnderChest", "miyukisystem.enderchest");
+        super("EnderChest", "miyukisystem.enderchest", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
@@ -32,25 +32,23 @@ public class EnderChestCommand extends CommandService {
         if (args.length > 0) {
 
             if (!(sender.hasPermission("miyukisystem.enderchest.other"))) {
-                sender.sendMessage("NoPermission");
+                MessageManagerKt.sendCustomMessage(sender, "NoPermission");
                 return false;
             }
 
             Player target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
-                sender.sendMessage("Offline");
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
             Inventory enderChest = target.getEnderChest();
-            ActionBar.sendActionBar(player, "OpeningEnderChestPlayer"); // {player} retorna o target.getName();
             player.openInventory(enderChest);
             return false;
         }
 
         Inventory enderChest = player.getEnderChest();
-        ActionBar.sendActionBar(player, "OpeningEnderChest");
         player.openInventory(enderChest);
 
         return true;

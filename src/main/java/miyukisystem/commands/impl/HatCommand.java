@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -14,14 +15,14 @@ import java.util.List;
 public class HatCommand extends CommandService {
 
     public HatCommand() {
-        super("Hat", "miyukisystem.hat");
+        super("Hat", "miyukisystem.hat", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
@@ -33,9 +34,9 @@ public class HatCommand extends CommandService {
             ItemStack helmet = playerInventory.getHelmet();
             playerInventory.setHelmet(itemInHand);
             player.setItemInHand(helmet);
-            player.sendMessage("HatPlaced");
+            MessageManagerKt.sendCustomMessage(player, "HatPlaced");
         } else {
-            player.sendMessage("InvalidHat");
+            MessageManagerKt.sendCustomMessage(player, "HatInvalid");
         }
 
         return false;

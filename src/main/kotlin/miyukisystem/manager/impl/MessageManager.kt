@@ -171,7 +171,6 @@ class MessageManager {
             load()
         }
 
-
         override fun load() {
             for (path in getPathList()) {
                 val config = ConfigManager.messages.config

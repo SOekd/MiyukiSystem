@@ -1,22 +1,35 @@
-# Para pesquisar um comando especifico, aperte CTRL+F e digite o comando que você queira.
-# Exemplo: Heal
-# E para reiniciar as mensagens, apenas digitar /miyukisystem reload ou reiniciar o servidor.
-
-# Geral
+# Mensagens gerais
 
 NoPermission: '&cVocê não tem permissão para executar este comando.'
 NoConsole: '&cSomente jogadores podem executar esse comando.'
 Offline: '&cO jogador especificado não está online.'
+
+#
+# LISTENERS
+#
 
 # ImproperNick Listener
 
 ImproperNick: '&cEsse nickname foi bloqueado no servidor.'
 ImproperNickLogged: '&cO player {player} foi kickado por ser um nick bloqueado.'
 
+# BlockedCommands Listener
+
+BlockedCommand: '&cComando bloqueado por um administrador.'
+
+#
+# COMMANDS
+#
+
+# Para pesquisar um comando especifico, aperte CTRL+F e digite o comando que você queira.
+# Exemplo: Heal
+# E para reiniciar as mensagens, apenas digitar /miyukisystem reload ou reiniciar o servidor.
+
 # Alert Command
 
 IncorrectAlertCommand: '&cComando incorreto. Use: /alerta <aviso>'
-AlertSent: '&aAlerta enviado para todos os players.'
+AlertSent: '&aAlerta enviado para todos os jogadores.'
+Alert: '&a&lALERTA: &a{alerta}.'
 
 # Heal Command
 
@@ -36,6 +49,7 @@ FeededPlayer: '&aVocê saciou o jogador {player} com sucesso.'
 
 # FlashLight Command
 
+Already:
 IncorrectFlashLightCommand: '&cComando incorreto. Use: /luz.'
 FlashLightActivated: '&aLuz ativada com sucesso.'
 FlashLightDisabled: '&cLuz desativada com sucesso.'
@@ -60,6 +74,8 @@ ClearedChat: '&aO chat foi limpo com sucesso.'
 
 # Fly Command
 
+FlyTargetActivated: '&aO modo voar de {player} foi ativado.'
+FlyTargetDisabled: '&cO modo voar de {player} foi desabilitado.'
 FlyActivated: '&aO modo voar foi ativado.'
 FlyDisabled: '&cO modo voar foi desabilitado.'
 
@@ -71,20 +87,10 @@ VanishJoined: '&aVocê entrou em modo vanish.'
 # Ping Command
 
 Ping: '&aO seu ping é de: &e{ping}&a.'
-Pong: '&aPong!'
-
-# Craft Command
-
-OpeningWorkbench: '&aAbrindo a mesa de trabalho...' # ActionBar
 
 # Trash Command
 
 OpeningTrash: '&aAbrindo o lixeiro...' # ActionBar
-
-# EnderChest Command
-
-OpeningEnderChestPlayer: '&aAbrindo enderchest de {player}...' # ActionBar
-OpeningEnderChest: '&aAbrindo enderchest...' # ActionBar
 
 # InvSee Command
 
@@ -132,11 +138,6 @@ IncorrectAnvilCommand: '&cUso incorreto. Use: /anvil.'
 # Speed Command
 
 IncorrectSpeedCommand: '&cUso incorreto. Use: /speed <1/20>'
-
-# BlockedCommands
-
-BlockedCommand: '&cComando bloqueado por um administrador.'
-
 
 
 

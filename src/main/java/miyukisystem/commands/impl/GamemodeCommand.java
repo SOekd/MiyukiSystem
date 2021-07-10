@@ -1,6 +1,7 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -15,14 +16,14 @@ import java.util.stream.Collectors;
 public class GamemodeCommand extends CommandService {
 
     public GamemodeCommand(String name) {
-        super("Gamemode", "miyukisystem.gamemode");
+        super("Gamemode", "miyukisystem.gamemode", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player) && args.length != 2) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
