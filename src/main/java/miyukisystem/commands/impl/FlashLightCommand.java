@@ -42,7 +42,7 @@ public class FlashLightCommand extends CommandService {
                 player.sendMessage("LuzDisabled");
             }
         } else {
-            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 50), true);
+            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 50));
             player.sendMessage("LuzActivated");
         }
 

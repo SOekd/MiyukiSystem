@@ -41,7 +41,7 @@ Teleport:
 Hat:
   Enabled: true
   Command: 'hat|chapeu'
-  Description: 'Comando para botar um bloco/qualquer coisa na cabeça'
+  Description: 'Comando para botar um bloco/qualquer coisa na cabeça.'
 
 ClearChat:
   Enabled: true
@@ -71,12 +71,12 @@ Trash:
 EnderChest:
   Enabled: true
   Command: 'enderchest|ec'
-  Description: 'Comando para você poder usar o enderchest de qualquer lugar'
+  Description: 'Comando para você poder usar o enderchest de qualquer lugar.'
 
 Workbench:
   Enabled: true
   Command: 'workbench|craft|craftingtable|wc'
-  Description: 'Comando para você poder usar a workbench de qualquer lugar'
+  Description: 'Comando para você poder usar a workbench de qualquer lugar.'
 
 InvSee:
   Enabled: true
@@ -86,7 +86,7 @@ InvSee:
 TpAll:
   Enabled: true
   Command: 'tpall'
-  Description: 'Comando para teleportar todos players até você'
+  Description: 'Comando para teleportar todos players até você.'
 
 Spawn:
   Enabled: true
@@ -107,12 +107,12 @@ Tpa:
 TpAccept:
   Enabled: true
   Command: 'tpaccept'
-  Description: 'Comando para aceitar a solicitação de teleporte'
+  Description: 'Comando para aceitar a solicitação de teleporte.'
 
 TpDeny:
   Enabled: true
   Command: 'tpdeny|tpadeny'
-  Description: 'Comando para recusar a solicitação de teleporte'
+  Description: 'Comando para recusar a solicitação de teleporte.'
 
 EditItem:
   Enabled: true
@@ -147,5 +147,10 @@ Speed:
 Back:
   Enabled: true
   Command: 'back|voltar'
-  Description: 'Comando para voltar a seu ultimo lugar'
+  Description: 'Comando para voltar a seu ultimo lugar.'
+
+God:
+  Enabled: true
+  Command: 'god|godmode|deus|mododeus'
+  Description: 'Comando para ativar a invencibilidade.'
 

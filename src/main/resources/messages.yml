@@ -103,7 +103,7 @@ IncorrectTpAllCommand: '&cUso incorreto. Use: /tpall <player>.'
 AllPlayersTeleportedToYou: '&aTodos os jogadores foram teleportados até sua localização.'
 ForcedTpAll: '&aTodos os jogadores foram teleportados até a localização de &e{player}.'
 
-# Tpa Command (FAÇA AQUI KROXY)
+# Tpa Command (FAÇA AQUI KROXY, faça tu cara)
 
 # Spawn Command
 
@@ -139,6 +139,10 @@ IncorrectAnvilCommand: '&cUso incorreto. Use: /anvil.'
 
 IncorrectSpeedCommand: '&cUso incorreto. Use: /speed <1/20>'
 
+# God Command
 
-
+DisabledGodMode: '&cO modo deus foi desativado.'
+EnabledGodMode: '&aO modo deus foi ativado.'
+DisabledGodModeOther: '&cO modo deus para {target} foi desativado.'
+EnabledGodModeOther: '&aO modo deus para {target} foi ativado.'
 
