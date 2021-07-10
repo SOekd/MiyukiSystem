@@ -2,11 +2,11 @@ package miyukisystem.manager
 
 abstract class CachedDataService<V : Cacheable> : DataService<V> {
 
-    open val cached = hashMapOf<String, V>()
+    open val cached = mutableMapOf<String, V>()
 
-    override fun has(key: String): Boolean = cached.containsKey(key)
+    override fun has(key: String): Boolean = cached.containsKey(key.toLowerCase())
 
-    override fun get(key: String): V = cached[key]!!
+    override fun get(key: String): V = cached[key.toLowerCase()]!!
 
     override fun set(value: V) {
         cached[value.getKey()] = value
@@ -17,7 +17,7 @@ abstract class CachedDataService<V : Cacheable> : DataService<V> {
     }
 
     override fun remove(key: String) {
-        cached.remove(key)
+        cached.remove(key.toLowerCase())
     }
 
     override fun getAll(): List<V> = cached.values.toList()

@@ -74,19 +74,6 @@ public class ClearCommand extends CommandService {
         return false;
     }
 
-    private boolean inventoryIsEmpty(Player player) {
-        // soekd (bota no playermanager)
-        return false;
-    }
-
-    private void clearInventory(Player player) {
-        player.getInventory().setHelmet(null);
-        player.getInventory().setChestplate(null);
-        player.getInventory().setLeggings(null);
-        player.getInventory().setBoots(null);
-        player.setItemOnCursor(null);
-    }
-
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {

@@ -16,6 +16,7 @@ repositories {
     maven("https://oss.sonatype.org/content/repositories/snapshots/")
     maven("https://libraries.minecraft.net/")
     maven("https://repo.aikar.co/content/groups/aikar/")
+    maven("https://repo.codemc.io/repository/maven-snapshots/")
 //    maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
     flatDir {
         dirs("libs")
@@ -33,6 +34,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.20")
     implementation("com.zaxxer:HikariCP:3.4.5")
     implementation("org.slf4j:slf4j-api:1.7.25")
+    implementation("net.wesjd:anvilgui:1.5.1-SNAPSHOT")
 }
 
 tasks {

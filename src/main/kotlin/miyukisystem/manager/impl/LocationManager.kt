@@ -1,46 +1,61 @@
 package miyukisystem.manager.impl
 
+import miyukisystem.manager.Cacheable
 import miyukisystem.manager.DataService
 import miyukisystem.manager.ManagerService
+import miyukisystem.util.toCustomString
+import miyukisystem.util.toLocation
 import org.bukkit.Location
 
 class LocationManager {
 
-    companion object: DataService<ConfigLocation>(), ManagerService {
-        override fun has(key: String): Boolean {
-            TODO("Not yet implemented")
+    companion object: DataService<CachedLocation>, ManagerService {
+
+        private val config = ConfigManager.locations.config
+
+        override fun has(key: String): Boolean = config.contains(key)
+
+        override fun get(key: String): CachedLocation = CachedLocation(key, config.getString(key).toLocation())
+
+        override fun set(value: CachedLocation) {
+            config.set(value.getKey(), value.location.toCustomString())
+            save()
         }
 
-        override fun get(key: String): ConfigLocation {
-            TODO("Not yet implemented")
-        }
-
-        override fun set(value: ConfigLocation) {
-            TODO("Not yet implemented")
-        }
-
-        override fun set(vararg value: ConfigLocation) {
-            TODO("Not yet implemented")
+        override fun set(vararg value: CachedLocation) {
+            value.forEach { set(it) }
         }
 
         override fun remove(key: String) {
+            config.set(key, null)
+            save()
+        }
+
+        override fun getAll(): List<CachedLocation> {
             TODO("Not yet implemented")
         }
 
-        override fun getAll(): List<ConfigLocation> {
-            TODO("Not yet implemented")
+        private fun save() {
+            ConfigManager.locations.saveConfig()
         }
 
         override fun load() {
-            TODO("Not yet implemented")
+            val config = ConfigManager.locations
+            config.saveDefaultConfig()
+            config.reloadConfig()
         }
 
         override fun reload() {
-            TODO("Not yet implemented")
+            load()
         }
 
     }
 
 }
 
-data class ConfigLocation(val path: String, val location: Location)
+data class CachedLocation(val path: String, val location: Location?) : Cacheable {
+
+    override fun getKey(): String = path
+
+
+}
