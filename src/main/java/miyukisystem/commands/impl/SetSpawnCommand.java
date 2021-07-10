@@ -39,7 +39,7 @@ public class SetSpawnCommand extends CommandService {
         config.set("Spawn", LocationUtilKt.toCustomString(spawn));
         ConfigManager.Companion.getLocations().saveConfig();
 
-        MessageManagerKt.sendCustomMessage(player, "SettedPlayer");
+        MessageManagerKt.sendCustomMessage(player, "SettedSpawn");
 
         return false;
     }

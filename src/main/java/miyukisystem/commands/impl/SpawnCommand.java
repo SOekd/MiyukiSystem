@@ -3,7 +3,7 @@ package miyukisystem.commands.impl;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
-import miyukisystem.manager.impl.PlayerManager1;
+import miyukisystem.manager.impl.PlayerManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
@@ -44,9 +44,9 @@ public class SpawnCommand extends CommandService {
 
         if (args.length == 0) {
 
-            PlayerManager1.teleportToSpawn(player);
+            PlayerManagerKt.toSpawn(player);
 
-            player.sendMessage("TeleportedSpawnSuccess");
+            MessageManagerKt.sendCustomMessage(player, "TeleportedSpawnSuccess");
             player.playSound(player.getLocation(), Sound.valueOf("LEVEL_UP"), 1.0f, 1.0f);
 
         }
@@ -68,7 +68,7 @@ public class SpawnCommand extends CommandService {
             val placeHolders = new HashMap<String, String>();
             placeHolders.put("{player}", target.getName());
 
-            PlayerManager1.teleportToSpawn(player);
+            PlayerManagerKt.toSpawn(target);
             MessageManagerKt.sendCustomMessage(sender, "SentToSpawn", placeHolders);
             MessageManagerKt.sendCustomMessage(sender, "ForcedTeleportSpawn");
         }

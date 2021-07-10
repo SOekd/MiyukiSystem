@@ -13,7 +13,6 @@ interface ManagerService {
             val classPath = ClassPath.from(Main.instance.javaClass.classLoader)
             var i = 0
             classPath.getTopLevelClassesRecursive("miyukisystem.manager.impl").forEach { classInfo ->
-                println(classInfo.name)
                 try {
                     val manager = Class.forName(classInfo.name).getDeclaredField("Companion").get(null)
                     if (manager is ManagerService) {

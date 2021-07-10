@@ -42,6 +42,11 @@ public class InvSeeCommand extends CommandService {
             return false;
         }
 
+        if (target == player) {
+            // ele msm
+            return false;
+        }
+
         Inventory targetInventory = target.getInventory();
         player.openInventory(targetInventory);
 

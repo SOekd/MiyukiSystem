@@ -36,7 +36,7 @@ public class HatCommand extends CommandService {
             player.setItemInHand(helmet);
             MessageManagerKt.sendCustomMessage(player, "HatPlaced");
         } else {
-            MessageManagerKt.sendCustomMessage(player, "HatInvalid");
+            MessageManagerKt.sendCustomMessage(player, "InvalidHat");
         }
 
         return false;

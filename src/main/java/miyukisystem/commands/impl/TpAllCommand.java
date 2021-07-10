@@ -1,12 +1,15 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class TpAllCommand extends CommandService {
@@ -19,7 +22,7 @@ public class TpAllCommand extends CommandService {
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (args.length > 1) {
-            sender.sendMessage("IncorrectTpAllCommand");
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectTpAllCommand");
             return false;
         }
 
@@ -28,7 +31,7 @@ public class TpAllCommand extends CommandService {
             Player target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
-                sender.sendMessage("Offline");
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
@@ -37,8 +40,11 @@ public class TpAllCommand extends CommandService {
                     it.teleport(target);
             });
 
-            target.sendMessage("AllPlayersTeleportedToYou");
-            sender.sendMessage("ForcedTpAll"); // {player} retorna o target.getName
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{player}", target.getName());
+
+            MessageManagerKt.sendCustomMessage(target, "AllPlayersTeleportedToYou");
+            MessageManagerKt.sendCustomMessage(sender, "ForcedTpAll", placeHolders);// {player} retorna o target.getName
         }
 
         if (args.length == 0) {

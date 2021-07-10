@@ -22,7 +22,7 @@ public class ClearChatCommand extends CommandService {
 
         val players = Bukkit.getOnlinePlayers();
         players.forEach(it -> StringUtils.repeat(" \n", 100));
-        players.forEach(it -> MessageManagerKt.sendCustomMessage(it, "ChatCleared"));
+        players.forEach(it -> MessageManagerKt.sendCustomMessage(it, "ClearedChat"));
 
         return false;
     }

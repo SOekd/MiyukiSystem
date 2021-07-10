@@ -5,7 +5,6 @@ import miyukisystem.hook.Vault
 import miyukisystem.listener.ListenerRegistry
 import miyukisystem.manager.ManagerService
 import miyukisystem.manager.impl.ConfigManager
-import miyukisystem.manager.impl.UserManager
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 

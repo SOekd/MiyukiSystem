@@ -3,6 +3,7 @@ package miyukisystem.commands.impl;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
+import miyukisystem.manager.impl.PlayerManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -52,10 +53,10 @@ public class ClearCommand extends CommandService {
             val placeHolders = new HashMap<String, String>();
             placeHolders.put("{player}", target.getName());
 
-            if (!inventoryIsEmpty(target)) {
+            if (!PlayerManagerKt.isInventoryEmpty(target, false)) {
                 MessageManagerKt.sendCustomMessage(sender, "AlreadyTargetCleared", placeHolders);
             } else {
-                clearInventory(target);
+                PlayerManagerKt.clearInventory(target);
                 MessageManagerKt.sendCustomMessage(sender, "TargetCleared", placeHolders);
             }
 
@@ -64,11 +65,11 @@ public class ClearCommand extends CommandService {
 
         Player player = (Player) sender;
 
-        if (!inventoryIsEmpty(player)) {
-            clearInventory(player);
-            player.sendMessage("Cleared");
+        if (!PlayerManagerKt.isInventoryEmpty(player, false)) {
+            PlayerManagerKt.clearInventory(player);
+            MessageManagerKt.sendCustomMessage(sender, "Cleared");
         } else {
-            sender.sendMessage("AlreadyCleared");
+            MessageManagerKt.sendCustomMessage(sender, "AlreadyCleared");
         }
 
         return false;

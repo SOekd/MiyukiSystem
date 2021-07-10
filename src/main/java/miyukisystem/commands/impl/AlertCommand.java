@@ -31,7 +31,6 @@ public class AlertCommand extends CommandService {
         placeHolders.put("{alerta}", warn);
 
         Bukkit.getOnlinePlayers().forEach(it -> MessageManagerKt.sendCustomMessage(it, "Alert", placeHolders));
-        Bukkit.broadcastMessage(warn);
         MessageManagerKt.sendCustomMessage(sender, "AlertSent");
 
         return true;

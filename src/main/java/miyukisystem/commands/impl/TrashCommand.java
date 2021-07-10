@@ -30,7 +30,7 @@ public class TrashCommand extends CommandService {
         Player player = (Player) sender;
         String titleMenu = Main.instance.getConfig().getString("TrashTitleMenu");
         int sizeMenu = Main.instance.getConfig().getInt("TrashSize");
-        Inventory trash = Bukkit.createInventory(null, sizeMenu, titleMenu); // ta na config.
+        Inventory trash = Bukkit.createInventory(null, sizeMenu, titleMenu);
         player.openInventory(trash);
         return false;
     }

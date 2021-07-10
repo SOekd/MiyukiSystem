@@ -122,14 +122,10 @@ class MessageManager {
             pathList.add("VanishJoined")
             // ping
             pathList.add("Ping")
-            pathList.add("Pong")
             // craft
-            pathList.add("OpeningWorkbench")
             // trash
             pathList.add("OpeningTrash")
             // enderchest
-            pathList.add("OpeningEnderChestPlayer")
-            pathList.add("OpeningEnderChest")
             // invsee
             pathList.add("IncorrectInvSeeCommand")
             pathList.add("OpeningInventory")
