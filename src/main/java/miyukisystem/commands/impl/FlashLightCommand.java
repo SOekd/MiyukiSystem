@@ -25,14 +25,7 @@ public class FlashLightCommand extends CommandService {
             return false;
         }
 
-        if (args.length > 0) {
-            MessageManagerKt.sendCustomMessage(sender, "IncorrectFlashLightCommand");
-            return false;
-        }
-
         Player player = (Player) sender;
-
-        // sei la o que o kroxy fez aqui ele que arrume
 
         if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) { // adicionar verificacao de amplifier e tempo
             if (player.getPotionEffect(PotionEffectType.NIGHT_VISION).getDuration() < 480) { // a poção não é nula, temos a verificação acima

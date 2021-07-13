@@ -43,12 +43,12 @@ public class TpaCommand extends CommandService {
         Player target = Bukkit.getPlayer(args[0]);
 
         if(target == null) {
-            player.sendMessage("OfflinePlayer");
+            player.sendMessage("Offline");
             return false;
         }
 
         if(target == player) {
-            player.sendMessage("Yourself");
+            player.sendMessage("TpaYourself");
             return false;
         }
 

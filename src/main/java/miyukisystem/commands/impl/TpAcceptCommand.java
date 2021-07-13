@@ -34,7 +34,7 @@ public class TpAcceptCommand extends CommandService {
             val targetTPA = TpaManager.Companion.lastReceived(player.getName());
 
             if (targetTPA == null) {
-                // mensagem que não recebeu nenhum tpa.
+                player.sendMessage("NoHaveRequests");
                 return false;
             }
 
@@ -42,7 +42,7 @@ public class TpAcceptCommand extends CommandService {
             val target = Bukkit.getPlayer(targetName);
 
             if (target == null) {
-                // aviso que expirou pq o cara deslogou.
+                player.sendMessage("ExpiredTpa");
                 return false;
             }
 
@@ -57,12 +57,12 @@ public class TpAcceptCommand extends CommandService {
             Player target = Bukkit.getPlayer(args[0]);
 
             if(target == null) {
-                player.sendMessage("OfflinePlayer");
+                player.sendMessage("Offline");
                 return false;
             }
 
             if(target.equals(player)) {
-                player.sendMessage("Yourself");
+                player.sendMessage("TpacceptYourself");
                 return false;
             }
 

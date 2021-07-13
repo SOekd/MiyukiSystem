@@ -56,6 +56,12 @@ Blockers:
 TrashSize: 54
 TrashTitleMenu: 'Lixeiro'
 
+# Reparar
+
+RepairBlockedNBTs: # Deixe com "[]" para não bloquear nenhum.
+  - 'NBT1'
+  - 'NBT2'
+
 Motd:
   # Motd quando está em WHITELIST (Use \n para pular linha);
   WhitelistMotd: ''
@@ -73,8 +79,8 @@ BlockedNicks:
   - 'teste1'
   - 'teste2'
 BlockedCommands: # Use "/".
-  - ''
-  - ''
+  - '/teste1'
+  - '/teste1'
 
 # Lista de materiais 1.8: https://helpch.at/docs/1.8/org/bukkit/Material.html
 # Lista de materiais 1.12:

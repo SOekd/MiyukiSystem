@@ -7,7 +7,6 @@ import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +35,7 @@ public class TpDenyCommand extends CommandService {
             val targetTPA = TpaManager.Companion.lastReceived(player.getName());
 
             if (targetTPA == null) {
-                // mensagem que não recebeu nenhum tpa.
+                player.sendMessage("NoHaveRequests");
                 return false;
             }
 

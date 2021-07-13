@@ -4,6 +4,7 @@ import lombok.val;
 import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.metadata.FixedMetadataValue;
@@ -17,7 +18,7 @@ public class VanishCommand extends CommandService {
         super("Vanish", "miyukisystem.vanish", false);
     }
 
-    // SOekd
+    // Em desenvolvimento, pode ocorrer vários bugs.
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
@@ -29,7 +30,15 @@ public class VanishCommand extends CommandService {
 
         val player = (Player) sender;
 
-        player.setMetadata("miyukysystem_vanish", new FixedMetadataValue(Main.Companion.getInstance(), true));
+        if(!player.hasMetadata("miyukisystem_vanish")) {
+            player.setMetadata("miyukysystem_vanish", new FixedMetadataValue(Main.Companion.getInstance(), true));
+            Bukkit.getOnlinePlayers().forEach(players -> players.hidePlayer(Main.Companion.getInstance(), player));
+            player.sendMessage("VanishJoined");
+        } else {
+            player.removeMetadata("miyukysystem_vanish", Main.Companion.getInstance());
+            Bukkit.getOnlinePlayers().forEach(players -> players.hidePlayer(Main.Companion.getInstance(), player));
+            player.sendMessage("VanishLeaved");
+        }
 
         return false;
     }

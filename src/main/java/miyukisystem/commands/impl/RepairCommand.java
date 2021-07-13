@@ -1,7 +1,11 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.ConfigManager;
 import miyukisystem.manager.impl.MessageManagerKt;
+import miyukisystem.util.NBTEditor;
+import miyukisystem.util.XMaterial;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -15,6 +19,8 @@ public class RepairCommand extends CommandService {
         super("Repair", "miyukisystem.repair", false);
     }
 
+    // Em desenvolvimento, pode ocorrer vários bugs.
+
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
@@ -22,6 +28,27 @@ public class RepairCommand extends CommandService {
             MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
+
+        val player = (Player) sender;
+        val itemInHand = player.getInventory().getItemInHand();
+
+        if(XMaterial.matchXMaterial(itemInHand.getType()).parseMaterial() == XMaterial.AIR.parseMaterial() || itemInHand.getType().getMaxDurability() == 0) {
+            player.sendMessage("NoReparable");
+            return false;
+        }
+
+        if(itemInHand.getDurability() == 0) {
+            player.sendMessage("MaxDurability");
+            return false;
+        }
+
+        if(NBTEditor.contains(itemInHand, ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs"))) {
+            player.sendMessage("BlockedRepairItem");
+            return false;
+        }
+
+        itemInHand.setDurability((short) 0);
+        player.sendMessage("SuccessRepair");
 
         return false;
     }

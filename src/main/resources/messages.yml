@@ -49,8 +49,7 @@ FeededPlayer: '&aVocê saciou o jogador {player} com sucesso.'
 
 # FlashLight Command
 
-Already:
-IncorrectFlashLightCommand: '&cComando incorreto. Use: /luz.'
+OnNightVisionPotion: '&cVocê está utilizando uma poção de visão noturna.'
 FlashLightActivated: '&aLuz ativada com sucesso.'
 FlashLightDisabled: '&cLuz desativada com sucesso.'
 
@@ -86,7 +85,7 @@ VanishJoined: '&aVocê entrou em modo vanish.'
 
 # Ping Command
 
-Ping: '&aO seu ping é de: &e{ping}&a.'
+Ping: '&aO seu ping é de: &e{ping}ms&a.'
 
 # Trash Command
 
@@ -103,7 +102,51 @@ IncorrectTpAllCommand: '&cUso incorreto. Use: /tpall <player>.'
 AllPlayersTeleportedToYou: '&aTodos os jogadores foram teleportados até sua localização.'
 ForcedTpAll: '&aTodos os jogadores foram teleportados até a localização de &e{player}.'
 
-# Tpa Command (FAÇA AQUI KROXY, faça tu cara)
+# Repair Command
+
+NoReparable: '&cO item não é reparável.'
+BlockedRepairItem: '&cO item foi bloqueado para ser reparado.'
+MaxDurability: '&cO item está com a durabilidade máxima.'
+SuccessRepair: '&aO item foi reparado com sucesso.'
+
+# Tpa Command (matt, tu é um belo vagabundo)
+
+IncorrectTpaCommand: '&cUso incorreto. Use: /tpa <player>.'
+TpaYourself: '&cVocê não pode enviar um pedido de tp para você mesmo.'
+TpaOther: # Mensagem enviada para o jogador alvo.
+  - ''
+  - '&fVocê recebeu um pedido de tp de {player}.'
+  - '&fAceite com &a/tpaccept {player} &fnegue com &c/tpdeny {player}&f.'
+  - ''
+TpaPlayer: # Mensagem enviada parar quem executou o comando.
+  - ''
+  - '&aVocê enviou um pedido de tp para {target}.'
+  - ''
+NoHaveRequests: '&cVocê não tem pedidos de tp.' # Para o tpaccept e tpdeny.
+ExpiredTpa: '&cO pedido de tpa que você mencionou expirou.' # Para o tpaccept e tpdeny.
+
+# TpAccept Command
+
+TpAcceptYourself: '&cVocê não pode aceitar o pedido de você mesmo.'
+AcceptTpaOther: # Mensagem para quem executou o comando.
+  - ''
+  - '&aVocê aceitou o pedido de tp de {target}.' # Lembrando que o target é o jogador mencionado.
+  - ''
+AcceptTpaPlayer: # Mensagem enviada para quem enviou o pedido.
+  - ''
+  - '&aO jogador {player} aceitou seu pedido de tp.'
+  - ''
+
+# TpDeny Command
+
+DenyTpaOther: # Mensagem para quem executou o comando.
+  - ''
+  - '&cVocê negou o pedido de tp de {target}.' # Lembrando que o target é o jogador mencionado.
+  - ''
+DenyTpaPlayer: # Mensagem enviada para quem enviou o pedido.
+  - ''
+  - '&cO jogador {player} negou seu pedido de tp.'
+  - ''
 
 # Spawn Command
 
