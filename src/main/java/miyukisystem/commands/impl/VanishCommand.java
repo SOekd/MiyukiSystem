@@ -33,11 +33,11 @@ public class VanishCommand extends CommandService {
         if(!player.hasMetadata("miyukisystem_vanish")) {
             player.setMetadata("miyukysystem_vanish", new FixedMetadataValue(Main.Companion.getInstance(), true));
             Bukkit.getOnlinePlayers().forEach(players -> players.hidePlayer(Main.Companion.getInstance(), player));
-            player.sendMessage("VanishJoined");
+            MessageManagerKt.sendCustomMessage(player, "VanishJoined");
         } else {
             player.removeMetadata("miyukysystem_vanish", Main.Companion.getInstance());
             Bukkit.getOnlinePlayers().forEach(players -> players.hidePlayer(Main.Companion.getInstance(), player));
-            player.sendMessage("VanishLeaved");
+            MessageManagerKt.sendCustomMessage(player, "VanishLeaved");
         }
 
         return false;

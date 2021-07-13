@@ -2,6 +2,7 @@ package miyukisystem.commands.impl;
 
 import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import org.bukkit.Bukkit;
@@ -23,7 +24,7 @@ public class TpAcceptCommand extends CommandService {
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
@@ -34,7 +35,7 @@ public class TpAcceptCommand extends CommandService {
             val targetTPA = TpaManager.Companion.lastReceived(player.getName());
 
             if (targetTPA == null) {
-                player.sendMessage("NoHaveRequests");
+                MessageManagerKt.sendCustomMessage(sender, "NoHaveRequests");
                 return false;
             }
 
@@ -42,14 +43,14 @@ public class TpAcceptCommand extends CommandService {
             val target = Bukkit.getPlayer(targetName);
 
             if (target == null) {
-                player.sendMessage("ExpiredTpa");
+                MessageManagerKt.sendCustomMessage(sender, "ExpiredTpa");
                 return false;
             }
 
             TpaManager.Companion.remove(target.getName());
 
-            player.sendMessage("AcceptTpaOther");
-            target.sendMessage("AcceptTpaPlayer");
+            MessageManagerKt.sendCustomMessage(target, "AcceptTpaPlayer");
+            MessageManagerKt.sendCustomMessage(player, "AcceptTpaOther");
             target.teleport(player.getLocation());
 
         } else {
@@ -58,23 +59,24 @@ public class TpAcceptCommand extends CommandService {
 
             if(target == null) {
                 player.sendMessage("Offline");
+                MessageManagerKt.sendCustomMessage(player, "Offline");
                 return false;
             }
 
             if(target.equals(player)) {
-                player.sendMessage("TpacceptYourself");
+                MessageManagerKt.sendCustomMessage(player, "TpacceptYourself");
                 return false;
             }
 
             if(!TpaManager.Companion.has(target.getName())) {
-                player.sendMessage("NoHaveRequests");
+                MessageManagerKt.sendCustomMessage(player, "NoHaveRequests");
                 return false;
             }
 
             TpaManager.Companion.remove(target.getName());
 
-            player.sendMessage("AcceptTpaOther");
-            target.sendMessage("AcceptTpaPlayer");
+            MessageManagerKt.sendCustomMessage(player, "AcceptTpaOther");
+            MessageManagerKt.sendCustomMessage(target, "AcceptTpaPlayer");
             target.teleport(player.getLocation());
 
         }

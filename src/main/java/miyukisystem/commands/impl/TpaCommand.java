@@ -2,6 +2,7 @@ package miyukisystem.commands.impl;
 
 import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import miyukisystem.util.AsyncUtil;
@@ -29,34 +30,34 @@ public class TpaCommand extends CommandService {
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
         Player player = (Player) sender;
 
         if(args.length != 1) {
-            player.sendMessage("IncorrectTpaCommand");
+            MessageManagerKt.sendCustomMessage(player, "IncorrectTpaCommand");
             return false;
         }
 
         Player target = Bukkit.getPlayer(args[0]);
 
         if(target == null) {
-            player.sendMessage("Offline");
+            MessageManagerKt.sendCustomMessage(player, "Offline");
             return false;
         }
 
         if(target == player) {
-            player.sendMessage("TpaYourself");
+            MessageManagerKt.sendCustomMessage(player, "TpaYourself");
             return false;
         }
 
         val tpa = new TPA(player.getName(), target.getName());
 
         TpaManager.Companion.set(tpa);
-        target.sendMessage("TpaOther");
-        player.sendMessage("TpaPlayer");
+        MessageManagerKt.sendCustomMessage(target, "TpaOther");
+        MessageManagerKt.sendCustomMessage(player, "TpaPlayer");
 
         return true;
     }

@@ -31,10 +31,10 @@ public class GodCommand extends CommandService {
 
             if(player.hasMetadata("miyukisystem_god")) {
                 player.removeMetadata("miyukisystem_god", Main.Companion.getInstance());
-                player.sendMessage("DisabledGodMode");
+                MessageManagerKt.sendCustomMessage(player, "DisabledGodMode");
             } else {
                 player.setMetadata("miyukysystem_mod", new FixedMetadataValue(Main.Companion.getInstance(), true));
-                player.sendMessage("EnabledGodMode");
+                MessageManagerKt.sendCustomMessage(player, "EnabledGodMode");
             }
 
             return false;
@@ -43,16 +43,16 @@ public class GodCommand extends CommandService {
         val target = Bukkit.getPlayer(args[0]);
 
         if(target == null) {
-            sender.sendMessage("Offline");
+            MessageManagerKt.sendCustomMessage(sender, "Offline");
             return false;
         }
 
         if(target.hasMetadata("miyukisystem_god")) {
             target.removeMetadata("miyukisystem_god", Main.Companion.getInstance());
-            sender.sendMessage("DisabledGodModeOther");
+            MessageManagerKt.sendCustomMessage(sender, "DisableGodModeOther");
         } else {
             target.setMetadata("miyukysystem_mod", new FixedMetadataValue(Main.Companion.getInstance(), true));
-            sender.sendMessage("EnabledGodModeOther");
+            MessageManagerKt.sendCustomMessage(sender, "EnableGodModeOther");
         }
 
         return false;

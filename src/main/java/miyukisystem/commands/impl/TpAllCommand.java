@@ -55,8 +55,6 @@ public class TpAllCommand extends CommandService {
                 if (it != p)
                     it.teleport(p);
             });
-
-            p.sendMessage("AllPlayersTeleportedToYou");
         }
 
         return false;

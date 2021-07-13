@@ -3,6 +3,7 @@ package miyukisystem.commands.impl;
 import com.google.common.collect.Iterables;
 import lombok.val;
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import org.bukkit.Bukkit;
@@ -24,7 +25,7 @@ public class TpDenyCommand extends CommandService {
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("NoConsole");
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
@@ -35,7 +36,7 @@ public class TpDenyCommand extends CommandService {
             val targetTPA = TpaManager.Companion.lastReceived(player.getName());
 
             if (targetTPA == null) {
-                player.sendMessage("NoHaveRequests");
+                MessageManagerKt.sendCustomMessage(player, "NoHaveRequests");
                 return false;
             }
 
@@ -44,29 +45,29 @@ public class TpDenyCommand extends CommandService {
 
             TpaManager.Companion.remove(targetName);
 
-            player.sendMessage("DenyTpaOther");
+            MessageManagerKt.sendCustomMessage(player, "DenyTpaOther");
 
             if (target!= null) {
-                target.sendMessage("DenyTpaPlayer");
+                MessageManagerKt.sendCustomMessage(target, "DenyTpaPlayer");
             }
         } else {
 
             Player target = Bukkit.getPlayer(args[0]);
 
             if(target == null) {
-                player.sendMessage("OfflinePlayer");
+                MessageManagerKt.sendCustomMessage(player, "Offline");
                 return false;
             }
 
             if(target.equals(player)) {
-                player.sendMessage("Yourself");
+                MessageManagerKt.sendCustomMessage(player, "TpDenyYourself");
                 return false;
             }
 
             TpaManager.Companion.remove(target.getName());
 
-            player.sendMessage("DenyTpaOther");
-            target.sendMessage("DenyTpaPlayer");
+            MessageManagerKt.sendCustomMessage(player, "DenyTpaOther");
+            MessageManagerKt.sendCustomMessage(target, "DenyTpaPlayer");
 
         }
 

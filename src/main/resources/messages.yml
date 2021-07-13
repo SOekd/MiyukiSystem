@@ -139,6 +139,7 @@ AcceptTpaPlayer: # Mensagem enviada para quem enviou o pedido.
 
 # TpDeny Command
 
+TpDenyYourself: '&cVocê não pode negar o pedido de você mesmo.'
 DenyTpaOther: # Mensagem para quem executou o comando.
   - ''
   - '&cVocê negou o pedido de tp de {target}.' # Lembrando que o target é o jogador mencionado.
