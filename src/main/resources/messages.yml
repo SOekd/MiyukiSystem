@@ -49,7 +49,6 @@ FeededPlayer: '&aVocê saciou o jogador {player} com sucesso.'
 
 # FlashLight Command
 
-OnNightVisionPotion: '&cVocê está utilizando uma poção de visão noturna.'
 FlashLightActivated: '&aLuz ativada com sucesso.'
 FlashLightDisabled: '&cLuz desativada com sucesso.'
 

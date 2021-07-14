@@ -28,12 +28,8 @@ public class FlashLightCommand extends CommandService {
         Player player = (Player) sender;
 
         if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) { // adicionar verificacao de amplifier e tempo
-            if (player.getPotionEffect(PotionEffectType.NIGHT_VISION).getDuration() < 480) { // a poção não é nula, temos a verificação acima
-                MessageManagerKt.sendCustomMessage(player, "OnNightVisionPotion");
-            } else {
-                player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-                MessageManagerKt.sendCustomMessage(player, "LuzDisabled");
-            }
+            player.removePotionEffect(PotionEffectType.NIGHT_VISION);
+            MessageManagerKt.sendCustomMessage(player, "LuzDisabled");
         } else {
             player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 50));
             MessageManagerKt.sendCustomMessage(player, "LuzActivated");

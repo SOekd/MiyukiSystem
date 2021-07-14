@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.List;
 
 public class GodCommand extends CommandService {
@@ -61,6 +62,6 @@ public class GodCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return null;
+        return Collections.emptyList();
     }
 }

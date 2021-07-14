@@ -96,7 +96,6 @@ Spawn:
 SetSpawn:
   Enabled: true
   Command: 'setspawn'
-  Aliases: []
   Description: 'Comando para setar o spawn.'
 
 Tpa:

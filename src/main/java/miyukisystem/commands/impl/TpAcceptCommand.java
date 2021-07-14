@@ -64,7 +64,7 @@ public class TpAcceptCommand extends CommandService {
             }
 
             if(target.equals(player)) {
-                MessageManagerKt.sendCustomMessage(player, "TpacceptYourself");
+                MessageManagerKt.sendCustomMessage(player, "TpAcceptYourself");
                 return false;
             }
 
