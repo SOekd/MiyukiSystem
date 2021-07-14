@@ -42,7 +42,7 @@ public class RepairCommand extends CommandService {
             return false;
         }
 
-        if(NBTEditor.contains(itemInHand, ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs"))) {
+        if(ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs").stream().anyMatch(it -> NBTEditor.contains(itemInHand, it))) {
             MessageManagerKt.sendCustomMessage(player, "BlockedRepairItem");
             return false;
         }

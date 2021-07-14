@@ -21,7 +21,7 @@ public class ClearChatCommand extends CommandService {
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
         val players = Bukkit.getOnlinePlayers();
-        players.forEach(it -> StringUtils.repeat(" \n", 100));
+        players.forEach(it -> it.sendMessage(StringUtils.repeat(" \n", 100)));
         players.forEach(it -> MessageManagerKt.sendCustomMessage(it, "ClearedChat"));
 
         return false;

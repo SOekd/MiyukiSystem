@@ -15,8 +15,10 @@ import java.util.List;
 
 public class GodCommand extends CommandService {
 
+    // Em desenvolvimento pode ocorrer bugs
+
     public GodCommand(@NotNull String name, @NotNull String perm, boolean async) {
-        super("god", "miyukisystem.god", false);
+        super("God", "miyukisystem.god", false);
     }
 
     @Override

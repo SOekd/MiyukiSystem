@@ -29,10 +29,10 @@ public class FlashLightCommand extends CommandService {
 
         if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) { // adicionar verificacao de amplifier e tempo
             player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-            MessageManagerKt.sendCustomMessage(player, "LuzDisabled");
+            MessageManagerKt.sendCustomMessage(player, "FlashLightDisabled");
         } else {
             player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 50));
-            MessageManagerKt.sendCustomMessage(player, "LuzActivated");
+            MessageManagerKt.sendCustomMessage(player, "FlashLightActivated");
         }
 
         return true;

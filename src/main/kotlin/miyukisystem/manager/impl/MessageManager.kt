@@ -83,7 +83,7 @@ class MessageManager {
             pathList.add("NoConsole")
             pathList.add("Offline")
             // alert
-            pathList.add("IncorrectAlertCommand");
+            pathList.add("IncorrectAlertCommand")
             pathList.add("AlertSent")
             // feed
             pathList.add("IncorrectFeedCommand")
@@ -92,7 +92,6 @@ class MessageManager {
             pathList.add("Feeded")
             pathList.add("FeededPlayer")
             // flashlight
-            pathList.add("IncorrectFlashLightCommand")
             pathList.add("FlashLightActivated")
             pathList.add("FlashLightDisabled")
             // gamemode
@@ -133,8 +132,21 @@ class MessageManager {
             pathList.add("IncorrectTpAllCommand")
             pathList.add("AllPlayersTeleportedToYou")
             pathList.add("ForcedTpAll")
-            // TPA (KROXY)
-
+            // Tpa
+            pathList.add("IncorrectTpaCommand")
+            pathList.add("TpaYourself")
+            pathList.add("TpaOther")
+            pathList.add("TpaPlayer")
+            pathList.add("NoHaveRequests")
+            pathList.add("ExpiredTpa")
+            // Tpaccept
+            pathList.add("AcceptTpaPlayer")
+            pathList.add("AcceptTpaOther")
+            pathList.add("TpAcceptYourself")
+            // Tpdeny
+            pathList.add("DenyTpaOther")
+            pathList.add("DenyTpaPlayer")
+            pathList.add("TpDenyYourself")
             // Spawn
             pathList.add("IncorrectSpawnCommand")
             pathList.add("IncorrectSpawnAdminCommand")
@@ -157,6 +169,14 @@ class MessageManager {
             pathList.add("IncorrectAnvilCommand")
             // speed
             pathList.add("IncorrectSpeedCommand")
+            // god
+            pathList.add("DisabledGodMode")
+            pathList.add("EnabledGodMode")
+            // repair
+            pathList.add("NoReparable")
+            pathList.add("MaxDurability")
+            pathList.add("BlockedRepairItem")
+            pathList.add("SuccessRepair")
             return pathList
         }
 

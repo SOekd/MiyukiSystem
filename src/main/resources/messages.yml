@@ -159,7 +159,7 @@ ForcedTeleportSpawn: '&aVocê foi forçado a ser teleportado pro spawn.'
 # SetSpawn Command
 
 IncorrectSetSpawnCommand: '&cUso incorreto. Use: /setspawn.'
-SetSpawnSuccess: '&aO spawn foi setado em sua localização com sucesso.'
+SettedSpawnSuccess: '&aO spawn foi setado em sua localização com sucesso.'
 
 # Clear Command
 
