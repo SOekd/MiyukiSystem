@@ -15,7 +15,7 @@ class Vault {
                 return false
             val rsp = getServer().servicesManager.getRegistration(Economy::class.java) ?: return false
             economy = rsp.provider
-            return economy != null
+            return true
         }
 
     }

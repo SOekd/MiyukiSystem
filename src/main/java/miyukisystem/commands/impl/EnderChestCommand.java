@@ -1,5 +1,6 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Bukkit;
@@ -27,7 +28,9 @@ public class EnderChestCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
+        val player = (Player) sender;
+
+        Inventory enderChest;
 
         if (args.length > 0) {
 
@@ -36,19 +39,18 @@ public class EnderChestCommand extends CommandService {
                 return false;
             }
 
-            Player target = Bukkit.getPlayer(args[0]);
+            val target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
                 MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
-            Inventory enderChest = target.getEnderChest();
-            player.openInventory(enderChest);
-            return false;
+            enderChest = target.getEnderChest();
+        } else {
+            enderChest = player.getEnderChest();
         }
 
-        Inventory enderChest = player.getEnderChest();
         player.openInventory(enderChest);
 
         return true;

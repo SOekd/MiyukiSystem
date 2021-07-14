@@ -16,13 +16,10 @@ import java.util.concurrent.CompletableFuture
 
 class UserSQLite : DataSourceProvider<User> {
 
-    private val url: String
+    private val url: String = "jdbc:sqlite:${File(Main.instance.dataFolder, "database${File.separator}users.db")}"
     private val gson: Gson
 
     init {
-        val config = ConfigManager.config.config
-        val section = config.getConfigurationSection("Database")!!
-        url = "jdbc:sqlite:${File(Main.instance.dataFolder, "database${File.separator}users.db")}"
         Class.forName("org.sqlite.JDBC")
 
         gson = GsonBuilder()

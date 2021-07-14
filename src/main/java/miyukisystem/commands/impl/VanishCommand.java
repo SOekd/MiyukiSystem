@@ -32,8 +32,8 @@ public class VanishCommand extends CommandService {
         val player = (Player) sender;
         val players = Bukkit.getOnlinePlayers();
 
-        if(!player.hasMetadata("miyukisystem_vanish")) {
-            player.setMetadata("miyukysystem_vanish", new FixedMetadataValue(Main.Companion.getInstance(), true));
+        if(!player.hasMetadata("miyukysystem_vanish")) {
+            player.setMetadata("miyukysystem_vanish", new FixedMetadataValue(Main.Companion.getInstance(), "meta"));
             players.forEach(it -> it.hidePlayer(player));
             MessageManagerKt.sendCustomMessage(player, "VanishJoined");
         } else {
@@ -41,8 +41,7 @@ public class VanishCommand extends CommandService {
             players.forEach(it -> it.showPlayer(player));
             MessageManagerKt.sendCustomMessage(player, "VanishLeaved");
         }
-
-        return false;
+        return true;
     }
 
     @NotNull

@@ -27,11 +27,6 @@ public class SetSpawnCommand extends CommandService {
             return false;
         }
 
-        if (args.length != 0) {
-            MessageManagerKt.sendCustomMessage(sender, "IncorrectSetSpawnCommand");
-            return false;
-        }
-
         Player player = (Player) sender;
 
         Location spawn = player.getLocation();

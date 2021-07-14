@@ -35,7 +35,7 @@ public class FlyCommand extends CommandService {
                 return false;
             }
 
-            Player target = Bukkit.getPlayer(args[0]);
+            val target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
                 MessageManagerKt.sendCustomMessage(sender, "Offline");

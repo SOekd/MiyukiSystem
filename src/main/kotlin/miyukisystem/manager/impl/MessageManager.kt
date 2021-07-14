@@ -154,7 +154,6 @@ class MessageManager {
             pathList.add("SentToSpawn")
             pathList.add("ForcedTeleportSpawn")
             // SetSpawn
-            pathList.add("IncorrectSetSpawnCommand")
             pathList.add("SetSpawnSuccess")
             // Clear
             pathList.add("IncorrectClearCommand")

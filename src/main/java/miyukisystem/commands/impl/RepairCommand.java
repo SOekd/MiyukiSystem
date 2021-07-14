@@ -1,11 +1,12 @@
 package miyukisystem.commands.impl;
 
+import com.cryptomorin.xseries.XMaterial;
+import io.github.bananapuncher714.nbteditor.NBTEditor;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.ConfigManager;
 import miyukisystem.manager.impl.MessageManagerKt;
-import miyukisystem.util.NBTEditor;
-import miyukisystem.util.XMaterial;
+import miyukisystem.util.NBTUtilKt;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +43,7 @@ public class RepairCommand extends CommandService {
             return false;
         }
 
-        if(ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs").stream().anyMatch(it -> NBTEditor.contains(itemInHand, it))) {
+        if(ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs").stream().anyMatch(it -> NBTUtilKt.containsNBT(itemInHand, it))) {
             MessageManagerKt.sendCustomMessage(player, "BlockedRepairItem");
             return false;
         }
@@ -50,7 +51,7 @@ public class RepairCommand extends CommandService {
         itemInHand.setDurability((short) 0);
         MessageManagerKt.sendCustomMessage(player, "SuccessRepair");
 
-        return false;
+        return true;
     }
 
     @NotNull

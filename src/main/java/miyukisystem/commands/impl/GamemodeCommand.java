@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class GamemodeCommand extends CommandService {
 
-    public GamemodeCommand(String name) {
+    public GamemodeCommand() {
         super("Gamemode", "miyukisystem.gamemode", false);
     }
 

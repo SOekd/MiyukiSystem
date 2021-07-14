@@ -1,7 +1,8 @@
 package miyukisystem.model
 
+import com.cryptomorin.xseries.messages.ActionBar
 import miyukisystem.manager.Cacheable
-import miyukisystem.util.ActionBar
+import miyukisystem.manager.impl.title
 import org.bukkit.Location
 import org.bukkit.entity.Player
 
@@ -16,7 +17,7 @@ class Warp(
     fun teleport(player: Player) {
         player.teleport(location)
         if (title != null) {
-            player.sendTitle(title.first, title.second)
+            player.title(title.first, title.second)
         }
         if (actionBar != null)
             ActionBar.sendActionBar(player, actionBar)

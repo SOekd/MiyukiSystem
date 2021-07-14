@@ -17,7 +17,7 @@ repositories {
     maven("https://libraries.minecraft.net/")
     maven("https://repo.aikar.co/content/groups/aikar/")
     maven("https://repo.codemc.io/repository/maven-snapshots/")
-//    maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
+    maven("https://repo.codemc.org/repository/maven-public/")
     flatDir {
         dirs("libs")
     }
@@ -26,7 +26,6 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-//    compileOnly("me.clip:placeholderapi:2.10.9")
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:1.5.21")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
@@ -35,6 +34,8 @@ dependencies {
     implementation("com.zaxxer:HikariCP:3.4.5")
     implementation("org.slf4j:slf4j-api:1.7.25")
     implementation("net.wesjd:anvilgui:1.5.1-SNAPSHOT")
+    implementation("io.github.bananapuncher714:nbteditor:7.17.0")
+    implementation("com.github.cryptomorin:XSeries:8.2.0")
 }
 
 tasks {
@@ -48,10 +49,11 @@ tasks {
     shadowJar {
         minimize {
             exclude(dependency("org.jetbrains.kotlin:.*"))
-//            exclude(dependency("org.jetbrains.kotlinx:.*"))
-//            exclude(dependency("com.github.shynixn.*:.*"))
         }
         relocate("kotlin", "miyukisystem.kotlin")
+        relocate("io.github.bananapuncher714.nbteditor", "miyukisystem.util")
+        relocate("net.wesjd.anvilgui", "miyukisystem.util.anvil")
+        relocate("com.cryptomorin.xseries", "miyukisystem.util.xseries")
         relocate("com.zaxxer", "miyukisystem.database.hikari")
         relocate("org.slf4j", "miyukisystem.util.slf4j")
         classifier = null
