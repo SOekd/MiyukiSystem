@@ -1,8 +1,10 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManager;
 import miyukisystem.manager.impl.MessageManagerKt;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
@@ -24,14 +26,43 @@ public class GamemodeCommand extends CommandService {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (!(sender instanceof Player) && args.length != 2) {
+        if (args.length < 1 || args.length > 2) {
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectGameModeCommand");
+            return false;
+        }
+
+        val gameMode = matchGamemode(args[0]);
+
+        if (gameMode == null) {
+            sender.sendMessage("inexistente");
+            return false;
+        }
+
+        if (args.length == 2) {
+
+
+
+            return true;
+        }
+
+        if (!(sender instanceof Player)) {
             MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
 
-        if (args.length < 1 || args.length > 2) {
-            MessageManagerKt.sendCustomMessage(sender, "IncorrectGameModeCommand");
-            return false;
+        val player = (Player) sender;
+
+        switch (gameMode) {
+            case CREATIVE:
+                if (!(sender.hasPermission("miyukisystem.gamemode.creative"))) {
+                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
+                    return false;
+                }
+                player.setGameMode(GameMode.CREATIVE);
+                break;
+            case SURVIVAL:
+            case ADVENTURE:
+            case SPECTATOR:
         }
 
         // botar permissão pra cada gamemode. (miyukisyste.creative, miyukisystem.survival)
@@ -39,48 +70,42 @@ public class GamemodeCommand extends CommandService {
         // botar /gamemode 1 /gamemode survival /gamemode sobrevivencia
         // /gamemode 1 nick
 
-        return false;
+        return true;
     }
 
-    public void setGameMode(Player player, String gameMode) {
-        switch (gameMode) {
-            case "0":
-            case "survival":
-            case "sobrevivencia":
-                player.setGameMode(GameMode.SURVIVAL);
-                break;
-            case "1":
-            case "creative":
-            case "criativo":
-                player.setGameMode(GameMode.CREATIVE);
-                break;
-            case "2":
-            case "adventure":
-            case "aventura":
-                player.setGameMode(GameMode.ADVENTURE);
-                break;
-            case "3":
-            case "spectator":
-            case "espectador":
-                player.setGameMode(GameMode.SPECTATOR);
-                break;
-            default:
-                break;
+    private GameMode matchGamemode(String gameMode) {
+        if (gameMode.startsWith("su") || gameMode.startsWith("so") || gameMode.equals("0")) {
+            return GameMode.SURVIVAL;
+        } else if (gameMode.startsWith("cr") || gameMode.equals("1")) {
+            return GameMode.CREATIVE;
+        } else if (gameMode.startsWith("a") || gameMode.equals("2")) {
+            return GameMode.ADVENTURE;
+        } else if (gameMode.startsWith("sp") || gameMode.equals("3")) {
+            return GameMode.SPECTATOR;
+        } else {
+            return null;
         }
     }
 
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        Player player = sender instanceof Player ? (Player) sender : null;
-        if (player == null || !player.hasPermission("miyukisystem.gamemode")) return Collections.emptyList();
-        if (args.length > 0) {
-            if (!player.hasPermission("miyukisystem.gamemode.other")) return Collections.emptyList();
-            return Bukkit.getOnlinePlayers().stream()
-                    .filter(player::canSee)
-                    .map(HumanEntity::getName)
+        val player = sender instanceof Player ? (Player) sender : null;
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.gamemode")) return Collections.emptyList();
+        val lastWord = args[args.length - 1];
+        if (args.length == 1) {
+            val modes = Arrays.asList("Survival", "Creative", "Adventure", "Spectator");
+            return modes.stream()
+                    .filter(it -> StringUtils.startsWithIgnoreCase(it, lastWord))
                     .collect(Collectors.toList());
         }
-        return Arrays.asList("survival", "creative", "adventure", "spectator");
+        else {
+            if (!player.hasPermission("miyukisystem.gamemode.other")) return Collections.emptyList();
+            return Bukkit.getOnlinePlayers().stream()
+                    .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))
+                    .map(HumanEntity::getName)
+                    .sorted()
+                    .collect(Collectors.toList());
+        }
     }
 }

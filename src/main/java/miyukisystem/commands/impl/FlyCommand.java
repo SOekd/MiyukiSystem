@@ -3,6 +3,7 @@ package miyukisystem.commands.impl;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -60,11 +61,13 @@ public class FlyCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        Player player = sender instanceof Player ? (Player) sender : null;
-        if (player == null || !player.hasPermission("miyukisystem.fly.other")) return Collections.emptyList();
+        val player = sender instanceof Player ? (Player) sender : null;
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.fly.other")) return Collections.emptyList();
+        val lastWord = args[args.length - 1];
         return Bukkit.getOnlinePlayers().stream()
-                .filter(player::canSee)
+                .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))
                 .map(HumanEntity::getName)
+                .sorted()
                 .collect(Collectors.toList());
     }
 }

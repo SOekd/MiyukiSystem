@@ -6,7 +6,7 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 
 # Por quê usar MiyukiSystem?
 
-* Uma [wiki]("https://github.com/SOekd/MiyukiSystem/wiki") completa para você.
+* Uma [wiki](https://github.com/SOekd/MiyukiSystem/wiki) completa para você.
 * Código aberto a toda comunidade.
 * Código super otimizado.
 * Atualizado constantemente.
@@ -28,18 +28,18 @@ Está com alguma dúvida na instalação? Verifique nosso tópico na [wiki]("htt
 
 ## Wiki:
 
-* [Tópico I - Instalando o plugin]("https://github.com/SOekd/MiyukiSystem/wiki/%5BMiyukiSystem%5D-Introdu%C3%A7%C3%A3o") - Tópico para a instalação do plugin.
-* [Tópico II - Comandos e Permissões]("https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Comandos") - Tópico para mostrar todos comandos e permissões que estão dísponiveís.
-* [Tópico III - Bloqueadores]("https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Bloqueadores") - Tópico para mostrar os bloqueadores de eventos e afins que estão dísponiveis.
-* [Tópico IV - Diversos]("https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Diversos") - Tudo o que você não encontrou nos tópicos acima, provavelmente irá achar aqui.
+* [Tópico I - Instalando o plugin](https://github.com/SOekd/MiyukiSystem/wiki/%5BMiyukiSystem%5D-Introdu%C3%A7%C3%A3o) - Tópico para a instalação do plugin.
+* [Tópico II - Comandos e Permissões](https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Comandos) - Tópico para mostrar todos comandos e permissões que estão dísponiveís.
+* [Tópico III - Bloqueadores](https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Bloqueadores) - Tópico para mostrar os bloqueadores de eventos e afins que estão dísponiveis.
+* [Tópico IV - Diversos](https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Diversos") - Tudo o que você não encontrou nos tópicos acima, provavelmente irá achar aqui.
 
 
-* [Wiki](""https://github.com/SOekd/MiyukiSystem/wiki"") constantemente atualizada.
-* Acha que devemos adicionar algo em nossa [wiki]("https://github.com/SOekd/MiyukiSystem/wiki")? abra um issue :D.
+* [Wiki](https://github.com/SOekd/MiyukiSystem/wiki) constantemente atualizada.
+* Acha que devemos adicionar algo em nossa [wiki](https://github.com/SOekd/MiyukiSystem/wiki)? abra um [issue](https://github.com/SOekd/MiyukiSystem/issues) :D.
 
 # APIs usadas:
 
-* [lombok]("https://github.com/projectlombok/lombok") - Gera getters/setters e muitos metódos utéis como var e val.
+* [lombok](https://github.com/projectlombok/lombok) - Gera getters/setters e muitos metódos utéis como var e val.
 
 ## Desenvolvedores:
 
@@ -53,4 +53,3 @@ Contribuidores, seja com a ideia inicial, ajuda em alguma parte do  código, etc
 
 
 Obrigado a todos. =)
-

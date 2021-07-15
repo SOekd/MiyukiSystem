@@ -1,7 +1,11 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
+import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
+import net.wesjd.anvilgui.version.VersionMatcher;
+import net.wesjd.anvilgui.version.VersionWrapper;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -15,6 +19,8 @@ public class AnvilCommand extends CommandService {
         super("Anvil", "miyukisystem.anvil", false);
     }
 
+    private final VersionWrapper WRAPPER = new VersionMatcher().match();
+
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
@@ -22,9 +28,20 @@ public class AnvilCommand extends CommandService {
             MessageManagerKt.sendCustomMessage(sender, "NoConsole");
             return false;
         }
+        val player = (Player) sender;
 
-        Player player = (Player) sender;
 
+        WRAPPER.handleInventoryCloseEvent(player);
+        WRAPPER.setActiveContainerDefault(player);
+
+        val title = " ";
+        final Object container = WRAPPER.newContainerAnvil(player, title);
+
+        val containerId = WRAPPER.getNextContainerId(player, container);
+        WRAPPER.sendPacketOpenWindow(player, containerId, title);
+        WRAPPER.setActiveContainer(player, container);
+        WRAPPER.setActiveContainerId(container, containerId);
+        WRAPPER.addActiveContainerSlotListener(container, player);
         return false;
     }
 
@@ -33,4 +50,6 @@ public class AnvilCommand extends CommandService {
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
         return Collections.emptyList();
     }
+
+
 }

@@ -4,6 +4,7 @@ import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.PlayerManagerKt;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -63,10 +64,12 @@ public class PingCommand extends CommandService {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
         Player player = sender instanceof Player ? (Player) sender : null;
-        if (player == null || !player.hasPermission("miyukisystem.ping.other")) return Collections.emptyList();
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.ping.other")) return Collections.emptyList();
+        val lastWord = args[args.length - 1];
         return Bukkit.getOnlinePlayers().stream()
-                .filter(player::canSee)
+                .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))
                 .map(HumanEntity::getName)
+                .sorted()
                 .collect(Collectors.toList());
     }
 }

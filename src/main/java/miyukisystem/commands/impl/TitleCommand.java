@@ -20,7 +20,7 @@ public class TitleCommand extends CommandService {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (args.length < 1) {
+        if (args.length == 0) {
             MessageManagerKt.sendCustomMessage(sender, "IncorrectTitleCommand");
             return false;
         }

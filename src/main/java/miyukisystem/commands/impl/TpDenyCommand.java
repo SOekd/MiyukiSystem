@@ -5,8 +5,10 @@ import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -51,7 +53,7 @@ public class TpDenyCommand extends CommandService {
             }
         } else {
 
-            Player target = Bukkit.getPlayer(args[0]);
+            val target = Bukkit.getPlayer(args[0]);
 
             if(target == null) {
                 MessageManagerKt.sendCustomMessage(player, "Offline");
@@ -63,24 +65,30 @@ public class TpDenyCommand extends CommandService {
                 return false;
             }
 
+            if (TpaManager.Companion.getAll().stream().noneMatch(it -> it.getFrom().equals(target.getName()))) {
+                player.sendMessage("nenhum jogador com este nome ai mandou tpa pra vc minha senhora");
+                return false;
+            }
+
             TpaManager.Companion.remove(target.getName());
 
             MessageManagerKt.sendCustomMessage(player, "DenyTpaOther");
             MessageManagerKt.sendCustomMessage(target, "DenyTpaPlayer");
 
         }
-
         return true;
     }
 
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        Player player = sender instanceof Player ? (Player) sender : null;
-        if (player == null || !player.hasPermission("miyukisystem.tpdeny")) return Collections.emptyList();
+        val player = sender instanceof Player ? (Player) sender : null;
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.tpa")) return Collections.emptyList();
+        val lastWord = args[args.length - 1];
         return TpaManager.Companion.getAll().stream()
-                .filter(it -> it.getTo().equalsIgnoreCase(player.getName()))
+                .filter(it -> it.getTo().equalsIgnoreCase(player.getName()) && StringUtils.startsWithIgnoreCase(it.getFrom(), lastWord))
                 .map(TPA::getFrom)
+                .sorted()
                 .collect(Collectors.toList());
     }
 }

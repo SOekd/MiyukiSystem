@@ -36,18 +36,12 @@ fun Player.clearInventory() {
 }
 
 private object PingReflection {
-    var getHandleMethod: Method? = null
     var pingField: Field? = null
 }
 
 fun Player.getServerPing(): Int {
     return try {
-        if (PingReflection.getHandleMethod == null) {
-            val method = javaClass.getDeclaredMethod("getHandle")
-            method.isAccessible = true
-            PingReflection.getHandleMethod = method
-        }
-        val entityPlayer = PingReflection.getHandleMethod!!.invoke(this)
+        val entityPlayer = ReflectionUtils.getHandle(this)!!
         if (PingReflection.pingField == null) {
             val field = entityPlayer.javaClass.getDeclaredField("ping")
             field.isAccessible = true
@@ -83,3 +77,4 @@ fun Player.sendActionBar(message: String) {
 fun Player.clearActionBar() {
     ActionBar.clearActionBar(this)
 }
+

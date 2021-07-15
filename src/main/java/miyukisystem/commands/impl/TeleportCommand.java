@@ -8,12 +8,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TeleportCommand extends CommandService {
 
@@ -142,6 +144,13 @@ public class TeleportCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return Collections.emptyList();
+        val player = sender instanceof Player ? (Player) sender : null;
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.teleport")) return Collections.emptyList();
+        val lastWord = args[args.length - 1];
+        return Bukkit.getOnlinePlayers().stream()
+                .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))
+                .map(HumanEntity::getName)
+                .sorted()
+                .collect(Collectors.toList());
     }
 }

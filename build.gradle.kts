@@ -19,13 +19,14 @@ repositories {
     maven("https://repo.codemc.io/repository/maven-snapshots/")
     maven("https://repo.codemc.org/repository/maven-public/")
     flatDir {
-        dirs("libs")
+        dirs("libs", "implementation")
     }
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(fileTree(mapOf("dir" to "implementation", "include" to listOf("*.jar"))))
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
     compileOnly("com.mojang:authlib:1.5.21")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
@@ -33,7 +34,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.20")
     implementation("com.zaxxer:HikariCP:3.4.5")
     implementation("org.slf4j:slf4j-api:1.7.25")
-    implementation("net.wesjd:anvilgui:1.5.1-SNAPSHOT")
+//    implementation("net.wesjd:anvilgui:1.5.1-SNAPSHOT")
     implementation("io.github.bananapuncher714:nbteditor:7.17.0")
     implementation("com.github.cryptomorin:XSeries:8.2.0")
 }

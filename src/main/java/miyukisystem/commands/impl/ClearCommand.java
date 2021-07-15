@@ -71,7 +71,6 @@ public class ClearCommand extends CommandService {
         } else {
             MessageManagerKt.sendCustomMessage(sender, "AlreadyCleared");
         }
-
         return false;
     }
 

@@ -1,6 +1,5 @@
 package miyukisystem.commands.impl;
 
-import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.command.CommandSender;
@@ -9,7 +8,6 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 public class EditItemCommand extends CommandService {

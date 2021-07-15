@@ -1,8 +1,10 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.PlayerManagerKt;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -35,8 +37,8 @@ public class InvSeeCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
-        Player target = Bukkit.getPlayer(args[0]);
+        val player = (Player) sender;
+        val target = Bukkit.getPlayer(args[0]);
 
         if (target == null) {
             MessageManagerKt.sendCustomMessage(sender, "Offline");
@@ -58,11 +60,13 @@ public class InvSeeCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        Player player = sender instanceof Player ? (Player) sender : null;
-        if (player == null || !player.hasPermission("miyukisystem.invsee")) return Collections.emptyList();
+        val player = sender instanceof Player ? (Player) sender : null;
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.invsee")) return Collections.emptyList();
+        val lastWord = args[args.length - 1];
         return Bukkit.getOnlinePlayers().stream()
-                .filter(player::canSee)
+                .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))
                 .map(HumanEntity::getName)
+                .sorted()
                 .collect(Collectors.toList());
     }
 }
