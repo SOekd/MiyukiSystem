@@ -36,19 +36,19 @@ public class TpaCommand extends CommandService {
 
         Player player = (Player) sender;
 
-        if(args.length != 1) {
+        if (args.length != 1) {
             MessageManagerKt.sendCustomMessage(player, "IncorrectTpaCommand");
             return false;
         }
 
         Player target = Bukkit.getPlayer(args[0]);
 
-        if(target == null) {
+        if (target == null) {
             MessageManagerKt.sendCustomMessage(player, "Offline");
             return false;
         }
 
-        if(target == player) {
+        if (target == player) {
             MessageManagerKt.sendCustomMessage(player, "TpaYourself");
             return false;
         }

@@ -121,6 +121,7 @@ class MessageManager {
             pathList.add("VanishJoined")
             // ping
             pathList.add("Ping")
+            pathList.add("PingTarget")
             // craft
             // trash
             pathList.add("OpeningTrash")
@@ -154,7 +155,7 @@ class MessageManager {
             pathList.add("SentToSpawn")
             pathList.add("ForcedTeleportSpawn")
             // SetSpawn
-            pathList.add("SetSpawnSuccess")
+            pathList.add("SettedSpawnSuccess")
             // Clear
             pathList.add("IncorrectClearCommand")
             pathList.add("AlreadyTargetCleared")
@@ -176,6 +177,9 @@ class MessageManager {
             pathList.add("MaxDurability")
             pathList.add("BlockedRepairItem")
             pathList.add("SuccessRepair")
+            // gamemode
+            pathList.add("GameModeChanged")
+            pathList.add("AlreadyGameMode");
             return pathList
         }
 

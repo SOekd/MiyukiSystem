@@ -44,7 +44,7 @@ public class TpAllCommand extends CommandService {
             placeHolders.put("{player}", target.getName());
 
             MessageManagerKt.sendCustomMessage(target, "AllPlayersTeleportedToYou");
-            MessageManagerKt.sendCustomMessage(sender, "ForcedTpAll", placeHolders);// {player} retorna o target.getName
+            MessageManagerKt.sendCustomMessage(sender, "ForcedTpAll", placeHolders);
         }
 
         if (args.length == 0) {

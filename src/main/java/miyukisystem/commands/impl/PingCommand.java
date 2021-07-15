@@ -33,6 +33,17 @@ public class PingCommand extends CommandService {
 
             val target = Bukkit.getPlayer(args[0]);
 
+            if (target == null) {
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                return false;
+            }
+
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{player}", target.getName());
+            placeHolders.put("{ping}", String.valueOf(PlayerManagerKt.getServerPing(target)));
+
+            MessageManagerKt.sendCustomMessage(sender, "PingTarget", placeHolders);
+
             return true;
         }
 

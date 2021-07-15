@@ -10,7 +10,6 @@ public class TeleportToSpawn implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
 
-        // if (!ConfigManager.Companion.getConfig().config.getBoolean("Spawn"))
         PlayerManagerKt.toSpawn(event.getPlayer());
 
     }

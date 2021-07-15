@@ -53,7 +53,7 @@ public class ClearCommand extends CommandService {
             val placeHolders = new HashMap<String, String>();
             placeHolders.put("{player}", target.getName());
 
-            if (!PlayerManagerKt.isInventoryEmpty(target, false)) {
+            if (PlayerManagerKt.isInventoryEmpty(target, false)) {
                 MessageManagerKt.sendCustomMessage(sender, "AlreadyTargetCleared", placeHolders);
             } else {
                 PlayerManagerKt.clearInventory(target);
@@ -65,7 +65,7 @@ public class ClearCommand extends CommandService {
 
         Player player = (Player) sender;
 
-        if (!PlayerManagerKt.isInventoryEmpty(player, false)) {
+        if (PlayerManagerKt.isInventoryEmpty(player, false)) {
             PlayerManagerKt.clearInventory(player);
             MessageManagerKt.sendCustomMessage(sender, "Cleared");
         } else {

@@ -2,6 +2,7 @@ package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
+import miyukisystem.manager.impl.PlayerManagerKt;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -43,11 +44,12 @@ public class InvSeeCommand extends CommandService {
         }
 
         if (target == player) {
-            // ele msm
+            MessageManagerKt.sendCustomMessage(sender, "");
             return false;
         }
 
         Inventory targetInventory = target.getInventory();
+        PlayerManagerKt.sendActionBar(target, "OpeningInventory"); // path do messages.yml. {player} retorna target.getName();
         player.openInventory(targetInventory);
 
         return false;

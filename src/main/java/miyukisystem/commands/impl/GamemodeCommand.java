@@ -1,8 +1,10 @@
 package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
+import miyukisystem.manager.impl.MessageManager;
 import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -27,12 +29,44 @@ public class GamemodeCommand extends CommandService {
             return false;
         }
 
+        if (args.length < 1 || args.length > 2) {
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectGameModeCommand");
+            return false;
+        }
+
         // botar permissão pra cada gamemode. (miyukisyste.creative, miyukisystem.survival)
 
         // botar /gamemode 1 /gamemode survival /gamemode sobrevivencia
         // /gamemode 1 nick
 
         return false;
+    }
+
+    public void setGameMode(Player player, String gameMode) {
+        switch (gameMode) {
+            case "0":
+            case "survival":
+            case "sobrevivencia":
+                player.setGameMode(GameMode.SURVIVAL);
+                break;
+            case "1":
+            case "creative":
+            case "criativo":
+                player.setGameMode(GameMode.CREATIVE);
+                break;
+            case "2":
+            case "adventure":
+            case "aventura":
+                player.setGameMode(GameMode.ADVENTURE);
+                break;
+            case "3":
+            case "spectator":
+            case "espectador":
+                player.setGameMode(GameMode.SPECTATOR);
+                break;
+            default:
+                break;
+        }
     }
 
     @NotNull

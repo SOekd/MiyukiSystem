@@ -29,10 +29,6 @@ public class EditItemCommand extends CommandService {
         Player player = (Player) sender;
         ItemStack itemHand = player.getItemInHand();
 
-        val map = new HashMap<String, String>();
-        map.put("{player}", "mattgay");
-        MessageManagerKt.sendCustomMessage(sender, "Path", map);
-
         return false;
     }
 

@@ -12,6 +12,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,17 +50,20 @@ public class GodCommand extends CommandService {
 
         val target = Bukkit.getPlayer(args[0]);
 
-        if(target == null) {
+        if (target == null) {
             MessageManagerKt.sendCustomMessage(sender, "Offline");
             return false;
         }
 
-        if(target.hasMetadata("miyukisystem_god")) {
+        val placeHolders = new HashMap<String, String>();
+        placeHolders.put("{target}", target.getName());
+
+        if (target.hasMetadata("miyukisystem_god")) {
             target.removeMetadata("miyukisystem_god", plugin);
-            MessageManagerKt.sendCustomMessage(sender, "DisableGodModeOther");
+            MessageManagerKt.sendCustomMessage(sender, "DisabledGodModeOther", placeHolders);
         } else {
             target.setMetadata("miyukisystem_god", new FixedMetadataValue(Main.Companion.getInstance(), "meta"));
-            MessageManagerKt.sendCustomMessage(sender, "EnableGodModeOther");
+            MessageManagerKt.sendCustomMessage(sender, "EnabledGodModeOther", placeHolders);
         }
 
         return false;

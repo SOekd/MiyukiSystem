@@ -2,10 +2,8 @@ package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -22,11 +20,6 @@ public class AnvilCommand extends CommandService {
 
         if (!(sender instanceof Player)) {
             MessageManagerKt.sendCustomMessage(sender, "NoConsole");
-            return false;
-        }
-
-        if (args.length > 0) {
-            MessageManagerKt.sendCustomMessage(sender, "IncorrectAnvilCommand");
             return false;
         }
 

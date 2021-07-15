@@ -33,12 +33,6 @@ public class TitleCommand extends CommandService {
             Bukkit.getOnlinePlayers().forEach(it -> PlayerManagerKt.title(it, title[0], ""));
         else
             Bukkit.getOnlinePlayers().forEach(it -> PlayerManagerKt.title(it, title[0], title[1]));
-//
-//        if (!(msg.contains("|"))) {
-//            Bukkit.getOnlinePlayers().forEach(it -> it.sendTitle(msg, ""));
-//        } else {
-//            Bukkit.getOnlinePlayers().forEach(it -> it.sendTitle(title[0], title[1]));
-//        }
 
         MessageManagerKt.sendCustomMessage(sender, "TitleSent");
 

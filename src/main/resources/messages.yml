@@ -11,7 +11,7 @@ Offline: '&cO jogador especificado não está online.'
 # ImproperNick Listener
 
 ImproperNick: '&cEsse nickname foi bloqueado no servidor.'
-ImproperNickLogged: '&cO player {player} foi kickado por ser um nick bloqueado.'
+ImproperNickLogged: '&cO player {player} foi kickado por ser um nick bloqueado. IP: {ip}.'
 
 # BlockedCommands Listener
 
@@ -85,6 +85,7 @@ VanishJoined: '&aVocê entrou em modo vanish.'
 # Ping Command
 
 Ping: '&aO seu ping é de: &e{ping}ms&a.'
+PingTarget: '&aO ping de &e{player} &aé de: &e{ping}.'
 
 # Trash Command
 
@@ -94,6 +95,7 @@ OpeningTrash: '&aAbrindo o lixeiro...' # ActionBar
 
 IncorrectInvSeeCommand: '&cUso incorreto. Use: /invsee <player>'
 OpeningInventory: '&aAbrindo inventário de {player}...' # ActionBar
+
 
 # TpAll Command
 
@@ -187,4 +189,9 @@ DisabledGodMode: '&cO modo deus foi desativado.'
 EnabledGodMode: '&aO modo deus foi ativado.'
 DisabledGodModeOther: '&cO modo deus para {target} foi desativado.'
 EnabledGodModeOther: '&aO modo deus para {target} foi ativado.'
+
+# GameMode Command
+
+GameModeChanged: '&aGamemode alterado com sucesso para {gamemode}.'
+AlreadyGameMode: '&cVocê já está no gamemode {gamemode}.'
 

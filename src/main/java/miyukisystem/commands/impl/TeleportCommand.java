@@ -1,5 +1,6 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import org.apache.commons.lang3.StringUtils;
@@ -11,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class TeleportCommand extends CommandService {
@@ -22,51 +24,54 @@ public class TeleportCommand extends CommandService {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (args.length < 1 || args.length > 5) {
+        if (args.length < 1 || args.length > 4) {
             MessageManagerKt.sendCustomMessage(sender, "IncorrectTeleportCommand");
             return false;
         }
 
-        /*double x, y, z;
-
+        // Argumento 1 = quer teleportar para algum player.
         if (args.length == 1) {
 
             if (!(sender instanceof Player)) {
-                sender.sendMessage("NoConsole");
+                MessageManagerKt.sendCustomMessage(sender, "NoConsole");
                 return false;
             }
 
             Player target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
-                sender.sendMessage("Offline");
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
             if (target.getName().equals(sender.getName())) {
-                sender.sendMessage("TeleportedToYourself");
+                MessageManagerKt.sendCustomMessage(sender, "TeleportedToYourself");
                 return false;
             }
 
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{player}", target.getName());
+
             Player player = (Player) sender;
-            player.teleport(target);
-            player.sendMessage("TeleportedSuccess"); // {player} retorna o nome do player q vc teleportou
+            player.teleport(target.getLocation());
+            MessageManagerKt.sendCustomMessage(player, "TeleportedSuccess", placeHolders); // {player} retorna o nome do player q vc teleportou
             return false;
         }
 
+        // se o argumento é 2, ele quer teleportar um player até outro player.
         if (args.length == 2) {
 
             Player player = Bukkit.getPlayer(args[0]);
 
             if (player == null) {
-                sender.sendMessage("Offline");
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
             Player target = Bukkit.getPlayer(args[1]);
 
             if (target == null) {
-                sender.sendMessage("Offline");
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
@@ -79,75 +84,57 @@ public class TeleportCommand extends CommandService {
 
         }
 
+        double x, y, z;
+
+        // se o args é 3 ele quer teleportar ate uma coord
         if (args.length == 3) {
 
             if (!(sender instanceof Player)) {
-                sender.sendMessage("NoConsole");
+                MessageManagerKt.sendCustomMessage(sender, "NoConsole");
                 return false;
             }
+
             try {
                 x = Double.parseDouble(args[0]);
                 y = Double.parseDouble(args[1]);
                 z = Double.parseDouble(args[2]);
             } catch (NumberFormatException exception) {
-                sender.sendMessage("InvalidCoords");
+                MessageManagerKt.sendCustomMessage(sender, "InvalidCoords");
                 return false;
             }
 
             Player player = (Player) sender;
             Location locationTarget = new Location(player.getWorld(), x, y, z);
             player.teleport(locationTarget);
-            player.sendMessage("TeleportedSuccess");
+            MessageManagerKt.sendCustomMessage(player, "TeleportedSuccessWithCoords");
         }
 
+        // se é 4, ele quer teleportar um player até uma coordenada.
         if (args.length == 4) {
 
-            if (!(sender instanceof Player)) {
-                sender.sendMessage("NoConsole");
+            Player target = Bukkit.getPlayer(args[0]);
+
+            if (target == null) {
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
                 return false;
             }
 
-            Player player = (Player) sender;
-
-            World world = Bukkit.getWorld(args[0]);
             try {
                 x = Double.parseDouble(args[1]);
                 y = Double.parseDouble(args[2]);
                 z = Double.parseDouble(args[3]);
             } catch (NumberFormatException exception) {
-                sender.sendMessage("InvalidCoords");
+                MessageManagerKt.sendCustomMessage(sender, "InvalidCoords");
                 return false;
             }
 
-            Location locationTarget = new Location(world, x, y, z);
-            player.teleport(locationTarget);
-            player.sendMessage("TeleportedSuccessWithCoords");
-        }
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{player}", target.getName());
 
-        if (args.length == 5) {
-
-            Player target = Bukkit.getPlayer(args[0]);
-
-            if (target == null) {
-                sender.sendMessage("Offline");
-                return false;
-            }
-
-            World world = Bukkit.getWorld(args[1]);
-            try {
-                x = Double.parseDouble(args[2]);
-                y = Double.parseDouble(args[3]);
-                z = Double.parseDouble(args[4]);
-            } catch (NumberFormatException exception) {
-                sender.sendMessage("InvalidNumber");
-                return false;
-            }
-
-            Location locationTarget = new Location(world, x, y, z);
+            Location locationTarget = new Location(target.getWorld(), x, y, z);
             target.teleport(locationTarget);
-            sender.sendMessage("PlayerTeleportedSuccessWithCoords"); // {player} retorna o nome do target
-
-        }*/
+            MessageManagerKt.sendCustomMessage(sender, "PlayerTeleportedSuccessWithCoords", placeHolders);
+        }
 
         return false;
     }

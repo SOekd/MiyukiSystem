@@ -13,9 +13,9 @@ public class BlockedCommands implements Listener {
         val args = e.getMessage().split(" ");
         val player = e.getPlayer();
 
-        if(player.hasPermission("miyukisystem.bypass.blockedcommands")) return;
+        if (player.hasPermission("miyukisystem.bypass.blockedcommands")) return;
 
-        if(ConfigManager.Companion.getConfig().config.getStringList("BlockedCommands").contains(args[0].toLowerCase())) {
+        if (ConfigManager.Companion.getConfig().config.getStringList("BlockedCommands").contains(args[0].toLowerCase())) {
             player.sendMessage("BlockedCommand");
             e.setCancelled(true);
         }

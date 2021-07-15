@@ -30,7 +30,7 @@ public class TpAcceptCommand extends CommandService {
 
         Player player = (Player) sender;
 
-        if(args.length < 1) {
+        if (args.length < 1) {
 
             val targetTPA = TpaManager.Companion.lastReceived(player.getName());
 
