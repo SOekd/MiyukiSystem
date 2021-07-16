@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,13 +35,25 @@ public class GamemodeCommand extends CommandService {
         val gameMode = matchGamemode(args[0]);
 
         if (gameMode == null) {
-            sender.sendMessage("inexistente");
+            MessageManagerKt.sendCustomMessage(sender, "GameModeNull");
             return false;
         }
 
         if (args.length == 2) {
 
+            val target = Bukkit.getPlayer(args[1]);
 
+            if (target == null) {
+                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                return false;
+            }
+
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{gamemode}", String.valueOf(gameMode));
+            placeHolders.put("{player}", target.getName());
+
+            target.setGameMode(gameMode);
+            MessageManagerKt.sendCustomMessage(sender, "GameModeTargetChanged", placeHolders);
 
             return true;
         }
@@ -51,6 +64,8 @@ public class GamemodeCommand extends CommandService {
         }
 
         val player = (Player) sender;
+        val placeHolders = new HashMap<String, String>();
+        placeHolders.put("{gamemode}", String.valueOf(gameMode));
 
         switch (gameMode) {
             case CREATIVE:
@@ -59,16 +74,37 @@ public class GamemodeCommand extends CommandService {
                     return false;
                 }
                 player.setGameMode(GameMode.CREATIVE);
+                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
                 break;
             case SURVIVAL:
+                if (!(sender.hasPermission("miyukisystem.gamemode.survival"))) {
+                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
+                    return false;
+                }
+                player.setGameMode(GameMode.SURVIVAL);
+                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
+                break;
             case ADVENTURE:
+                if (!(sender.hasPermission("miyukisystem.gamemode.adventure"))) {
+                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
+                    return false;
+                }
+                player.setGameMode(GameMode.ADVENTURE);
+                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
+                break;
             case SPECTATOR:
+                if (!(sender.hasPermission("miyukisystem.gamemode.spectator"))) {
+                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
+                    return false;
+                }
+                player.setGameMode(GameMode.SPECTATOR);
+                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
+                break;
+            default:
+                MessageManagerKt.sendCustomMessage(sender, "GameModeNotFound");
+                break;
+
         }
-
-        // botar permissão pra cada gamemode. (miyukisyste.creative, miyukisystem.survival)
-
-        // botar /gamemode 1 /gamemode survival /gamemode sobrevivencia
-        // /gamemode 1 nick
 
         return true;
     }

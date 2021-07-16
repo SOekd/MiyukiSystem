@@ -33,17 +33,17 @@ public class RepairCommand extends CommandService {
         val player = (Player) sender;
         val itemInHand = player.getInventory().getItemInHand();
 
-        if(XMaterial.matchXMaterial(itemInHand.getType()).parseMaterial() == XMaterial.AIR.parseMaterial() || itemInHand.getType().getMaxDurability() == 0) {
+        if (XMaterial.matchXMaterial(itemInHand.getType()).parseMaterial() == XMaterial.AIR.parseMaterial() || itemInHand.getType().getMaxDurability() == 0) {
             MessageManagerKt.sendCustomMessage(player, "NoReparable");
             return false;
         }
 
-        if(itemInHand.getDurability() == 0) {
+        if (itemInHand.getDurability() == 0) {
             MessageManagerKt.sendCustomMessage(player, "MaxDurability");
             return false;
         }
 
-        if(ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs").stream().anyMatch(it -> NBTUtilKt.containsNBT(itemInHand, it))) {
+        if (ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs").stream().anyMatch(it -> NBTUtilKt.containsNBT(itemInHand, it))) {
             MessageManagerKt.sendCustomMessage(player, "BlockedRepairItem");
             return false;
         }

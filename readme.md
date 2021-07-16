@@ -13,8 +13,8 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 * Thread-safe.
 * Suporte a cores RGB (1.16+).
 * Suporte a materiais das novas versões.
+* Tab-complete em comandos compatíveis.
 * Entre muitos outros.
-
 
 # Usando o plugin:
 
@@ -34,12 +34,11 @@ Está com alguma dúvida na instalação? Verifique nosso tópico na [wiki]("htt
 * [Tópico IV - Diversos](https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Diversos") - Tudo o que você não encontrou nos tópicos acima, provavelmente irá achar aqui.
 
 
-* [Wiki](https://github.com/SOekd/MiyukiSystem/wiki) constantemente atualizada.
-* Acha que devemos adicionar algo em nossa [wiki](https://github.com/SOekd/MiyukiSystem/wiki)? abra um [issue](https://github.com/SOekd/MiyukiSystem/issues) :D.
 
-# APIs usadas:
+[Wiki](https://github.com/SOekd/MiyukiSystem/wiki) constantemente atualizada.
 
-* [lombok](https://github.com/projectlombok/lombok) - Gera getters/setters e muitos metódos utéis como var e val.
+
+Acha que devemos adicionar algo em nossa [wiki](https://github.com/SOekd/MiyukiSystem/wiki)? abra um [issue](https://github.com/SOekd/MiyukiSystem/issues) :D.
 
 ## Desenvolvedores:
 

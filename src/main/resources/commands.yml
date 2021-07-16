@@ -153,3 +153,13 @@ God:
   Command: 'god|godmode|deus|mododeus'
   Description: 'Comando para ativar a invencibilidade.'
 
+TpHere:
+  Enabled: true
+  Command: 'tphere|tph'
+  Description: 'Comando para puxar alguém até você.'
+
+ActionBar:
+  Enabled: true
+  Command: 'actionbar'
+  Description: 'Comando para enviar actionbar para players.'
+

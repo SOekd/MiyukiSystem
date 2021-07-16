@@ -85,7 +85,7 @@ VanishJoined: '&aVocê entrou em modo vanish.'
 # Ping Command
 
 Ping: '&aO seu ping é de: &e{ping}ms&a.'
-PingTarget: '&aO ping de &e{player} &aé de: &e{ping}.'
+PingTarget: '&aO ping de &e{player} &aé de: &e{ping}ms.'
 
 # Trash Command
 
@@ -192,6 +192,19 @@ EnabledGodModeOther: '&aO modo deus para {target} foi ativado.'
 
 # GameMode Command
 
+GameModeNotFound: '&cModo de jogo não encontrado.'
+GameModeTargetChanged: '&aModo de jogo de {player} alterado com sucesso para {gamemode}.'
 GameModeChanged: '&aGamemode alterado com sucesso para {gamemode}.'
 AlreadyGameMode: '&cVocê já está no gamemode {gamemode}.'
+
+# TpHere Command
+
+IncorrectTpHereCommand: '&cUso incorreto. Use: /tphere <player>.'
+TpHereSuccess: '&aVocê teleportou {player} até sua localização.'
+GameModeNull: '&cModo de jogo não encontrado.'
+
+# ActionBar Command
+
+IncorrectActionBarCommand: '&cUso incorreto. Use: /actionbar <*/player> <mensagem>.'
+ActionBarSent: '&aActionbar enviada com sucesso.'
 

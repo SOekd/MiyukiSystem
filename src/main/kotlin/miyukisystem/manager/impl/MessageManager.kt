@@ -178,8 +178,18 @@ class MessageManager {
             pathList.add("BlockedRepairItem")
             pathList.add("SuccessRepair")
             // gamemode
+            pathList.add("GameModeNotFound")
+            pathList.add("GameModeTargetChanged")
             pathList.add("GameModeChanged")
             pathList.add("AlreadyGameMode");
+            // tphere
+            pathList.add("IncorrectTpHereCommand")
+            pathList.add("TpHereSuccess")
+            pathList.add("GameModeNull")
+            // actionbar
+            pathList.add("IncorrectActionBarCommand")
+            pathList.add("ActionBarSent")
+
             return pathList
         }
 
