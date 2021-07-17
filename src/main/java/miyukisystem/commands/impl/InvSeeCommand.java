@@ -13,6 +13,7 @@ import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,6 +50,9 @@ public class InvSeeCommand extends CommandService {
             MessageManagerKt.sendCustomMessage(sender, "");
             return false;
         }
+
+        val placeHolders = new HashMap<String, String>();
+        placeHolders.put("{player}", target.getName());
 
         Inventory targetInventory = target.getInventory();
         PlayerManagerKt.sendActionBar(target, "OpeningInventory"); // path do messages.yml. {player} retorna target.getName();

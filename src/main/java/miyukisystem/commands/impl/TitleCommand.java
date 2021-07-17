@@ -17,6 +17,8 @@ public class TitleCommand extends CommandService {
         super("Title", "miyukisystem.title", false);
     }
 
+    // Comando 100% feito.
+
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

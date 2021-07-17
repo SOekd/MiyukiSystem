@@ -24,19 +24,18 @@ Uma espécie de **fork** do famoso [system](https://github.com/eduardo-mior/Syst
 * Caso tenha algum problema, sugestões abrir uma issue clicando [aqui](https://github.com/SOekd/MiyukiSystem/issues).
 
 
-Está com alguma dúvida na instalação? Verifique nosso tópico na [wiki]("https://github.com/SOekd/MiyukiSystem/wiki/%5BMiyukiSystem%5D-Introdu%C3%A7%C3%A3o").
+Está com alguma dúvida na instalação? Verifique nosso tópico na [wiki](https://github.com/SOekd/MiyukiSystem/wiki/%5BMiyukiSystem%5D-Introdu%C3%A7%C3%A3o).
 
 ## Wiki:
 
-* [Tópico I - Instalando o plugin](https://github.com/SOekd/MiyukiSystem/wiki/%5BMiyukiSystem%5D-Introdu%C3%A7%C3%A3o) - Tópico para a instalação do plugin.
-* [Tópico II - Comandos e Permissões](https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Comandos) - Tópico para mostrar todos comandos e permissões que estão dísponiveís.
-* [Tópico III - Bloqueadores](https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Bloqueadores) - Tópico para mostrar os bloqueadores de eventos e afins que estão dísponiveis.
-* [Tópico IV - Diversos](https://github.com/SOekd/MiyukiSystem/wiki/MiyukiSystem---Diversos") - Tudo o que você não encontrou nos tópicos acima, provavelmente irá achar aqui.
+* [Tópico I - Instalando o plugin](https://bit.ly/3evgm0K) - Tópico para a instalação do plugin.
+* [Tópico II - Comandos e Permissões](https://bit.ly/2UUBVka) - Tópico para mostrar todos comandos e permissões que estão dísponiveís.
+* [Tópico III - Bloqueadores](https://bit.ly/3eruYhK) - Tópico para mostrar os bloqueadores de eventos e afins que estão dísponiveis.
+* [Tópico IV - Diversos](https://bit.ly/3wHx03z) - Tudo o que você não encontrou nos tópicos acima, provavelmente irá achar aqui.
 
 
 
 [Wiki](https://github.com/SOekd/MiyukiSystem/wiki) constantemente atualizada.
-
 
 Acha que devemos adicionar algo em nossa [wiki](https://github.com/SOekd/MiyukiSystem/wiki)? abra um [issue](https://github.com/SOekd/MiyukiSystem/issues) :D.
 
@@ -46,7 +45,7 @@ Acha que devemos adicionar algo em nossa [wiki](https://github.com/SOekd/MiyukiS
 
 ## Contribuidores:
 
-Contribuidores, seja com a ideia inicial, ajuda em alguma parte do  código, etc.
+Contribuidores, seja com ideias, ajuda em alguma parte do  código, etc.
 
 * [Nevisk, Alexandre]
 

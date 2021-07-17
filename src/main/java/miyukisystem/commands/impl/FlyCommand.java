@@ -46,7 +46,6 @@ public class FlyCommand extends CommandService {
             val placeHolders = new HashMap<String, String>();
             placeHolders.put("{player}", target.getName());
             target.setAllowFlight(!target.getAllowFlight());
-            String a = "1;";
 
             sender.sendMessage(target.getAllowFlight() ? "&aO modo voar de &7{player} &afoi ativado." : "&cO modo voar de &7{player} &cfoi desativado.");
 

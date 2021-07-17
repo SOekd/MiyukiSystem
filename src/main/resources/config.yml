@@ -10,7 +10,7 @@ Database:
   # Caso dê algum erro ao tentar conectar com o MySQL ou HIKARI, coloque 'com.mysql.cj.jdbc.Driver' no driver!
   MySQLDriver: 'com.mysql.jdbc.Driver'
   HikariConfiguration:
-    PoolName: 'SOPluginsPool'
+    PoolName: 'MiyukiSystemPool'
     MiniumIdle: 10
     MaximumPoolSize: 10
     ConnectionTimeout: 30000
@@ -25,6 +25,17 @@ Database:
     ElideSetAutoCommits: true
     MaintainTimeStats: false
 
+# Se deixar true, toda vez q o player entrar, ele vai ser teleportado pro spawn invez de
+# sua ultima localização.
+TeleportSpawn: true
+
+# Tempo para expirar o TPA (em segundos)
+TpaExpire: 30
+
+# Lixeiro
+
+TrashSize: 54
+TrashTitleMenu: 'Lixeiro'
 
 
 # true -> bloqueado
@@ -51,11 +62,6 @@ Blockers:
   # Cancela o player de entrar na cama.
   Sleep: true
 
-# Lixeiro
-
-TrashSize: 54
-TrashTitleMenu: 'Lixeiro'
-
 # Reparar
 
 RepairBlockedNBTs: # Deixe com "[]" para não bloquear nenhum.
@@ -74,18 +80,16 @@ Motd: # Lembrando que se deixar vaziu ele fica o default da server.properties. (
   # Jogadores máximos com a motd normal. (Apenas estático)
   NormalMaxPlayers: 200
 
-# Tempo para expirar o TPA (em segundos)
-TpaExpire: 30
-
 BlockedNicks:
   - 'teste1'
   - 'teste2'
+
 BlockedCommands: # Use "/".
   - '/teste1'
-  - '/teste1'
+  - '/teste2'
 
 # Lista de materiais 1.8: https://helpch.at/docs/1.8/org/bukkit/Material.html
 # Lista de materiais 1.12:
 BlockedCrafts:
-  -
+
 

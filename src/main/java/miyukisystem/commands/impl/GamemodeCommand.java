@@ -12,10 +12,7 @@ import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GamemodeCommand extends CommandService {
@@ -110,6 +107,7 @@ public class GamemodeCommand extends CommandService {
     }
 
     private GameMode matchGamemode(String gameMode) {
+        gameMode = gameMode.toLowerCase();
         if (gameMode.startsWith("su") || gameMode.startsWith("so") || gameMode.equals("0")) {
             return GameMode.SURVIVAL;
         } else if (gameMode.startsWith("cr") || gameMode.equals("1")) {
@@ -127,15 +125,15 @@ public class GamemodeCommand extends CommandService {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
         val player = sender instanceof Player ? (Player) sender : null;
-        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.gamemode")) return Collections.emptyList();
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.gamemode"))
+            return Collections.emptyList();
         val lastWord = args[args.length - 1];
         if (args.length == 1) {
             val modes = Arrays.asList("Survival", "Creative", "Adventure", "Spectator");
             return modes.stream()
                     .filter(it -> StringUtils.startsWithIgnoreCase(it, lastWord))
                     .collect(Collectors.toList());
-        }
-        else {
+        } else {
             if (!player.hasPermission("miyukisystem.gamemode.other")) return Collections.emptyList();
             return Bukkit.getOnlinePlayers().stream()
                     .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))

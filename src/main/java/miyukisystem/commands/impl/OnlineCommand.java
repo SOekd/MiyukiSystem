@@ -1,38 +1,29 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
-public class EditItemCommand extends CommandService {
+public class OnlineCommand extends CommandService {
 
-    public EditItemCommand() {
-        super("EditItem", "miyukisystem.edititem", false);
+    public OnlineCommand() {
+        super("Online", "miyukisystem.online", false);
     }
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (!(sender instanceof Player)) {
-            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
-            return false;
-        }
+        val placeHolders = new HashMap<String, String>();
+        placeHolders.put("{online}", String.valueOf(Bukkit.getOnlinePlayers().size()));
 
-        Player player = (Player) sender;
-        ItemStack itemHand = player.getItemInHand();
-
-        /*
-        *
-        *
-        *
-        *
-        * */
+        MessageManagerKt.sendCustomMessage(sender, "Online", placeHolders);
 
         return false;
     }

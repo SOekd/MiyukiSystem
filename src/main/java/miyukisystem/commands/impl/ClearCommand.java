@@ -21,8 +21,6 @@ public class ClearCommand extends CommandService {
         super("Clear", "miyukisystem.clear", false);
     }
 
-    // critica muito pitomba
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

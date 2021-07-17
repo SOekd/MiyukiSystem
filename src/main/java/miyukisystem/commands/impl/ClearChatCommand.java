@@ -17,6 +17,8 @@ public class ClearChatCommand extends CommandService {
         super("ClearChat", "miyukisystem.clearchat", false);
     }
 
+    // Comando 100% feito.
+
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

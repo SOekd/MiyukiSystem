@@ -20,6 +20,8 @@ public class AlertCommand extends CommandService {
         super("Alert", "miyukisystem.alert", false);
     }
 
+    // Comando 100% feito.
+
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

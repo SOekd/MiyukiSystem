@@ -163,3 +163,13 @@ ActionBar:
   Command: 'actionbar'
   Description: 'Comando para enviar actionbar para players.'
 
+ExecuteSound:
+  Enabled: true
+  Command: 'executesound|executarsom'
+  Description: 'Comando para enviar sons aos players.'
+
+Online:
+  Enabled: true
+  Command: 'online'
+  Description: 'Comando para ver a quantidade de players online.'
+

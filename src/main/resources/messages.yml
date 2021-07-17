@@ -210,3 +210,13 @@ GameModeNull: '&cModo de jogo não encontrado.'
 IncorrectActionBarCommand: '&cUso incorreto. Use: /actionbar <*/player> <mensagem>.'
 ActionBarSent: '&aActionbar enviada com sucesso.'
 
+# ExecuteSound Command
+
+IncorrectExecuteSoundCommand: '&cUso incorreto. Use: /executesound <*/player> <sound>.'
+SoundNotFound: '&cSom não encontrado.'
+SoundSentTarget: '&aSom enviado para {player}.'
+SoundSent: '&aSom enviado para todos os jogadores.'
+
+# Online Command
+
+Online: '&aO servidor está com &e{online} &ajogadores online.'

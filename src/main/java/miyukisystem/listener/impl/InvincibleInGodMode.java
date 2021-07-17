@@ -10,13 +10,13 @@ public class InvincibleInGodMode implements Listener {
 
     @EventHandler
     public void onEntityDamage(EntityDamageEvent e) {
-        if(!(e.getEntity() instanceof Player)) {
+        if (!(e.getEntity() instanceof Player)) {
             return;
         }
 
         val player = (Player) e.getEntity();
 
-        if(player.hasMetadata("miyukisystem_god")) {
+        if (player.hasMetadata("miyukisystem_god")) {
             e.setCancelled(true);
         }
 

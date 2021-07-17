@@ -47,6 +47,9 @@
 # miyukisystem.speed -> permissão para usar o comando /speed.
 # miyukisystem.back -> permissão para usar o comando /back.
 
+# miyukisystem.executesound -> permissão para usar o comando /executesound
+# miyukisystem.online -> permissão para usar o comando /online.
+
 # ------------------------------------------------------------------------------------------------
 
 # Gerais

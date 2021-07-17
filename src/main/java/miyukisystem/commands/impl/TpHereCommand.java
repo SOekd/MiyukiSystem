@@ -18,6 +18,8 @@ public class TpHereCommand extends CommandService {
         super("TpHere", "miyukisystem.tphere", false);
     }
 
+    // Comando 100% feito.
+
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

@@ -30,7 +30,7 @@ public class GodCommand extends CommandService {
 
         val plugin = Main.Companion.getInstance();
 
-        if(args.length == 0) {
+        if (args.length == 0) {
             if (!(sender instanceof Player)) {
                 MessageManagerKt.sendCustomMessage(sender, "NoConsole");
                 return false;
@@ -38,7 +38,7 @@ public class GodCommand extends CommandService {
 
             val player = (Player) sender;
 
-            if(player.hasMetadata("miyukisystem_god")) {
+            if (player.hasMetadata("miyukisystem_god")) {
                 player.removeMetadata("miyukisystem_god", plugin);
                 MessageManagerKt.sendCustomMessage(player, "DisabledGodMode");
             } else {
@@ -78,7 +78,8 @@ public class GodCommand extends CommandService {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
         val player = sender instanceof Player ? (Player) sender : null;
-        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.god.other")) return Collections.emptyList();
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.god.other"))
+            return Collections.emptyList();
         val lastWord = args[args.length - 1];
         return Bukkit.getOnlinePlayers().stream()
                 .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))

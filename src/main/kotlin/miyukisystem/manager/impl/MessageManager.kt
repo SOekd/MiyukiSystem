@@ -193,6 +193,13 @@ class MessageManager {
             // actionbar
             pathList.add("IncorrectActionBarCommand")
             pathList.add("ActionBarSent")
+            // execute sound
+            pathList.add("IncorrectExecuteSoundCommand")
+            pathList.add("SoundNotFound")
+            pathList.add("SoundSentTarget")
+            pathList.add("SoundSent")
+            // online
+            pathList.add("Online")
 
             return pathList
         }
