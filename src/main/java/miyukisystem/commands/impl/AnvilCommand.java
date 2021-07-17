@@ -1,7 +1,6 @@
 package miyukisystem.commands.impl;
 
 import lombok.val;
-import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import net.wesjd.anvilgui.version.VersionMatcher;

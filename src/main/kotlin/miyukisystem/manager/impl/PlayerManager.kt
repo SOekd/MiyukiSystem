@@ -1,10 +1,12 @@
 package miyukisystem.manager.impl
 
 import com.cryptomorin.xseries.ReflectionUtils
+import com.cryptomorin.xseries.XSound
 import com.cryptomorin.xseries.messages.ActionBar
 import com.cryptomorin.xseries.messages.Titles
 import org.bukkit.Bukkit
 import org.bukkit.Material
+import org.bukkit.Sound
 import org.bukkit.entity.Player
 import java.lang.reflect.Field
 import java.lang.reflect.Method
@@ -74,7 +76,12 @@ fun Player.sendActionBar(message: String) {
     ActionBar.sendActionBar(this, message)
 }
 
+fun Player.sendActionBar(message: String, placeholder: MutableMap<String, String>) {
+    var msg = message
+    placeholder.forEach { (placeholder, value) -> msg = msg.replace(placeholder, value) }
+    ActionBar.sendActionBar(this, msg)
+}
+
 fun Player.clearActionBar() {
     ActionBar.clearActionBar(this)
 }
-

@@ -47,13 +47,14 @@ public class FlyCommand extends CommandService {
             placeHolders.put("{player}", target.getName());
             target.setAllowFlight(!target.getAllowFlight());
 
-            sender.sendMessage(target.getAllowFlight() ? "&aO modo voar de &7{player} &afoi ativado." : "&cO modo voar de &7{player} &cfoi desativado.");
+            MessageManagerKt.sendCustomMessage(sender, target.getAllowFlight() ? "FlyTargetActivated" : "FlyTargetDisabled", placeHolders);
 
             return true;
         }
 
         Player player = (Player) sender;
         player.setAllowFlight(!player.getAllowFlight());
+        MessageManagerKt.sendCustomMessage(player, player.getAllowFlight() ? "FlyActivated" : "FlyDisabled");
         player.sendMessage(player.getAllowFlight() ? "FlyActivated" : "FlyDisabled"); // necessita de testes, não sei se irá funcionar
 
         return true;

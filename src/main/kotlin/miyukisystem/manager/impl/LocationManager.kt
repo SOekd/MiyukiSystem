@@ -1,24 +1,24 @@
 package miyukisystem.manager.impl
 
-import miyukisystem.manager.Cacheable
 import miyukisystem.manager.DataService
 import miyukisystem.manager.ManagerService
+import miyukisystem.model.CachedLocation
 import miyukisystem.util.toCustomString
 import miyukisystem.util.toLocation
-import org.bukkit.Location
+import java.util.*
 
 class LocationManager {
 
     companion object: DataService<CachedLocation>, ManagerService {
 
-        private val config = ConfigManager.locations.config
+        private val config = ConfigManager.data.config
 
-        override fun has(key: String): Boolean = config.contains(key)
+        override fun has(key: String): Boolean = config.contains("Locations.$key")
 
-        override fun get(key: String): CachedLocation = CachedLocation(key, config.getString(key).toLocation())
+        override fun get(key: String): CachedLocation = CachedLocation("Locations.$key", config.getString(key).toLocation())
 
         override fun set(value: CachedLocation) {
-            config.set(value.getKey(), value.location.toCustomString())
+            config.set("Locations.${value.getKey()}", value.location.toCustomString())
             save()
         }
 
@@ -27,20 +27,22 @@ class LocationManager {
         }
 
         override fun remove(key: String) {
-            config.set(key, null)
+            config.set("Locations.$key", null)
             save()
         }
 
+
         override fun getAll(): List<CachedLocation> {
-            TODO("Not yet implemented")
+            if (!config.isConfigurationSection("Locations")) return Collections.emptyList()
+            return config.getConfigurationSection("Locations")!!.getKeys(false).map { get(it) }
         }
 
         private fun save() {
-            ConfigManager.locations.saveConfig()
+            ConfigManager.data.saveConfig()
         }
 
         override fun load() {
-            val config = ConfigManager.locations
+            val config = ConfigManager.data
             config.saveDefaultConfig()
             config.reloadConfig()
         }
@@ -50,12 +52,5 @@ class LocationManager {
         }
 
     }
-
-}
-
-data class CachedLocation(val path: String, val location: Location?) : Cacheable {
-
-    override fun getKey(): String = path
-
 
 }

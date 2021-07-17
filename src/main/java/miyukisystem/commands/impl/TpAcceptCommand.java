@@ -65,8 +65,7 @@ public class TpAcceptCommand extends CommandService {
             Player target = Bukkit.getPlayer(args[0]);
 
             if(target == null) {
-                player.sendMessage("Offline");
-                MessageManagerKt.sendCustomMessage(player, "Offline");
+                MessageManagerKt.sendCustomMessage(player, "PlayerOffline");
                 return false;
             }
 

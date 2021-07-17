@@ -5,6 +5,7 @@ import com.google.common.cache.CacheBuilder
 import miyukisystem.manager.Cacheable
 import miyukisystem.manager.DataService
 import miyukisystem.manager.ManagerService
+import miyukisystem.model.TPA
 import java.util.concurrent.TimeUnit
 
 class TpaManager {
@@ -52,11 +53,5 @@ class TpaManager {
 
 
     }
-
-}
-
-data class TPA(val from: String, val to: String) : Cacheable {
-
-    override fun getKey(): String = from
 
 }

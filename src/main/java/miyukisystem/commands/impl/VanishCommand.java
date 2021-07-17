@@ -55,7 +55,7 @@ public class VanishCommand extends CommandService {
         val placeHolders = new HashMap<String, String>();
 
         if(target == null) {
-            MessageManagerKt.sendCustomMessage(player, "Offline");
+            MessageManagerKt.sendCustomMessage(player, "PlayerOffline");
             return false;
         }
 

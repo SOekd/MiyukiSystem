@@ -43,7 +43,7 @@ public class EnderChestCommand extends CommandService {
             val target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
-                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
                 return false;
             }
 

@@ -35,7 +35,6 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.20")
     implementation("com.zaxxer:HikariCP:3.4.5")
     implementation("org.slf4j:slf4j-api:1.7.25")
-//    implementation("net.wesjd:anvilgui:1.5.1-SNAPSHOT")
     implementation("io.github.bananapuncher714:nbteditor:7.17.0")
     implementation("com.github.cryptomorin:XSeries:8.2.0")
 }

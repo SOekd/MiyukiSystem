@@ -40,7 +40,7 @@ public class ActionBarCommand extends CommandService {
                 return false;
             }
 
-            MessageManagerKt.sendCustomMessage(sender, "Offline");
+            MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
             return false;
         }
 

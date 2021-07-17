@@ -1,4 +1,4 @@
-package miyukisystem.listener.impl;
+package miyukisystem.listener.impl.blockers;
 
 import miyukisystem.manager.impl.ConfigManager;
 import miyukisystem.manager.impl.PlayerManagerKt;
@@ -24,4 +24,5 @@ public class BlockFallIntoVoid implements Listener {
             }
         }
     }
+
 }

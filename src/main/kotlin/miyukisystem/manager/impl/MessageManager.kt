@@ -81,7 +81,7 @@ class MessageManager {
             // geral
             pathList.add("NoPermission")
             pathList.add("NoConsole")
-            pathList.add("Offline")
+            pathList.add("PlayerOffline")
             // alert
             pathList.add("IncorrectAlertCommand")
             pathList.add("AlertSent")
@@ -116,6 +116,8 @@ class MessageManager {
             // fly
             pathList.add("FlyActivated")
             pathList.add("FlyDisabled")
+            pathList.add("FlyTargetActivated")
+            pathList.add("FlyTargetDisabled")
             // vanish
             pathList.add("VanishLeaved")
             pathList.add("VanishJoined")
@@ -186,10 +188,13 @@ class MessageManager {
             pathList.add("GameModeTargetChanged")
             pathList.add("GameModeChanged")
             pathList.add("AlreadyGameMode")
+            pathList.add("Survival")
+            pathList.add("Creative")
+            pathList.add("Aventura")
+            pathList.add("Adventure")
             // tphere
             pathList.add("IncorrectTpHereCommand")
             pathList.add("TpHereSuccess")
-            pathList.add("GameModeNull")
             // actionbar
             pathList.add("IncorrectActionBarCommand")
             pathList.add("ActionBarSent")
@@ -199,7 +204,7 @@ class MessageManager {
             pathList.add("SoundSentTarget")
             pathList.add("SoundSent")
             // online
-            pathList.add("Online")
+            pathList.add("OnlinePlayers")
 
             return pathList
         }

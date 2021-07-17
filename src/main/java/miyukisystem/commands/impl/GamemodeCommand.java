@@ -41,13 +41,18 @@ public class GamemodeCommand extends CommandService {
             val target = Bukkit.getPlayer(args[1]);
 
             if (target == null) {
-                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
                 return false;
             }
 
             val placeHolders = new HashMap<String, String>();
-            placeHolders.put("{gamemode}", String.valueOf(gameMode));
+            placeHolders.put("{gamemode}", getName(gameMode));
             placeHolders.put("{player}", target.getName());
+
+            if (!(sender.hasPermission("miyukisystem.gamemode." + gameMode.name().toLowerCase()))) {
+                MessageManagerKt.sendCustomMessage(sender, "NoPermission");
+                return false;
+            }
 
             target.setGameMode(gameMode);
             MessageManagerKt.sendCustomMessage(sender, "GameModeTargetChanged", placeHolders);
@@ -62,46 +67,15 @@ public class GamemodeCommand extends CommandService {
 
         val player = (Player) sender;
         val placeHolders = new HashMap<String, String>();
-        placeHolders.put("{gamemode}", String.valueOf(gameMode));
+        placeHolders.put("{gamemode}", getName(gameMode));
 
-        switch (gameMode) {
-            case CREATIVE:
-                if (!(sender.hasPermission("miyukisystem.gamemode.creative"))) {
-                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
-                    return false;
-                }
-                player.setGameMode(GameMode.CREATIVE);
-                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
-                break;
-            case SURVIVAL:
-                if (!(sender.hasPermission("miyukisystem.gamemode.survival"))) {
-                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
-                    return false;
-                }
-                player.setGameMode(GameMode.SURVIVAL);
-                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
-                break;
-            case ADVENTURE:
-                if (!(sender.hasPermission("miyukisystem.gamemode.adventure"))) {
-                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
-                    return false;
-                }
-                player.setGameMode(GameMode.ADVENTURE);
-                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
-                break;
-            case SPECTATOR:
-                if (!(sender.hasPermission("miyukisystem.gamemode.spectator"))) {
-                    MessageManagerKt.sendCustomMessage(sender, "NoPermission");
-                    return false;
-                }
-                player.setGameMode(GameMode.SPECTATOR);
-                MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
-                break;
-            default:
-                MessageManagerKt.sendCustomMessage(sender, "GameModeNotFound");
-                break;
-
+        if (!(sender.hasPermission("miyukisystem.gamemode." + gameMode.name().toLowerCase()))) {
+            MessageManagerKt.sendCustomMessage(sender, "NoPermission");
+            return false;
         }
+
+        player.setGameMode(gameMode);
+        MessageManagerKt.sendCustomMessage(sender, "GameModeChanged", placeHolders);
 
         return true;
     }
@@ -118,6 +92,21 @@ public class GamemodeCommand extends CommandService {
             return GameMode.SPECTATOR;
         } else {
             return null;
+        }
+    }
+
+    private String getName(GameMode gameMode) {
+        switch (gameMode) {
+            case SURVIVAL:
+                return MessageManager.Companion.getMessage("Survival")[0];
+            case CREATIVE:
+                return MessageManager.Companion.getMessage("Creative")[0];
+            case SPECTATOR:
+                return MessageManager.Companion.getMessage("Spectator")[0];
+            case ADVENTURE:
+                return MessageManager.Companion.getMessage("Adventure")[0];
+            default:
+                return "";
         }
     }
 

@@ -42,7 +42,7 @@ public class TeleportCommand extends CommandService {
             Player target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
-                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
                 return false;
             }
 
@@ -66,14 +66,14 @@ public class TeleportCommand extends CommandService {
             Player player = Bukkit.getPlayer(args[0]);
 
             if (player == null) {
-                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
                 return false;
             }
 
             Player target = Bukkit.getPlayer(args[1]);
 
             if (target == null) {
-                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
                 return false;
             }
 
@@ -117,7 +117,7 @@ public class TeleportCommand extends CommandService {
             Player target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
-                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
                 return false;
             }
 

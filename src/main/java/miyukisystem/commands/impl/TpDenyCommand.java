@@ -61,7 +61,7 @@ public class TpDenyCommand extends CommandService {
             val target = Bukkit.getPlayer(args[0]);
 
             if(target == null) {
-                MessageManagerKt.sendCustomMessage(player, "Offline");
+                MessageManagerKt.sendCustomMessage(player, "PlayerOffline");
                 return false;
             }
 

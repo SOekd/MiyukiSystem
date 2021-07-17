@@ -23,7 +23,7 @@ public class OnlineCommand extends CommandService {
         val placeHolders = new HashMap<String, String>();
         placeHolders.put("{online}", String.valueOf(Bukkit.getOnlinePlayers().size()));
 
-        MessageManagerKt.sendCustomMessage(sender, "Online", placeHolders);
+        MessageManagerKt.sendCustomMessage(sender, "OnlinePlayers", placeHolders);
 
         return false;
     }

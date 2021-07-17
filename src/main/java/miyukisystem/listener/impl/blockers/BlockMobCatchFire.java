@@ -1,4 +1,4 @@
-package miyukisystem.listener.impl;
+package miyukisystem.listener.impl.blockers;
 
 import miyukisystem.manager.impl.ConfigManager;
 import org.bukkit.event.EventHandler;

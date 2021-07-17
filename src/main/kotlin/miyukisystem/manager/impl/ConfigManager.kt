@@ -12,7 +12,8 @@ class ConfigManager {
         val config = Config("config.yml")
         val messages = Config("messages.yml")
         val commands = Config("commands.yml")
-        val locations = Config("locations.yml")
+        val subCommands = Config("subcommands.yml")
+        val data = Config("data.yml")
 
         override fun load() {
             if (File(Main.instance.dataFolder, "ajuda.yml").exists())
@@ -21,7 +22,8 @@ class ConfigManager {
             config.saveDefaultConfig()
             messages.saveDefaultConfig()
             commands.saveDefaultConfig()
-            locations.saveDefaultConfig()
+            data.saveDefaultConfig()
+            subCommands.saveDefaultConfig()
             reload()
         }
 
@@ -29,7 +31,8 @@ class ConfigManager {
             config.reloadConfig()
             messages.reloadConfig()
             commands.reloadConfig()
-            locations.reloadConfig()
+            data.reloadConfig()
+            subCommands.reloadConfig()
         }
 
     }

@@ -33,7 +33,7 @@ public class AlertCommand extends CommandService {
         String warn = String.join(" ", args).replace('&', '§');
 
         val placeHolders = new HashMap<String, String>();
-        placeHolders.put("{alerta}", warn);
+        placeHolders.put("{alert}", warn);
 
         Bukkit.getOnlinePlayers().forEach(it -> MessageManagerKt.sendCustomMessage(it, "Alert", placeHolders));
         MessageManagerKt.sendCustomMessage(sender, "AlertSent");

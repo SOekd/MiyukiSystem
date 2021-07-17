@@ -43,7 +43,7 @@ public class HealCommand extends CommandService {
             player = Bukkit.getPlayer(args[0]);
 
             if (player == null) {
-                MessageManagerKt.sendCustomMessage(sender, "Offline");
+                MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
                 return false;
             }
 

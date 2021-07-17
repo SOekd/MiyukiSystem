@@ -2,7 +2,7 @@
 
 NoPermission: '&cVocê não tem permissão para executar este comando.'
 NoConsole: '&cSomente jogadores podem executar esse comando.'
-Offline: '&cO jogador especificado não está online.'
+PlayerOffline: '&cO jogador especificado não está online.'
 
 #
 # LISTENERS
@@ -29,7 +29,7 @@ BlockedCommand: '&cComando bloqueado por um administrador.'
 
 IncorrectAlertCommand: '&cComando incorreto. Use: /alerta <aviso>'
 AlertSent: '&aAlerta enviado para todos os jogadores.'
-Alert: '&a&lALERTA: &a{alerta}.'
+Alert: '&a&lALERTA: &a{alert}.'
 
 # Heal Command
 
@@ -198,12 +198,16 @@ GameModeNotFound: '&cModo de jogo não encontrado.'
 GameModeTargetChanged: '&aModo de jogo de {player} alterado com sucesso para {gamemode}.'
 GameModeChanged: '&aGamemode alterado com sucesso para {gamemode}.'
 AlreadyGameMode: '&cVocê já está no gamemode {gamemode}.'
+Survival: 'Sobrevivência'
+Creative: 'Criativo'
+Adventure: 'Aventura'
+Spectator: 'Espectador'
+
 
 # TpHere Command
 
 IncorrectTpHereCommand: '&cUso incorreto. Use: /tphere <player>.'
 TpHereSuccess: '&aVocê teleportou {player} até sua localização.'
-GameModeNull: '&cModo de jogo não encontrado.'
 
 # ActionBar Command
 
@@ -219,4 +223,4 @@ SoundSent: '&aSom enviado para todos os jogadores.'
 
 # Online Command
 
-Online: '&aO servidor está com &e{online} &ajogadores online.'
+OnlinePlayers: '&aO servidor está com &e{online} &ajogadores online.'
