@@ -55,10 +55,13 @@ public class TpaCommand extends CommandService {
         }
 
         val tpa = new TPA(player.getName(), target.getName());
+        val placeHolders = new HashMap<String, String>();
+        placeHolders.put("{player}", player.getName());
+        placeHolders.put("{target}", target.getName());
 
         TpaManager.Companion.set(tpa);
-        MessageManagerKt.sendCustomMessage(target, "TpaOther");
-        MessageManagerKt.sendCustomMessage(player, "TpaPlayer");
+        MessageManagerKt.sendCustomMessage(target, "TpaOther", placeHolders);
+        MessageManagerKt.sendCustomMessage(player, "TpaPlayer", placeHolders);
 
         return true;
     }

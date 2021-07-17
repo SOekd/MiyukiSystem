@@ -14,10 +14,11 @@ public class VanishNewPlayers implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         val player = e.getPlayer();
+        val plugin = Main.Companion.getInstance();
 
         Bukkit.getOnlinePlayers().forEach(it -> {
             if(it.hasMetadata("miyukisystem_vanish")) {
-                player.hidePlayer(Main.Companion.getInstance(), it);
+                player.hidePlayer(plugin, it);
             }
         });
     }

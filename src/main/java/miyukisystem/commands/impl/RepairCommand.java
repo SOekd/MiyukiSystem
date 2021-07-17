@@ -1,7 +1,6 @@
 package miyukisystem.commands.impl;
 
 import com.cryptomorin.xseries.XMaterial;
-import io.github.bananapuncher714.nbteditor.NBTEditor;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.ConfigManager;
@@ -13,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class RepairCommand extends CommandService {
 
@@ -24,6 +24,8 @@ public class RepairCommand extends CommandService {
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
+
+        val config = ConfigManager.Companion.getConfig().config;
 
         if (!(sender instanceof Player)) {
             MessageManagerKt.sendCustomMessage(sender, "NoConsole");
@@ -43,11 +45,17 @@ public class RepairCommand extends CommandService {
             return false;
         }
 
-        if (ConfigManager.Companion.getConfig().config.getStringList("RepairBlockedNBTs").stream().anyMatch(it -> NBTUtilKt.containsNBT(itemInHand, it))) {
+        if (config.getStringList("RepairBlockedNBTs").stream().anyMatch(it -> NBTUtilKt.containsNBT(itemInHand, it))) {
             MessageManagerKt.sendCustomMessage(player, "BlockedRepairItem");
             return false;
         }
 
+        val items = config.getStringList("RepairBlockedItems").stream().map(XMaterial::matchXMaterial).filter(Optional::isPresent).map(Optional::get);
+        val hand = XMaterial.matchXMaterial(itemInHand);
+        if (items.anyMatch(it -> it == hand)) {
+            MessageManagerKt.sendCustomMessage(player, "BlockedRepairItem");
+            return false;
+        }
         itemInHand.setDurability((short) 0);
         MessageManagerKt.sendCustomMessage(player, "SuccessRepair");
 

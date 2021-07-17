@@ -119,6 +119,8 @@ class MessageManager {
             // vanish
             pathList.add("VanishLeaved")
             pathList.add("VanishJoined")
+            pathList.add("VanishLeavedOther")
+            pathList.add("VanishJoinedOther")
             // ping
             pathList.add("Ping")
             pathList.add("PingTarget")
@@ -172,6 +174,8 @@ class MessageManager {
             // god
             pathList.add("DisabledGodMode")
             pathList.add("EnabledGodMode")
+            pathList.add("DisabledGodModeOther")
+            pathList.add("EnabledGodModeOther")
             // repair
             pathList.add("NoReparable")
             pathList.add("MaxDurability")
@@ -181,7 +185,7 @@ class MessageManager {
             pathList.add("GameModeNotFound")
             pathList.add("GameModeTargetChanged")
             pathList.add("GameModeChanged")
-            pathList.add("AlreadyGameMode");
+            pathList.add("AlreadyGameMode")
             // tphere
             pathList.add("IncorrectTpHereCommand")
             pathList.add("TpHereSuccess")

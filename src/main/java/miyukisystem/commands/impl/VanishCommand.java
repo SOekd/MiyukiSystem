@@ -11,6 +11,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class VanishCommand extends CommandService {
@@ -24,23 +25,52 @@ public class VanishCommand extends CommandService {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (!(sender instanceof Player)) {
-            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
-            return false;
+        val plugin = Main.Companion.getInstance();
+
+        if(args.length == 0) {
+
+            if (!(sender instanceof Player)) {
+                MessageManagerKt.sendCustomMessage(sender, "NoConsole");
+                return false;
+            }
+
+            val player = (Player) sender;
+            val players = Bukkit.getOnlinePlayers();
+
+            if(!player.hasMetadata("miyukisystem_vanish")) {
+                player.setMetadata("miyukisystem_vanish", new FixedMetadataValue(plugin, "meta"));
+                players.forEach(it -> it.hidePlayer(player));
+                MessageManagerKt.sendCustomMessage(player, "VanishJoined");
+            } else {
+                player.removeMetadata("miyukisystem_vanish", plugin);
+                players.forEach(it -> it.showPlayer(player));
+                MessageManagerKt.sendCustomMessage(player, "VanishLeaved");
+            }
+            return true;
         }
 
         val player = (Player) sender;
         val players = Bukkit.getOnlinePlayers();
+        val target = Bukkit.getPlayer(args[0]);
+        val placeHolders = new HashMap<String, String>();
 
-        if(!player.hasMetadata("miyukysystem_vanish")) {
-            player.setMetadata("miyukysystem_vanish", new FixedMetadataValue(Main.Companion.getInstance(), "meta"));
-            players.forEach(it -> it.hidePlayer(player));
-            MessageManagerKt.sendCustomMessage(player, "VanishJoined");
-        } else {
-            player.removeMetadata("miyukysystem_vanish", Main.Companion.getInstance());
-            players.forEach(it -> it.showPlayer(player));
-            MessageManagerKt.sendCustomMessage(player, "VanishLeaved");
+        if(target == null) {
+            MessageManagerKt.sendCustomMessage(player, "Offline");
+            return false;
         }
+
+        placeHolders.put("{target}", target.getName());
+
+        if(!target.hasMetadata("miyukisystem_vanish")) {
+            target.setMetadata("miyukisystem_vanish", new FixedMetadataValue(plugin, "meta"));
+            players.forEach(it -> it.hidePlayer(target));
+            MessageManagerKt.sendCustomMessage(player, "VanishJoinedOther", placeHolders);
+        } else {
+            target.removeMetadata("miyukisystem_vanish", plugin);
+            players.forEach(it -> it.showPlayer(target));
+            MessageManagerKt.sendCustomMessage(player, "VanishLeavedOther", placeHolders);
+        }
+
         return true;
     }
 

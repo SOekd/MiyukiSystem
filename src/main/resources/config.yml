@@ -61,15 +61,17 @@ TrashTitleMenu: 'Lixeiro'
 RepairBlockedNBTs: # Deixe com "[]" para não bloquear nenhum.
   - 'NBT1'
   - 'NBT2'
+RepairBlockedItems: # Deixe com "[]" para não bloquear nenhum.
+  - 'DIAMOND_PICKAXE'
 
-Motd:
-  # Motd quando está em WHITELIST (Use \n para pular linha);
+Motd: # Lembrando que se deixar vaziu ele fica o default da server.properties. (Ignora o MaxPlayers também!)
+  # Motd quando está em WHITELIST (Use \n para pular linha)
   WhitelistMotd: ''
-  # Jogadores máximos quando está em WHITELIST. (Apenas estático);
+  # Jogadores máximos quando está em WHITELIST. (Apenas estático)
   WhitelistMaxPlayers: 1
   # Motd normal (Use \n para pular linha);
   NormalMotd: ''
-  # Jogadores máximos com a motd normal. (Apenas estático);
+  # Jogadores máximos com a motd normal. (Apenas estático)
   NormalMaxPlayers: 200
 
 # Tempo para expirar o TPA (em segundos)

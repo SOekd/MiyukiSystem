@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,8 +52,12 @@ public class TpAcceptCommand extends CommandService {
 
             TpaManager.Companion.remove(target.getName());
 
-            MessageManagerKt.sendCustomMessage(target, "AcceptTpaPlayer");
-            MessageManagerKt.sendCustomMessage(player, "AcceptTpaOther");
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{target}", player.getName()); // Lembrando que aqui é o contrário.
+            placeHolders.put("{player}", target.getName());
+
+            MessageManagerKt.sendCustomMessage(target, "AcceptTpaPlayer", placeHolders);
+            MessageManagerKt.sendCustomMessage(player, "AcceptTpaOther", placeHolders);
             target.teleport(player.getLocation());
 
         } else {
@@ -77,8 +82,12 @@ public class TpAcceptCommand extends CommandService {
 
             TpaManager.Companion.remove(target.getName());
 
-            MessageManagerKt.sendCustomMessage(player, "AcceptTpaOther");
-            MessageManagerKt.sendCustomMessage(target, "AcceptTpaPlayer");
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{target}", player.getName()); // Lembrando que aqui é o contrário.
+            placeHolders.put("{player}", target.getName());
+
+            MessageManagerKt.sendCustomMessage(player, "AcceptTpaOther", placeHolders);
+            MessageManagerKt.sendCustomMessage(target, "AcceptTpaPlayer", placeHolders);
             target.teleport(player.getLocation());
 
         }

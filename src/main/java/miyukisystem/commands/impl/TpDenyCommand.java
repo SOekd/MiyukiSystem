@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,10 +47,14 @@ public class TpDenyCommand extends CommandService {
 
             TpaManager.Companion.remove(targetName);
 
-            MessageManagerKt.sendCustomMessage(player, "DenyTpaOther");
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{target}", player.getName()); // Lembrando que aqui é o contrário.
+            placeHolders.put("{player}", targetName);
+
+            MessageManagerKt.sendCustomMessage(player, "DenyTpaOther", placeHolders);
 
             if (target!= null) {
-                MessageManagerKt.sendCustomMessage(target, "DenyTpaPlayer");
+                MessageManagerKt.sendCustomMessage(target, "DenyTpaPlayer", placeHolders);
             }
         } else {
 
@@ -66,14 +71,18 @@ public class TpDenyCommand extends CommandService {
             }
 
             if (TpaManager.Companion.getAll().stream().noneMatch(it -> it.getFrom().equals(target.getName()))) {
-                player.sendMessage("nenhum jogador com este nome ai mandou tpa pra vc minha senhora");
+                MessageManagerKt.sendCustomMessage(player, "NoHaveRequests");
                 return false;
             }
 
             TpaManager.Companion.remove(target.getName());
 
-            MessageManagerKt.sendCustomMessage(player, "DenyTpaOther");
-            MessageManagerKt.sendCustomMessage(target, "DenyTpaPlayer");
+            val placeHolders = new HashMap<String, String>();
+            placeHolders.put("{target}", player.getName()); // Lembrando que aqui é o contrário.
+            placeHolders.put("{player}", target.getName());
+
+            MessageManagerKt.sendCustomMessage(player, "DenyTpaOther", placeHolders);
+            MessageManagerKt.sendCustomMessage(target, "DenyTpaPlayer", placeHolders);
 
         }
         return true;

@@ -80,7 +80,9 @@ FlyDisabled: '&cO modo voar foi desabilitado.'
 # Vanish Command
 
 VanishLeaved: '&cVocê saiu do modo vanish.'
-VanishJoined: '&aVocê entrou em modo vanish.'
+VanishJoined: '&aVocê entrou no modo vanish.'
+VanishLeavedOther: '&cO jogador {target} saiu do modo vanish.'
+VanishJoinedOther: '&aO jogador {target} entrou no modo vanish.'
 
 # Ping Command
 
@@ -110,7 +112,7 @@ BlockedRepairItem: '&cO item foi bloqueado para ser reparado.'
 MaxDurability: '&cO item está com a durabilidade máxima.'
 SuccessRepair: '&aO item foi reparado com sucesso.'
 
-# Tpa Command (matt, tu é um belo vagabundo)
+# Tpa Command
 
 IncorrectTpaCommand: '&cUso incorreto. Use: /tpa <player>.'
 TpaYourself: '&cVocê não pode enviar um pedido de tp para você mesmo.'

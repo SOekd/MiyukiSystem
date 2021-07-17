@@ -1,6 +1,8 @@
 package miyukisystem.listener.impl;
 
+import lombok.val;
 import miyukisystem.manager.impl.ConfigManager;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,14 +13,16 @@ public class Motd implements Listener {
     @EventHandler
     public void onServerListPing(ServerListPingEvent e) {
 
-        if (!ConfigManager.Companion.getConfig().config.getBoolean("MOTD")) return;
+        val config = ConfigManager.Companion.getConfig().config;
+
+        if(StringUtils.isEmpty(config.getString("Motd.WhitelistMotd")) || StringUtils.isEmpty(config.getString("Motd.NormalMotd"))) return;
 
         if (Bukkit.hasWhitelist()) {
-            e.setMotd("WhitelistMotd");
-            e.setMaxPlayers(0); // colocar um getInt para pegar dá config.
+            e.setMotd(config.getString("Motd.WhitelistMotd"));
+            e.setMaxPlayers(config.getInt("Motd.WhitelistMaxPlayers"));
         } else {
-            e.setMotd("NormalMotd");
-            e.setMaxPlayers(200); // colocar um getInt para pegar dá config.
+            e.setMotd(config.getString("Motd.NormalMotd"));
+            e.setMaxPlayers(config.getInt("Motd.NormalMaxPlayers"));
         }
     }
 }
