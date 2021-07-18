@@ -35,7 +35,7 @@ Gamemode:
 
 Teleport:
   Enabled: true
-  Command: 'teleport|tp'
+  Command: 'teleport|tp|go'
   Description: 'Comando para se teleportar.'
 
 Hat:
@@ -155,7 +155,7 @@ God:
 
 TpHere:
   Enabled: true
-  Command: 'tphere|tph'
+  Command: 'tphere|tph|puxar'
   Description: 'Comando para puxar alguém até você.'
 
 ActionBar:
@@ -172,4 +172,9 @@ Online:
   Enabled: true
   Command: 'online'
   Description: 'Comando para ver a quantidade de players online.'
+
+Whitelist:
+  Enabled: true
+  Command: 'whitelist|manutenção|manutencao'
+  Description: 'Comando para usar a manutenção.'
 

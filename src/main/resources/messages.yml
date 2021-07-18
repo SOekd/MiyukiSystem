@@ -224,3 +224,14 @@ SoundSent: '&aSom enviado para todos os jogadores.'
 # Online Command
 
 OnlinePlayers: '&aO servidor está com &e{online} &ajogadores online.'
+
+# Whitelist Command
+
+WhitelistHelp:
+  - '&c&lWHITELIST &7- &c&lCOMANDOS'
+  - ''
+  - '&c/whitelist add <player> &7- &cAdiciona alguem a whitelist.'
+  - '&c/whitelist remove <player> &7- &cRemove alguem da whitelist.'
+  - '&c/whitelist perms <player> <perm> &7- &cAdiciona ou remove uma permissão. (QUEBRAR, COMANDOS, COLOCAR)'
+  - '&c/whitelist reload &7- &cRecarrega a whitelist.'
+  - ''
