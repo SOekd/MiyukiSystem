@@ -4,10 +4,10 @@ import miyukisystem.manager.Cacheable
 import miyukisystem.manager.impl.WhitelistManager
 
 data class WhitelistPlayer(
-    val playerName: String,
-    val canBreak: Boolean = false,
-    val canPlace: Boolean = false,
-    val canExecuteCommands: Boolean = false
+    var playerName: String,
+    var canBreak: Boolean = false,
+    var canPlace: Boolean = false,
+    var canExecuteCommands: Boolean = false
 ) : Cacheable {
 
     override fun getKey(): String = playerName.toLowerCase()

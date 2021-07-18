@@ -1,3 +1,4 @@
+
 Database:
   # Modos disponíveis: HIKARICP, MYSQL e SQLITE.
   Mode: SQLITE
@@ -29,16 +30,13 @@ Database:
 TeleportSpawn: true
 
 # Tempo para expirar o TPA (em segundos)
-TpaExpire: 120
+TpaExpire: 30
 
-# Lixeiro Menu
+# Lixeiro
 
 TrashSize: 54
 TrashTitleMenu: 'Lixeiro'
 
-# Mensagem do KickAll
-KickAllMessage: '&cVocê foi expulso.'
-KickAllSuccess: '&aTodos os jogadores foram expulsos com sucesso.'
 
 # true -> bloqueado
 # false -> não bloqueado
@@ -63,19 +61,6 @@ Blockers:
   RainCancel: true
   # Cancela o player de entrar na cama.
   Sleep: true
-  # Cancela de derreter o gelo e a neve.
-  Melt: true
-  # Cancela a explosão dos itens.
-  ItemExplosion: true
-  # Cancela de entrar em portais. Se tiver true = bloqueia.
-  Portal:
-    Nether: true
-    End: true
-  # Cancela a fome. Se tiver true = não tem mais fome.
-  Feed: true
-  # Cancela a mensagem de morte.
-  DeathMessage: true
-
 
 # Reparar
 
@@ -85,7 +70,7 @@ RepairBlockedNBTs: # Deixe com "[]" para não bloquear nenhum.
 RepairBlockedItems: # Deixe com "[]" para não bloquear nenhum.
   - 'DIAMOND_PICKAXE'
 
-Motd: # Lembrando que se deixar vazio ele fica o default da server.properties. (Ignora o MaxPlayers também!)
+Motd: # Lembrando que se deixar vaziu ele fica o default da server.properties. (Ignora o MaxPlayers também!)
   # Motd quando está em WHITELIST (Use \n para pular linha)
   WhitelistMotd: ''
   # Jogadores máximos quando está em WHITELIST. (Apenas estático)

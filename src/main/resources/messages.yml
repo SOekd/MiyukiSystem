@@ -224,7 +224,3 @@ SoundSent: '&aSom enviado para todos os jogadores.'
 # Online Command
 
 OnlinePlayers: '&aO servidor está com &e{online} &ajogadores online.'
-
-# Sudo Command
-
-IncorrectSudoCommand: '&cUso incorreto. Use: /sudo <player> <comando>.'
