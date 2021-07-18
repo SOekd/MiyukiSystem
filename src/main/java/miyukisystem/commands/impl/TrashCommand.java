@@ -1,5 +1,6 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.Main;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
@@ -26,10 +27,10 @@ public class TrashCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
+        val player = (Player) sender;
 
-        String titleMenu = Main.instance.getConfig().getString("TrashTitleMenu");
-        int sizeMenu = Main.instance.getConfig().getInt("TrashSize");
+        val titleMenu = Main.instance.getConfig().getString("TrashTitleMenu");
+        val sizeMenu = Main.instance.getConfig().getInt("TrashSize");
 
         Inventory trash = Bukkit.createInventory(null, sizeMenu, titleMenu);
 

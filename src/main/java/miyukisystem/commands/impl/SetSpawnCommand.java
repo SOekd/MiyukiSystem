@@ -1,8 +1,11 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.ConfigManager;
+import miyukisystem.manager.impl.LocationManager;
 import miyukisystem.manager.impl.MessageManagerKt;
+import miyukisystem.model.CachedLocation;
 import miyukisystem.util.LocationUtilKt;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
@@ -27,13 +30,10 @@ public class SetSpawnCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
+        val player = (Player) sender;
 
-        Location spawn = player.getLocation();
-        YamlConfiguration config = ConfigManager.Companion.getLocations().config;
-        config.set("Spawn", LocationUtilKt.toCustomString(spawn));
-        ConfigManager.Companion.getLocations().saveConfig();
-
+        val spawn = player.getLocation();
+        LocationManager.Companion.set(new CachedLocation("Spawn", spawn));
         MessageManagerKt.sendCustomMessage(player, "SettedSpawnSuccess");
 
         return false;

@@ -52,16 +52,16 @@ public class VanishCommand extends CommandService {
         val player = (Player) sender;
         val players = Bukkit.getOnlinePlayers();
         val target = Bukkit.getPlayer(args[0]);
-        val placeHolders = new HashMap<String, String>();
 
         if(target == null) {
             MessageManagerKt.sendCustomMessage(player, "PlayerOffline");
             return false;
         }
 
+        val placeHolders = new HashMap<String, String>();
         placeHolders.put("{target}", target.getName());
 
-        if(!target.hasMetadata("miyukisystem_vanish")) {
+        if (!target.hasMetadata("miyukisystem_vanish")) {
             target.setMetadata("miyukisystem_vanish", new FixedMetadataValue(plugin, "meta"));
             players.forEach(it -> it.hidePlayer(target));
             MessageManagerKt.sendCustomMessage(player, "VanishJoinedOther", placeHolders);

@@ -3,7 +3,6 @@ package miyukisystem.commands.impl;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
-import miyukisystem.manager.impl.TPA;
 import miyukisystem.manager.impl.TpaManager;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
@@ -31,7 +30,7 @@ public class TpAcceptCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
+        val player = (Player) sender;
 
         if (args.length < 1) {
 
@@ -64,17 +63,17 @@ public class TpAcceptCommand extends CommandService {
 
             Player target = Bukkit.getPlayer(args[0]);
 
-            if(target == null) {
+            if (target == null) {
                 MessageManagerKt.sendCustomMessage(player, "PlayerOffline");
                 return false;
             }
 
-            if(target.equals(player)) {
+            if (target.equals(player)) {
                 MessageManagerKt.sendCustomMessage(player, "TpAcceptYourself");
                 return false;
             }
 
-            if(!TpaManager.Companion.has(target.getName())) {
+            if (!TpaManager.Companion.has(target.getName())) {
                 MessageManagerKt.sendCustomMessage(player, "NoHaveRequests");
                 return false;
             }
@@ -98,7 +97,8 @@ public class TpAcceptCommand extends CommandService {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
         val player = sender instanceof Player ? (Player) sender : null;
-        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.tpaccept")) return Collections.emptyList();
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.tpaccept"))
+            return Collections.emptyList();
         val lastWord = args[args.length - 1];
         return Bukkit.getOnlinePlayers().stream()
                 .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))

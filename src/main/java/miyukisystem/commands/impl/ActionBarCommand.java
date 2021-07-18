@@ -50,7 +50,6 @@ public class ActionBarCommand extends CommandService {
         return false;
     }
 
-    // colocar tabcomplete
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {

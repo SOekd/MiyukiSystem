@@ -3,32 +3,40 @@ package miyukisystem.commands.impl;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
 
-public class WorkbenchCommand extends CommandService {
+public class SudoCommand extends CommandService {
 
-    public WorkbenchCommand() {
-        super("Workbench", "miyukisystem.workbench", false);
+    public SudoCommand() {
+        super("Sudo", "miyukisystem.sudo", false);
     }
 
-    // Comando 100% feito.
+
+    // arrumar (nao t funfando obviamente)
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (!(sender instanceof Player)) {
-            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
+        if (args.length < 2) {
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectSudoCommand");
             return false;
         }
 
-        val player = (Player) sender;
-        player.closeInventory();
-        player.openWorkbench(player.getLocation(), true);
+        val target = Bukkit.getPlayer(args[0]);
+
+        if (target == null) {
+            MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
+            return false;
+        }
+
+        val message = String.join(" ", args);
+        Bukkit.dispatchCommand(target, message);
+
         return false;
     }
 

@@ -21,7 +21,7 @@ public class SpeedCommand extends CommandService {
 
         if (!(sender instanceof Player) && args.length != 2) {
             MessageManagerKt.sendCustomMessage(sender, "NoConsole");
-            return false; // pro console, /speed SOekd 2;
+            return false;
         }
 
         return false;

@@ -50,6 +50,8 @@
 # miyukisystem.executesound -> permissão para usar o comando /executesound
 # miyukisystem.online -> permissão para usar o comando /online.
 
+# miyukisystem.kickall -> permissão para usar o comando /kickall
+
 # ------------------------------------------------------------------------------------------------
 
 # Gerais

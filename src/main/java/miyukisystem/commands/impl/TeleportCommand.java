@@ -31,7 +31,6 @@ public class TeleportCommand extends CommandService {
             return false;
         }
 
-        // Argumento 1 = quer teleportar para algum player.
         if (args.length == 1) {
 
             if (!(sender instanceof Player)) {
@@ -60,7 +59,6 @@ public class TeleportCommand extends CommandService {
             return false;
         }
 
-        // se o argumento é 2, ele quer teleportar um player até outro player.
         if (args.length == 2) {
 
             Player player = Bukkit.getPlayer(args[0]);
@@ -88,7 +86,6 @@ public class TeleportCommand extends CommandService {
 
         double x, y, z;
 
-        // se o args é 3 ele quer teleportar ate uma coord
         if (args.length == 3) {
 
             if (!(sender instanceof Player)) {
@@ -111,7 +108,6 @@ public class TeleportCommand extends CommandService {
             MessageManagerKt.sendCustomMessage(player, "TeleportedSuccessWithCoords");
         }
 
-        // se é 4, ele quer teleportar um player até uma coordenada.
         if (args.length == 4) {
 
             Player target = Bukkit.getPlayer(args[0]);

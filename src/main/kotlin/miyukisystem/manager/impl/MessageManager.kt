@@ -94,7 +94,6 @@ class MessageManager {
             // flashlight
             pathList.add("FlashLightActivated")
             pathList.add("FlashLightDisabled")
-            // gamemode
             // hat
             pathList.add("HatPlaced")
             pathList.add("InvalidHat")
@@ -190,8 +189,8 @@ class MessageManager {
             pathList.add("AlreadyGameMode")
             pathList.add("Survival")
             pathList.add("Creative")
-            pathList.add("Aventura")
             pathList.add("Adventure")
+            pathList.add("Spectator")
             // tphere
             pathList.add("IncorrectTpHereCommand")
             pathList.add("TpHereSuccess")
@@ -205,6 +204,8 @@ class MessageManager {
             pathList.add("SoundSent")
             // online
             pathList.add("OnlinePlayers")
+            // sudo
+            pathList.add("IncorrectSudoCommand")
 
             return pathList
         }
