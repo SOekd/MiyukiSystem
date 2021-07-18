@@ -173,3 +173,12 @@ Online:
   Command: 'online'
   Description: 'Comando para ver a quantidade de players online.'
 
+KickAll:
+  Enabled: true
+  Command: 'kickall'
+  Description: 'Comando para expulsar todos do servidor.'
+
+Sudo:
+  Enabled: true
+  Command: 'sudo'
+  Description: 'Comando para enviar comandos pelo player.'

@@ -61,6 +61,18 @@ Blockers:
   RainCancel: true
   # Cancela o player de entrar na cama.
   Sleep: true
+  # Cancela de derreter o gelo e a neve.
+  Melt: true
+  # Cancela a explosão dos itens.
+  ItemExplosion: true
+  # Cancela de entrar em portais. Se tiver true = bloqueia.
+  Portal:
+    Nether: true
+    End: true
+  # Cancela a fome. Se tiver true = não tem mais fome.
+  Feed: true
+  # Cancela a mensagem de morte.
+  DeathMessage: true
 
 # Reparar
 
