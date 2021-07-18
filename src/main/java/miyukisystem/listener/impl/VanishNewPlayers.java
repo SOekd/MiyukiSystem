@@ -16,7 +16,7 @@ public class VanishNewPlayers implements Listener {
         val player = e.getPlayer();
 
         Bukkit.getOnlinePlayers().forEach(it -> {
-            if(it.hasMetadata("miyukisystem_vanish")) {
+            if(!it.hasPermission("miyukisystem.bypass.vanish") && it.hasMetadata("miyukisystem_vanish")) {
                 player.hidePlayer(it);
             }
         });

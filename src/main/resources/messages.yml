@@ -86,8 +86,8 @@ VanishJoinedOther: '&aO jogador {target} entrou no modo vanish.'
 
 # Ping Command
 
-Ping: '&aO seu ping é de: &e{ping}ms&a.'
-PingTarget: '&aO ping de &e{player} &aé de: &e{ping}ms.'
+Ping: '&aO seu ping é de {ping}ms.'
+PingTarget: '&aO ping de {player} é de {ping}ms.'
 
 # Trash Command
 
@@ -154,7 +154,6 @@ DenyTpaPlayer: # Mensagem enviada para quem enviou o pedido.
 
 # Spawn Command
 
-IncorrectSpawnCommand: '&cUso incorreto. Use: /spawn.'
 IncorrectSpawnAdminCommand: '&cUso incorreto. Use: /spawn <player>.'
 TeleportedSpawnSuccess: '&aVocê foi teleportado para o spawn com sucesso.'
 SentToSpawn: '&aVocê enviou o player {player} pro spawn.'
@@ -166,7 +165,6 @@ SettedSpawnSuccess: '&aO spawn foi setado em sua localização com sucesso.'
 
 # Clear Command
 
-IncorrectClearCommand: '&cUso incorreto. Use: /clear.'
 AlreadyTargetCleared: '&cO inventário de {player} já está limpo.'
 TargetCleared: '&aVocê limpou o inventário de {player} com sucesso.'
 Cleared: '&aO seu inventário foi limpo com sucesso.'
@@ -176,10 +174,6 @@ AlreadyCleared: '&cO seu inventário já está limpo.'
 
 IncorrectTitleCommand: '&cUso incorreto. Use: /title msg <nl> msg.'
 TitleSent: '&aO seu title foi enviado.'
-
-# Anvil Command
-
-IncorrectAnvilCommand: '&cUso incorreto. Use: /anvil.'
 
 # Speed Command
 
@@ -203,7 +197,6 @@ Creative: 'Criativo'
 Adventure: 'Aventura'
 Spectator: 'Espectador'
 
-
 # TpHere Command
 
 IncorrectTpHereCommand: '&cUso incorreto. Use: /tphere <player>.'
@@ -224,3 +217,36 @@ SoundSent: '&aSom enviado para todos os jogadores.'
 # Online Command
 
 OnlinePlayers: '&aO servidor está com &e{online} &ajogadores online.'
+
+# Whitelist Command
+
+WhitelistHelp:
+  - '&c&lWHITELIST &7- &c&lCOMANDOS'
+  - ''
+  - '&c/whitelist true &7- &cLiga a whitelist. (Não expulsa jogadores)'
+  - '&c/whitelist false &7- &cDesliga a whitelist.'
+  - '&c/whitelist add <player> &7- &cAdiciona alguem a whitelist.'
+  - '&c/whitelist remove <player> &7- &cRemove alguem da whitelist.'
+  - '&c/whitelist perms <player> <perm> &7- &cAdiciona ou remove uma permissão. (QUEBRAR, COMANDOS, COLOCAR)'
+  - '&c/whitelist reload &7- &cRecarrega a whitelist.'
+  - ''
+IncorrectWhitelistAddSubCommand: '&cUso incorreto. Use: /whitelist add <player>.'
+IncorrectWhitelistRemoveSubCommand: '&cUso incorreto. Use: /whitelist remove <player>.'
+IncorrectWhitelistPermissionSubCommand: '&cUso incorreto. Use: /whitelist perms <player> <perm>. (QUEBRAR, COMANDOS, COLOCAR)'
+WhitelistAlreadyTrue: '&cA whitelist já está ligada.'
+WhitelistAlreadyFalse: '&cA whitelist já está desligada.'
+WhitelistTrue: '&aA whitelist foi ligada.'
+WhitelistFalse: '&cA whitelist foi desligada.'
+PlayerNotOnTheWhitelist: '&cO jogador não está na whitelist.'
+PlayerAlreadyOnTheWhitelist: '&cO jogador já está na whitelist.'
+RemovedThePlayerFromTheWhitelist: '&cRemovido o jogador da whitelist.'
+WhitelistReloaded: '&aA whitelist foi recarregada.'
+WhitelistPermissionCanBreakFalse: '&cAgora o jogador não pode mais quebrar blocos na whitelist.'
+WhitelistPermissionCanBreakTrue: '&aAgora o jogador pode quebrar blocos na whitelist.'
+WhitelistPermissionCanPlaceFalse: '&cAgora o jogador não pode mais colocar blocos na whitelist.'
+WhitelistPermissionCanPlaceTrue: '&aAgora o jogador pode colocar blocos na whitelist.'
+WhitelistPermissionExecuteCommandsFalse: '&cAgora o jogador não pode executar comandos na whitelist.'
+WhitelistPermissionExecuteCommandsTrue: '&aAgora o jogador pode executar comandos na whitelist.'
+WhitelistOnKick:
+  - '&c&lMANUTENÇÃO'
+  - '&cA manutenção está ativada.'

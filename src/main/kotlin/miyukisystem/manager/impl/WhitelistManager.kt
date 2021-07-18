@@ -46,6 +46,13 @@ class WhitelistManager {
             return config.getConfigurationSection("Whitelist")!!.getKeys(false).map { get(it) }
         }
 
+        fun getState(): Boolean = config.getBoolean("WhitelistState")
+
+        fun setState(state: Boolean) {
+            config.set("WhitelistState", state)
+            save()
+        }
+
         private fun save() {
             ConfigManager.data.saveConfig()
         }

@@ -2,10 +2,7 @@ package miyukisystem.commands.impl;
 
 import miyukisystem.commands.CommandService;
 import miyukisystem.commands.SubCommand;
-import miyukisystem.commands.impl.subcommands.WhitelistAddSubCommand;
-import miyukisystem.commands.impl.subcommands.WhitelistPermissionSubCommand;
-import miyukisystem.commands.impl.subcommands.WhitelistReloadSubCommand;
-import miyukisystem.commands.impl.subcommands.WhitelistRemoveSubCommand;
+import miyukisystem.commands.impl.subcommands.*;
 import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +21,8 @@ public class WhitelistCommand extends CommandService {
         subCommands.add(new WhitelistRemoveSubCommand());
         subCommands.add(new WhitelistPermissionSubCommand());
         subCommands.add(new WhitelistReloadSubCommand());
+        subCommands.add(new WhitelistTrueSubCommand());
+        subCommands.add(new WhitelistFalseSubCommand());
     }
 
     @Override
@@ -33,7 +32,7 @@ public class WhitelistCommand extends CommandService {
             for(SubCommand subCommand : subCommands) {
                 List<String> aliases = subCommand.getAliases();
                 if(aliases.contains(args[0].toLowerCase())) {
-                    subCommand.execute(sender, args);
+                    return subCommand.execute(sender, args);
                 }
             }
         }

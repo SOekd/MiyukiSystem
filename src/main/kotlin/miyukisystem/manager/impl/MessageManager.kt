@@ -151,16 +151,12 @@ class MessageManager {
             pathList.add("DenyTpaOther")
             pathList.add("DenyTpaPlayer")
             pathList.add("TpDenyYourself")
-            // Spawn
-            pathList.add("IncorrectSpawnCommand")
             pathList.add("IncorrectSpawnAdminCommand")
             pathList.add("TeleportedSpawnSuccess")
             pathList.add("SentToSpawn")
             pathList.add("ForcedTeleportSpawn")
             // SetSpawn
             pathList.add("SettedSpawnSuccess")
-            // Clear
-            pathList.add("IncorrectClearCommand")
             pathList.add("AlreadyTargetCleared")
             pathList.add("TargetCleared")
             pathList.add("Cleared")
@@ -168,8 +164,6 @@ class MessageManager {
             // title
             pathList.add("IncorrectTitleCommand")
             pathList.add("TitleSent")
-            // anvil
-            pathList.add("IncorrectAnvilCommand")
             // speed
             pathList.add("IncorrectSpeedCommand")
             // god
@@ -206,6 +200,26 @@ class MessageManager {
             pathList.add("OnlinePlayers")
             // sudo
             pathList.add("IncorrectSudoCommand")
+            // whitelist
+            pathList.add("WhitelistHelp")
+            pathList.add("IncorrectWhitelistAddSubCommand")
+            pathList.add("IncorrectWhitelistRemoveSubCommand")
+            pathList.add("IncorrectWhitelistPermissionSubCommand")
+            pathList.add("WhitelistAlreadyTrue")
+            pathList.add("WhitelistAlreadyFalse")
+            pathList.add("WhitelistTrue")
+            pathList.add("WhitelistFalse")
+            pathList.add("PlayerNotOnTheWhitelist")
+            pathList.add("PlayerAlreadyOnTheWhitelist")
+            pathList.add("RemovedThePlayerFromTheWhitelist")
+            pathList.add("WhitelistReloaded")
+            pathList.add("WhitelistPermissionCanBreakFalse")
+            pathList.add("WhitelistPermissionCanBreakTrue")
+            pathList.add("WhitelistPermissionCanPlaceFalse")
+            pathList.add("WhitelistPermissionCanPlaceTrue")
+            pathList.add("WhitelistPermissionExecuteCommandsFalse")
+            pathList.add("WhitelistPermissionExecuteCommandsTrue")
+            pathList.add("WhitelistOnKick")
 
             return pathList
         }

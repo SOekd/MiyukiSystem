@@ -22,7 +22,7 @@ public class WhitelistRemoveSubCommand extends SubCommand {
         }
 
         if(!WhitelistManager.Companion.has(args[0])) {
-            MessageManagerKt.sendCustomMessage(sender, "IsNotInWhitelist");
+            MessageManagerKt.sendCustomMessage(sender, "PlayerNotOnTheWhitelist");
             return false;
         }
 
@@ -30,7 +30,7 @@ public class WhitelistRemoveSubCommand extends SubCommand {
         val targetName = target.getPlayerName();
 
         WhitelistManager.Companion.remove(targetName);
-        MessageManagerKt.sendCustomMessage(sender, "RemovedPlayerOnWhitelist");
+        MessageManagerKt.sendCustomMessage(sender, "RemovedThePlayerFromTheWhitelist");
 
         return true;
     }

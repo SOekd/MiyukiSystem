@@ -1,4 +1,18 @@
-
-Exemplo:
+WhitelistTrue:
   Enabled: true
-  Aliases: 'asd|asd|asd|asd'
+  Aliases: 'true|ligar|on'
+WhitelistFalse:
+  Enabled: true
+  Aliases: 'false|desligar|off'
+WhitelistAdd:
+  Enabled: true
+  Aliases: 'add|adicionar'
+WhitelistRemove:
+  Enabled: true
+  Aliases: 'remove|remover'
+WhitelistPermission:
+  Enabled: true
+  Aliases: 'permission|permissions|permissões|permissão|permissao|permissoes|perm|perms'
+WhitelistReload:
+  Enabled: true
+  Aliases: 'reload|recarregar' 

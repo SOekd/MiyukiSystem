@@ -17,19 +17,18 @@ public class WhitelistPermissionSubCommand extends SubCommand {
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args, @NotNull String command) {
 
         if(args.length < 3) {
-            MessageManagerKt.sendCustomMessage(sender, "IncorrectWhitelistRemoveSubCommand");
+            MessageManagerKt.sendCustomMessage(sender, "IncorrectWhitelistPermissionSubCommand");
             return false;
         }
 
         val manager = WhitelistManager.Companion;
 
         if(!manager.has(args[0])) {
-            MessageManagerKt.sendCustomMessage(sender, "IsNotInWhitelist");
+            MessageManagerKt.sendCustomMessage(sender, "PlayerNotOnTheWhitelist");
             return false;
         }
 
         val target = manager.get(args[0]);
-        val targetName = target.getPlayerName();
 
         switch (args[1]) {
             case "break":
@@ -38,9 +37,10 @@ public class WhitelistPermissionSubCommand extends SubCommand {
             case "quebrarblocos":
                 if(target.getCanBreak()) {
                     target.setCanBreak(false);
-                    // mensagem que adicionou como false o break
+                    MessageManagerKt.sendCustomMessage(sender, "WhitelistPermissionCanBreakFalse");
                 } else {
                     target.setCanBreak(true);
+                    MessageManagerKt.sendCustomMessage(sender, "WhitelistPermissionCanBreakTrue");
                 }
                 break;
             case "comandos":
@@ -49,9 +49,10 @@ public class WhitelistPermissionSubCommand extends SubCommand {
             case "commands":
                 if(target.getCanExecuteCommands()) {
                     target.setCanExecuteCommands(false);
-                    // mensagem que adicionou como false o executecommands
+                    MessageManagerKt.sendCustomMessage(sender, "WhitelistPermissionExecuteCommandsFalse");
                 } else {
                     target.setCanExecuteCommands(true);
+                    MessageManagerKt.sendCustomMessage(sender, "WhitelistPermissionExecuteCommandsTrue");
                 }
                 break;
             case "placeblocks":
@@ -60,9 +61,10 @@ public class WhitelistPermissionSubCommand extends SubCommand {
             case "place":
                 if(target.getCanPlace()) {
                     target.setCanPlace(false);
-                    // mensagem que adicionou como false o place
+                    MessageManagerKt.sendCustomMessage(sender, "WhitelistPermissionCanPlaceFalse");
                 } else {
                     target.setCanPlace(true);
+                    MessageManagerKt.sendCustomMessage(sender, "WhitelistPermissionCanPlaceTrue");
                 }
                 break;
         }

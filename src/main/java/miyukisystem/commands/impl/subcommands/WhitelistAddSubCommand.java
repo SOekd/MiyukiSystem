@@ -18,6 +18,8 @@ public class WhitelistAddSubCommand extends SubCommand {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args, @NotNull String command) {
 
+        val manager = WhitelistManager.Companion;
+
         if(args.length < 1) {
             MessageManagerKt.sendCustomMessage(sender, "IncorrectWhitelistAddSubCommand");
             return false;
@@ -30,10 +32,15 @@ public class WhitelistAddSubCommand extends SubCommand {
             return false;
         }
 
+        if(manager.has(target.getName())) {
+            MessageManagerKt.sendCustomMessage(sender, "PlayerAlreadyOnTheWhitelist");
+            return false;
+        }
+
         WhitelistPlayer whitelistPlayer = new WhitelistPlayer("target", false, false, false);
         whitelistPlayer.save();
-        WhitelistManager.Companion.set(whitelistPlayer);
-        MessageManagerKt.sendCustomMessage(sender, "AddedPlayerOnWhitelist");
+        manager.set(whitelistPlayer);
+        MessageManagerKt.sendCustomMessage(sender, "AddedThePlayerFromTheWhitelist");
 
         return true;
     }

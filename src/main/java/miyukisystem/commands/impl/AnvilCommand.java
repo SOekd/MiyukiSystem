@@ -29,7 +29,6 @@ public class AnvilCommand extends CommandService {
         }
         val player = (Player) sender;
 
-
         WRAPPER.handleInventoryCloseEvent(player);
         WRAPPER.setActiveContainerDefault(player);
 

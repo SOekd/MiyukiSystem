@@ -1,3 +1,11 @@
+#
+# Lista de materiais: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+#
+# true -> sim
+# false -> não
+#
+# Para pesquisar, veja aqui na lista abaixo os bloqueadores e de um CTRL+F para pesquisar.
+# Exemplo: CTRL + F, LeavesDecay
 
 Database:
   # Modos disponíveis: HIKARICP, MYSQL e SQLITE.
@@ -36,13 +44,6 @@ TpaExpire: 30
 
 TrashSize: 54
 TrashTitleMenu: 'Lixeiro'
-
-
-# true -> bloqueado
-# false -> não bloqueado
-
-# Para pesquisar, veja aqui na lista abaixo os bloqueadores e de um CTRL+F para pesquisar.
-# Exemplo: CTRL + F, LeavesDecay
 
 Blockers:
   # Bloqueia de transformar a água em gelo.
@@ -100,8 +101,6 @@ BlockedCommands: # Use "/".
   - '/teste1'
   - '/teste2'
 
-# Lista de materiais 1.8: https://helpch.at/docs/1.8/org/bukkit/Material.html
-# Lista de materiais 1.12:
 BlockedCrafts:
 
 

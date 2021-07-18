@@ -39,7 +39,10 @@ public class VanishCommand extends CommandService {
 
             if(!player.hasMetadata("miyukisystem_vanish")) {
                 player.setMetadata("miyukisystem_vanish", new FixedMetadataValue(plugin, "meta"));
-                players.forEach(it -> it.hidePlayer(player));
+                players.forEach(it -> {
+                    if(!it.hasPermission("miyukisystem.bypass.vanish"))
+                    it.hidePlayer(player);
+                });
                 MessageManagerKt.sendCustomMessage(player, "VanishJoined");
             } else {
                 player.removeMetadata("miyukisystem_vanish", plugin);
