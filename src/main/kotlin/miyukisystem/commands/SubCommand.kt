@@ -13,7 +13,6 @@ abstract class SubCommand(val name: String) {
 
         aliases = section.getString("Aliases")!!.split("|")
         enabled = section.getBoolean("Enabled")
-
     }
 
     fun execute(sender: CommandSender, args: Array<String>): Boolean {

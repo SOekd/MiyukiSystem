@@ -1,4 +1,4 @@
-package miyukisystem.commands.impl.subcommands;
+package miyukisystem.commands.impl.subcommands.whitelist;
 
 import miyukisystem.commands.SubCommand;
 import miyukisystem.manager.impl.MessageManagerKt;

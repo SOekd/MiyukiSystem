@@ -187,3 +187,34 @@ Whitelist:
   Enabled: true
   Command: 'whitelist|manutenção|manutencao'
   Description: 'Comando para usar a manutenção.'
+
+EnchantingTable:
+  # Funciona somente nas versões mais recentes do minecraft.
+  Enabled: false
+  Command: 'enchantingtable|enchanting|enchanttable'
+  Description: 'Abrir a mesa de encantamentos virtual.'
+
+Stonecutter:
+  Enabled: true
+  Command: 'stonecutter'
+  Description: 'Abrir o stonecutter virtual.'
+
+CartographyTable:
+  Enabled: true
+  Command: 'cartographytable'
+  Description: 'Abrir a cartography table virtual.'
+
+Grindstone:
+  Enabled: true
+  Command: 'grindstone'
+  Description: 'Abrir o grindstone virtual.'
+
+Loom:
+  Enabled: true
+  Command: 'loom'
+  Description: 'Abrir o grindstone virtual.'
+
+SmithingTable:
+  Enabled: true
+  Command: 'smithingtable'
+  Description: 'Abrir a smithing table virtual.'
