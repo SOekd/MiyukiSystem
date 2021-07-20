@@ -223,6 +223,8 @@ class MessageManager {
             // checkip
             pathList.add("IncorrectCheckIPCommand")
             pathList.add("CheckingIP")
+            // colors
+            pathList.add("Colors")
 
             return pathList
         }

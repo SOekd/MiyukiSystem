@@ -1,7 +1,6 @@
 package miyukisystem.listener.impl;
 
 import lombok.val;
-import miyukisystem.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

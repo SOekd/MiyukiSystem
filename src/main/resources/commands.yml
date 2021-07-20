@@ -223,3 +223,8 @@ CheckIP:
   Enabled: true
   Command: 'checkip'
   Description: 'Checar o ip de algum jogador.'
+
+Colors:
+  Enabled: true
+  Command: 'colors|color|cores|cor'
+  Description: 'Veja os códigos de cores existentes.'

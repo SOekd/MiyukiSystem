@@ -259,3 +259,28 @@ WhitelistOnKick:
 
 IncorrectCheckIPCommand: '&cUso incorreto. Use: /checkip <player>.'
 CheckingIP: '&cIP de {player}: &e{ip}.'
+
+# Colors Command
+
+Colors:
+  - '&0C&1ó&2d&3i&4g&5o &6d&7e &8C&9o&ar&be&cs'
+  - ''
+  - '&0&&00 &7- &0Preto'
+  - '&1&&11 &7- &1Azul Escuro'
+  - '&2&&22 &7- &2Verde Escuro'
+  - '&3&&33 &7- &3Turquesa Escuro'
+  - '&4&&44 &7- &4Vermelho Escuro'
+  - '&5&&55 &7- &5Roxo'
+  - '&6&&66 &7- &6Amarelo Escuro/Laranja'
+  - '&7&&77 &7- &7Cinza Claro'
+  - '&8&&88 &7- &8Cinza Escuro'
+  - '&9&&99 &7- &9Azul Claro'
+  - '&a&&aa &7- &aVerde Claro'
+  - '&b&&bb &7- &bTurquesa Claro'
+  - '&c&&cc &7- &cVermelho Claro'
+  - '&d&&dd &7- &dMagenta'
+  - '&e&&ee &7- &eAmarelo Claro'
+  - '&f&&ff &7- &fBranco'
+  - ''
+  - '&aOBS: Na 1.16+ você pode usar HEX: https://htmlcolorcodes.com/'
+  - ''

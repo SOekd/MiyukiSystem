@@ -5,11 +5,9 @@ import miyukisystem.commands.SubCommand;
 import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.WhitelistManager;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class WhitelistPermissionSubCommand extends SubCommand {
@@ -94,7 +92,7 @@ public class WhitelistPermissionSubCommand extends SubCommand {
 
         }
 
-        // manda o help aq kroxy
+        MessageManagerKt.sendCustomMessage(sender, "WhitelistHelp");
 
         return true;
     }

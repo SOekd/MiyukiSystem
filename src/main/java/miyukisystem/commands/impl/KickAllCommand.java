@@ -3,7 +3,6 @@ package miyukisystem.commands.impl;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.ConfigManager;
-import miyukisystem.manager.impl.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
