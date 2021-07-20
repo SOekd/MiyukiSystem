@@ -218,3 +218,8 @@ SmithingTable:
   Enabled: true
   Command: 'smithingtable'
   Description: 'Abrir a smithing table virtual.'
+
+CheckIP:
+  Enabled: true
+  Command: 'checkip'
+  Description: 'Checar o ip de algum jogador.'

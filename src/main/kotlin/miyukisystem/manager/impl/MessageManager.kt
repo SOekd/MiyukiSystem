@@ -220,6 +220,9 @@ class MessageManager {
             pathList.add("WhitelistPermissionExecuteCommandsFalse")
             pathList.add("WhitelistPermissionExecuteCommandsTrue")
             pathList.add("WhitelistOnKick")
+            // checkip
+            pathList.add("IncorrectCheckIPCommand")
+            pathList.add("CheckingIP")
 
             return pathList
         }

@@ -218,6 +218,10 @@ SoundSent: '&aSom enviado para todos os jogadores.'
 
 OnlinePlayers: '&aO servidor está com &e{online} &ajogadores online.'
 
+# Sudo Command
+
+IncorrectSudoCommand: '&cUso incorreto. Use: /sudo <player> <comando>.'
+
 # Whitelist Command
 
 WhitelistHelp:
@@ -250,3 +254,8 @@ WhitelistPermissionExecuteCommandsTrue: '&aAgora o jogador pode executar comando
 WhitelistOnKick:
   - '&c&lMANUTENÇÃO'
   - '&cA manutenção está ativada.'
+
+# CheckIP Command
+
+IncorrectCheckIPCommand: '&cUso incorreto. Use: /checkip <player>.'
+CheckingIP: '&cIP de {player}: &e{ip}.'
