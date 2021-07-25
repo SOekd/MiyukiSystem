@@ -19,15 +19,15 @@ class ConfigManager {
             if (File(Main.instance.dataFolder, "ajuda.yml").exists())
                 Main.instance.saveResource("ajuda.yml", false)
 
+        }
+
+        override fun reload() {
             config.saveDefaultConfig()
             messages.saveDefaultConfig()
             commands.saveDefaultConfig()
             data.saveDefaultConfig()
             subCommands.saveDefaultConfig()
-            reload()
-        }
 
-        override fun reload() {
             config.reloadConfig()
             messages.reloadConfig()
             commands.reloadConfig()

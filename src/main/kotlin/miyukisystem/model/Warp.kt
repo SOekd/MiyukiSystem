@@ -9,9 +9,10 @@ import org.bukkit.entity.Player
 class Warp(
     val name: String,
     var location: Location,
-    private val title: Pair<String, String>?,
-    private val actionBar: String?,
-    private val message: Array<String>
+    var permission: String,
+    val title: Pair<String, String>?,
+    val actionBar: String?,
+    val message: Array<String>
 ) : Cacheable {
 
     fun teleport(player: Player) {

@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder
 import miyukisystem.Main
 import miyukisystem.manager.ManagerService
 import miyukisystem.model.User
+import miyukisystem.sendToConsole
 import miyukisystem.util.JsonFile
 import net.md_5.bungee.api.chat.BaseComponent
 import net.md_5.bungee.api.chat.TextComponent
@@ -266,13 +267,11 @@ class MessageManager {
                     config.isList(path) ->
                         messages.put(path, config.getStringList(path).map { it.translateColorCodes() }.toTypedArray())
                     else -> {
-                        Bukkit.getConsoleSender()
-                            .sendMessage("§9§lMiyukiSystem  §cNao foi possivel encontrar a mensagem com o PATH: §7$path§c.")
+                        "§9§lMiyukiSystem  §cNao foi possivel encontrar a mensagem com o PATH: §7$path§c.".sendToConsole()
                     }
                 }
             }
-            Bukkit.getConsoleSender()
-                .sendMessage("§9§lMiyukiSystem  §aTodas as mensagens foram carregadas com sucesso.")
+            "§9§lMiyukiSystem  §aForam carregadas ${getPathList().size} mensagens com sucesso.".sendToConsole()
         }
 
         fun getMessage(path: String): Array<String> {

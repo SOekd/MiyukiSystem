@@ -10,7 +10,7 @@ data class WhitelistPlayer(
     var canExecuteCommands: Boolean = false
 ) : Cacheable {
 
-    override fun getKey(): String = playerName.toLowerCase()
+    override fun getKey(): String = playerName.lowercase()
 
     fun save() {
         WhitelistManager.set(this)

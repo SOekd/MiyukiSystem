@@ -2,7 +2,6 @@ package miyukisystem.manager.impl
 
 import com.google.common.cache.Cache
 import com.google.common.cache.CacheBuilder
-import miyukisystem.manager.Cacheable
 import miyukisystem.manager.DataService
 import miyukisystem.manager.ManagerService
 import miyukisystem.model.TPA

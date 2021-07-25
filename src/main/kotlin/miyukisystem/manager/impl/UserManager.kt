@@ -23,10 +23,6 @@ class UserManager {
                 fun onPlayerJoin(event: PlayerJoinEvent) {
                     val player = event.player
 
-                    "{player}".formatPlaceholder {
-                        this["{player}"] = player.name
-                    }
-
                     Database.USERS.has(player.name).thenAccept { hasUser ->
                         if (hasUser) {
                             Database.USERS.get(player.name).thenAccept { set(it) }
