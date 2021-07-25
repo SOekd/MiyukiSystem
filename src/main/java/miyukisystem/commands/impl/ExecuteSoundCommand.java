@@ -51,7 +51,7 @@ public class ExecuteSoundCommand extends CommandService {
                 return false;
             }
 
-            MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
+            MessageManagerKt.sendCustomMessage(sender, "Offline");
             return false;
         }
 

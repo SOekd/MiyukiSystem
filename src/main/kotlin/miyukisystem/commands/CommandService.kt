@@ -5,7 +5,6 @@ import miyukisystem.Main
 import miyukisystem.manager.ManagerService
 import miyukisystem.manager.impl.ConfigManager
 import miyukisystem.manager.impl.sendCustomMessage
-import miyukisystem.sendToConsole
 import miyukisystem.util.async
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
@@ -34,11 +33,9 @@ abstract class CommandService(
                         commandMap.register("miyukisystem", command)
                         i++
                     }
-                } catch (exception: Exception) {
-                    exception.printStackTrace()
-                }
+                } catch (exception: Exception) {  }
             }
-            "§9§lMiyukiSystem  §aForam registrados §7$i §acomandos.".sendToConsole()
+            Bukkit.getConsoleSender().sendMessage("§9§lMiyukiSystem  §aForam registrados §7$i §acomandos.")
         }
 
         override fun reload() { }
