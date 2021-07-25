@@ -8,12 +8,15 @@ class Config(private val path: String) {
 
     lateinit var config: YamlConfiguration
 
+    private val file = File(Main.instance.dataFolder, path)
+
     init {
+        saveDefaultConfig()
         reloadConfig()
     }
 
     fun saveConfig() {
-        config.save(File(Main.instance.dataFolder, path))
+        config.save(file)
     }
 
     fun saveDefaultConfig() {
@@ -29,7 +32,7 @@ class Config(private val path: String) {
     }
 
     fun reloadConfig() {
-        config = YamlConfiguration.loadConfiguration(File(Main.instance.dataFolder, path))
+        config = YamlConfiguration.loadConfiguration(file)
     }
 
 

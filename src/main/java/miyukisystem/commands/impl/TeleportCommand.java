@@ -3,7 +3,7 @@ package miyukisystem.commands.impl;
 import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;

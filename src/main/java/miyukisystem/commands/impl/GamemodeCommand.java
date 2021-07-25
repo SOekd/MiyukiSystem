@@ -4,7 +4,7 @@ import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManager;
 import miyukisystem.manager.impl.MessageManagerKt;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
