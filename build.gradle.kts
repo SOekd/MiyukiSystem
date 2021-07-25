@@ -34,11 +34,13 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
     compileOnly("org.projectlombok:lombok:1.18.20")
     annotationProcessor("org.projectlombok:lombok:1.18.20")
-    slim("com.zaxxer:HikariCP:3.4.5")
+    implementation("com.zaxxer:HikariCP:3.4.5")
     implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("org.slf4j:slf4j-simple:1.7.30")
     implementation("io.github.bananapuncher714:nbteditor:7.17.0")
     slim("com.github.cryptomorin:XSeries:8.2.0")
     slim("com.h2database:h2:1.4.200")
+    slim("org.mariadb.jdbc:mariadb-java-client:2.7.3")
 }
 
 tasks {
@@ -50,10 +52,10 @@ tasks {
     }
     slimJar {
         relocate("com.zaxxer", "miyukisystem.database")
-        relocate("org.slf4j", "miyukisystem.util.slf4j")
         relocate("kotlin", "miyukisystem.kotlin")
         relocate("com.cryptomorin.xseries", "miyukisystem.util.xseries")
         relocate("org.h2", "miyukisystem.database.h2")
+        relocate("org.mariadb", "miyukisystem.database.mariadb")
         relocate("org.intellij.lang.annotations", "miyukisystem.util.annotations")
         relocate("org.jetbrains.annotations", "miyukisystem.util.annotations")
         relocate("com.google.protobuf", "miyukisystem.util.google.protobuf")
@@ -62,6 +64,7 @@ tasks {
         relocate("io.github.bananapuncher714.nbteditor", "miyukisystem.util")
         relocate("io.github.slimjar", "miyukisystem.util.slimjar")
         relocate("net.wesjd.anvilgui", "miyukisystem.util.anvil")
+        relocate("org.slf4j", "miyukisystem.util.slf4j")
         classifier = null
     }
 }

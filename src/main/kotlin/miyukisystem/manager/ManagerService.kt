@@ -2,7 +2,7 @@ package miyukisystem.manager
 
 import com.google.common.reflect.ClassPath
 import miyukisystem.Main
-import org.bukkit.Bukkit
+import miyukisystem.sendToConsole
 
 interface ManagerService {
 
@@ -19,9 +19,9 @@ interface ManagerService {
                         manager.load()
                         i++
                     }
-                } catch (exception: Exception) {  }
+                } catch (exception: Exception) { }
             }
-            Bukkit.getConsoleSender().sendMessage("§9§lMiyukiSystem  §aForam carregados §7$i §amodulos.")
+            "§9§lMiyukiSystem  §aForam carregados §7$i §amodulos.".sendToConsole()
         }
 
         override fun reload() { }

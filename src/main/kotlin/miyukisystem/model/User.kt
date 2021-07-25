@@ -12,13 +12,11 @@ class User(
     val kits: MutableMap<String, Long>
 ) : Cacheable {
 
-
     fun save() {
         UserManager.set(this)
 
         Database.USERS.update(this)
     }
-
 
     override fun getKey(): String = playerName.lowercase()
 

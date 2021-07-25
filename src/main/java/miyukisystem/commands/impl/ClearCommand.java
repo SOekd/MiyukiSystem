@@ -4,14 +4,17 @@ import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.PlayerManagerKt;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ClearCommand extends CommandService {
 
@@ -22,19 +25,14 @@ public class ClearCommand extends CommandService {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 
-        if (!(sender instanceof Player) && args.length == 0) {
-            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
-            return false;
-        }
-
-        if (args.length == 1) {
+        if (args.length > 0) {
 
             if (!(sender.hasPermission("miyukisystem.clear.other"))) {
                 MessageManagerKt.sendCustomMessage(sender, "NoPermission");
                 return false;
             }
 
-            Player target = Bukkit.getPlayer(args[0]);
+            val target = Bukkit.getPlayer(args[0]);
 
             if (target == null) {
                 MessageManagerKt.sendCustomMessage(sender, "PlayerOffline");
@@ -54,9 +52,14 @@ public class ClearCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
+        if (!(sender instanceof Player)) {
+            MessageManagerKt.sendCustomMessage(sender, "NoConsole");
+            return false;
+        }
 
-        if (PlayerManagerKt.isInventoryEmpty(player, false)) {
+        val player = (Player) sender;
+
+        if (!PlayerManagerKt.isInventoryEmpty(player, true)) {
             PlayerManagerKt.clearInventory(player);
             MessageManagerKt.sendCustomMessage(sender, "Cleared");
         } else {
@@ -68,6 +71,13 @@ public class ClearCommand extends CommandService {
     @NotNull
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull String[] args) {
-        return Collections.emptyList();
+        val player = sender instanceof Player ? (Player) sender : null;
+        if (args.length == 0 || player == null || !player.hasPermission("miyukisystem.clear.other")) return Collections.emptyList();
+        val lastWord = args[args.length - 1];
+        return Bukkit.getOnlinePlayers().stream()
+                .filter(it -> player.canSee(it) && StringUtils.startsWithIgnoreCase(it.getName(), lastWord))
+                .map(HumanEntity::getName)
+                .sorted()
+                .collect(Collectors.toList());
     }
 }

@@ -3,6 +3,7 @@ package miyukisystem.listener
 import com.google.common.reflect.ClassPath
 import miyukisystem.Main
 import miyukisystem.manager.ManagerService
+import miyukisystem.sendToConsole
 import org.bukkit.Bukkit
 import org.bukkit.event.Listener
 
@@ -22,7 +23,7 @@ class ListenerRegistry {
                     }
                 } catch (exception: Exception) {  }
             }
-            Bukkit.getConsoleSender().sendMessage("§9§lMiyukiSystem  §aForam registrados §7$i §aeventos.")
+            "§9§lMiyukiSystem  §aForam registrados §7$i §aeventos.".sendToConsole()
         }
 
         override fun reload() { }

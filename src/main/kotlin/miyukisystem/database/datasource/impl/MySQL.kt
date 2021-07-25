@@ -16,18 +16,24 @@ class MySQL : DataSource {
         val config = ConfigManager.config.config
         var section = config.getConfigurationSection("Database")!!
 
+        val mode = section.getString("Mode")!!.lowercase()
+
         val hikariConfig = HikariConfig().apply {
             jdbcUrl =
-                "jdbc:mysql://${section.getString("Host")}:${section.getString("Port")}/${section.getString("Database")}"
+                "jdbc:$mode://${section.getString("Host")}:${section.getString("Port")}/${section.getString("Database")}"
             username = section.getString("Username")
             password = section.getString("Password")
 
-            driverClassName = try {
-                Class.forName("com.mysql.cj.jdbc.Driver")
-                "com.mysql.cj.jdbc.Driver"
-            } catch (exception: Exception) {
-                "com.mysql.jdbc.Driver"
-            }
+            driverClassName = if (mode == "mysql") {
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver")
+                    "com.mysql.cj.jdbc.Driver"
+                } catch (exception: Exception) {
+                    "com.mysql.jdbc.Driver"
+                }
+            } else
+                "org.mariadb.jdbc.Driver"
+
             section = section.getConfigurationSection("MySQLConfiguration")!!
 
             poolName = section.getString("PoolName")
