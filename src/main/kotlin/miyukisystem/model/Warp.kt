@@ -26,6 +26,6 @@ class Warp(
             player.sendMessage(message)
     }
 
-    override fun getKey(): String = name.toLowerCase()
+    override fun getKey(): String = name.lowercase()
 
 }

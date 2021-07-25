@@ -9,26 +9,26 @@ class WhitelistManager {
 
     companion object : DataService<WhitelistPlayer>, ManagerService {
 
-        val config = ConfigManager.data.config
-
-        override fun has(key: String): Boolean = config.contains("Whitelist.$key")
+        override fun has(key: String): Boolean = ConfigManager.data.config.contains("Whitelist.${key.lowercase()}")
 
         override fun get(key: String): WhitelistPlayer {
-            val section = config.getConfigurationSection("Whitelist.$key")!!
+            val section = "Whitelist.${key.lowercase()}"
+            val config = ConfigManager.data.config
             return WhitelistPlayer(
-                section.getString("Name")!!,
-                section.getBoolean("CanBreak"),
-                section.getBoolean("CanPlace"),
-                section.getBoolean("CanExecuteCommands")
+                config.getString("$section.Name")!!,
+                config.getBoolean("$section.CanBreak"),
+                config.getBoolean("$section.CanPlace"),
+                config.getBoolean("$section.CanExecuteCommands")
             )
         }
 
         override fun set(value: WhitelistPlayer) {
-            val section = config.getConfigurationSection("Whitelist.${value.getKey()}")!!
-            section.set("Name", value.playerName)
-            section.set("CanBreak", value.canBreak)
-            section.set("CanPlace", value.canPlace)
-            section.set("CanExecuteCommands", value.canExecuteCommands)
+            val section = "Whitelist.${value.getKey().lowercase()}"
+            val config = ConfigManager.data.config
+            config.set("$section.Name", value.playerName)
+            config.set("$section.CanBreak", value.canBreak)
+            config.set("$section.CanPlace", value.canPlace)
+            config.set("$section.CanExecuteCommands", value.canExecuteCommands)
             save()
         }
 
@@ -37,19 +37,20 @@ class WhitelistManager {
         }
 
         override fun remove(key: String) {
-            config.set("Whitelist.$key", null)
+            ConfigManager.data.config.set("Whitelist.$key", null)
             save()
         }
 
         override fun getAll(): List<WhitelistPlayer> {
+            val config = ConfigManager.data.config
             if (!config.isConfigurationSection("Whitelist")) return Collections.emptyList()
             return config.getConfigurationSection("Whitelist")!!.getKeys(false).map { get(it) }
         }
 
-        fun getState(): Boolean = config.getBoolean("WhitelistState")
+        fun getState(): Boolean = ConfigManager.data.config.getBoolean("WhitelistState")
 
         fun setState(state: Boolean) {
-            config.set("WhitelistState", state)
+            ConfigManager.data.config.set("WhitelistState", state)
             save()
         }
 

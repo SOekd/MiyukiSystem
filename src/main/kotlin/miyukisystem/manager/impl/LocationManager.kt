@@ -11,14 +11,13 @@ class LocationManager {
 
     companion object: DataService<CachedLocation>, ManagerService {
 
-        private val config = ConfigManager.data.config
 
-        override fun has(key: String): Boolean = config.contains("Locations.$key")
+        override fun has(key: String): Boolean = ConfigManager.data.config.contains("Locations.$key")
 
-        override fun get(key: String): CachedLocation = CachedLocation("Locations.$key", config.getString(key).toLocation())
+        override fun get(key: String): CachedLocation = CachedLocation("Locations.$key", ConfigManager.data.config.getString(key).toLocation())
 
         override fun set(value: CachedLocation) {
-            config.set("Locations.${value.getKey()}", value.location.toCustomString())
+            ConfigManager.data.config.set("Locations.${value.getKey()}", value.location.toCustomString())
             save()
         }
 
@@ -27,12 +26,13 @@ class LocationManager {
         }
 
         override fun remove(key: String) {
-            config.set("Locations.$key", null)
+            ConfigManager.data.config.set("Locations.$key", null)
             save()
         }
 
 
         override fun getAll(): List<CachedLocation> {
+            val config = ConfigManager.data.config
             if (!config.isConfigurationSection("Locations")) return Collections.emptyList()
             return config.getConfigurationSection("Locations")!!.getKeys(false).map { get(it) }
         }

@@ -238,7 +238,8 @@ class MessageManager {
         }
 
         override fun load() {
-            for (path in getPathList()) {
+            val paths = getPathList()
+            for (path in paths) {
                 val config = ConfigManager.messages.config
                 when {
                     config.isString(path) -> {
@@ -271,7 +272,7 @@ class MessageManager {
                     }
                 }
             }
-            "§9§lMiyukiSystem  §aForam carregadas ${getPathList().size} mensagens com sucesso.".sendToConsole()
+            "§9§lMiyukiSystem  §aForam carregadas ${paths.size} mensagens com sucesso.".sendToConsole()
         }
 
         fun getMessage(path: String): Array<String> {
