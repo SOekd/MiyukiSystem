@@ -3,11 +3,12 @@ package miyukisystem.model
 import miyukisystem.database.Database
 import miyukisystem.manager.Cacheable
 import miyukisystem.manager.impl.UserManager
+import miyukisystem.util.async
 import org.bukkit.Location
 
 class User(
     val playerName: String,
-    var tpaEnabled: Boolean,
+    val tpaEnabled: Boolean,
     val homes: MutableMap<String, Location>,
     val kits: MutableMap<String, Long>
 ) : Cacheable {
@@ -16,7 +17,10 @@ class User(
     fun save() {
         UserManager.set(this)
 
-        Database.USERS.update(this)
+        // Testar para ver se irá funcionar corretamente.
+        async {
+            Database.USERS.insertOrUpdate(this)
+        }
     }
 
 

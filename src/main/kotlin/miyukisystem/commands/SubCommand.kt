@@ -6,10 +6,10 @@ import org.bukkit.command.CommandSender
 abstract class SubCommand(val name: String) {
 
     val aliases: List<String>
-    private val enabled : Boolean
+    val enabled : Boolean
 
     init {
-        val section = ConfigManager.subCommands.config.getConfigurationSection(name)!!
+        val section = ConfigManager.subCommands.config.getConfigurationSection("Exemplo")!!
 
         aliases = section.getString("Aliases")!!.split("|")
         enabled = section.getBoolean("Enabled")

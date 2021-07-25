@@ -1,8 +1,7 @@
 plugins {
-    kotlin("jvm") version "1.5.21"
+    kotlin("jvm") version "1.4.32"
     `java-library`
     id("com.github.johnrengelman.shadow") version "6.1.0"
-    id("io.github.slimjar") version "1.2.1"
 }
 
 group = "miyukisystem"
@@ -26,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    slim(kotlin("stdlib-jdk8"))
+    implementation(kotlin("stdlib-jdk8"))
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(fileTree(mapOf("dir" to "implementation", "include" to listOf("*.jar"))))
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
@@ -34,11 +33,10 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
     compileOnly("org.projectlombok:lombok:1.18.20")
     annotationProcessor("org.projectlombok:lombok:1.18.20")
-    slim("com.zaxxer:HikariCP:3.4.5")
-    implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("com.zaxxer:HikariCP:3.4.5")
+    implementation("org.slf4j:slf4j-api:1.7.25")
     implementation("io.github.bananapuncher714:nbteditor:7.17.0")
-    slim("com.github.cryptomorin:XSeries:8.2.0")
-    slim("com.h2database:h2:1.4.200")
+    implementation("com.github.cryptomorin:XSeries:8.2.0")
 }
 
 tasks {
@@ -48,20 +46,17 @@ tasks {
     withType<JavaCompile> {
         options.encoding = "UTF-8"
     }
-    slimJar {
-        relocate("com.zaxxer", "miyukisystem.database")
-        relocate("org.slf4j", "miyukisystem.util.slf4j")
-        relocate("kotlin", "miyukisystem.kotlin")
-        relocate("com.cryptomorin.xseries", "miyukisystem.util.xseries")
-        relocate("org.h2", "miyukisystem.database.h2")
-        relocate("org.intellij.lang.annotations", "miyukisystem.util.annotations")
-        relocate("org.jetbrains.annotations", "miyukisystem.util.annotations")
-        relocate("com.google.protobuf", "miyukisystem.util.google.protobuf")
-    }
+
     shadowJar {
+        minimize {
+            exclude(dependency("org.jetbrains.kotlin:.*"))
+        }
+        relocate("kotlin", "miyukisystem.kotlin")
         relocate("io.github.bananapuncher714.nbteditor", "miyukisystem.util")
-        relocate("io.github.slimjar", "miyukisystem.util.slimjar")
         relocate("net.wesjd.anvilgui", "miyukisystem.util.anvil")
+        relocate("com.cryptomorin.xseries", "miyukisystem.util.xseries")
+        relocate("com.zaxxer", "miyukisystem.database.hikari")
+        relocate("org.slf4j", "miyukisystem.util.slf4j")
         classifier = null
     }
 }
