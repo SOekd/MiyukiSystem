@@ -101,7 +101,12 @@ SetSpawn:
 Tpa:
   Enabled: true
   Command: 'tpa'
-  Description: 'Comando para enviar uma solicitacao de teleporte para uma pessoa.'
+  Description: 'Comando para enviar uma solicitação de teleporte para uma pessoa.'
+
+TpaToggle:
+  Enabled: true
+  Command: 'tpatoggle|desativartpa|ativartpa'
+  Description: 'Comando para desativar as solicitações de teleporte.'
 
 TpAccept:
   Enabled: true

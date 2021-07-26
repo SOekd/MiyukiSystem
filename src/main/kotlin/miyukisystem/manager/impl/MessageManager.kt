@@ -144,6 +144,11 @@ class MessageManager {
             pathList.add("TpaPlayer")
             pathList.add("NoHaveRequests")
             pathList.add("ExpiredTpa")
+            pathList.add("YourTpaIsDisabled")
+            pathList.add("TargetTpaIsDisabled")
+            // TpToggle
+            pathList.add("TpaEnabled")
+            pathList.add("TpaDisabled")
             // Tpaccept
             pathList.add("AcceptTpaPlayer")
             pathList.add("AcceptTpaOther")

@@ -72,6 +72,10 @@ Blockers:
   Feed: true
   # Cancela a mensagem de morte.
   DeathMessage: true
+  # Bloqueia do jogador entrar em veículos.
+  PlayerGetIntoVehicles: false
+  # Bloqueia de entidades (MOBS) entrarem em veículos.
+  EntityGetIntoVehicles: true
 
 # Reparar
 

@@ -127,6 +127,13 @@ TpaPlayer: # Mensagem enviada parar quem executou o comando.
   - ''
 NoHaveRequests: '&cVocê não tem pedidos de tp.' # Para o tpaccept e tpdeny.
 ExpiredTpa: '&cO pedido de tpa que você mencionou expirou.' # Para o tpaccept e tpdeny.
+YourTpaIsDisabled: '&cVocê está com as solicitações de tp desativadas.'
+TargetTpaIsDisabled: '&cO jogador está com as solicitações de tp desativadas.'
+
+# TpaToggle Command
+
+TpaEnabled: '&aAs solicitações de teleporte foram ativadas.'
+TpaDisabled: '&cAs solicitações de teleporte foram desativadas.'
 
 # TpAccept Command
 

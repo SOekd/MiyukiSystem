@@ -4,6 +4,7 @@ import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import miyukisystem.manager.impl.TpaManager;
+import miyukisystem.manager.impl.UserManager;
 import miyukisystem.model.TPA;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
@@ -33,14 +34,20 @@ public class TpaCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
+        val player = (Player) sender;
+        val playerUser = UserManager.Companion.get(player.getName());
 
         if (args.length != 1) {
             MessageManagerKt.sendCustomMessage(player, "IncorrectTpaCommand");
             return false;
         }
 
-        Player target = Bukkit.getPlayer(args[0]);
+        if(!playerUser.getTpaEnabled()) {
+            MessageManagerKt.sendCustomMessage(player, "YourTpaIsDisabled");
+            return false;
+        }
+
+        val target = Bukkit.getPlayer(args[0]);
 
         if (target == null) {
             MessageManagerKt.sendCustomMessage(player, "PlayerOffline");
@@ -49,6 +56,13 @@ public class TpaCommand extends CommandService {
 
         if (target == player) {
             MessageManagerKt.sendCustomMessage(player, "TpaYourself");
+            return false;
+        }
+
+        val targetUser = UserManager.Companion.get(target.getName());
+
+        if(!targetUser.getTpaEnabled()) {
+            MessageManagerKt.sendCustomMessage(player, "TargetTpaIsDisabled");
             return false;
         }
 
