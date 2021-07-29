@@ -16,8 +16,6 @@ public class WorkbenchCommand extends CommandService {
         super("Workbench", "miyukisystem.workbench", false);
     }
 
-    // Comando 100% feito.
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

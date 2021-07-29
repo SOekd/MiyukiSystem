@@ -54,7 +54,7 @@ public class TeleportCommand extends CommandService {
 
             Player player = (Player) sender;
             player.teleport(target.getLocation());
-            MessageManagerKt.sendCustomMessage(player, "TeleportedSuccess", placeHolders); // {player} retorna o nome do player q vc teleportou
+            MessageManagerKt.sendCustomMessage(player, "TeleportedSuccess", placeHolders);
             return false;
         }
 

@@ -55,7 +55,6 @@ public class FlyCommand extends CommandService {
         Player player = (Player) sender;
         player.setAllowFlight(!player.getAllowFlight());
         MessageManagerKt.sendCustomMessage(player, player.getAllowFlight() ? "FlyActivated" : "FlyDisabled");
-        player.sendMessage(player.getAllowFlight() ? "FlyActivated" : "FlyDisabled"); // necessita de testes, não sei se irá funcionar
 
         return true;
     }

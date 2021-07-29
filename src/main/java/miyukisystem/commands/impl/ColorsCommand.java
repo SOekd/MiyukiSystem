@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ColorsCommand extends CommandService {
+
     public ColorsCommand() {
         super("Colors", "miyukisystem.colors", false);
     }

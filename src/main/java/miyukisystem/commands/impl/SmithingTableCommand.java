@@ -31,7 +31,7 @@ public class SmithingTableCommand extends CommandService {
         try {
             player.openSmithingTable(player.getLocation(), true);
         } catch (Exception exception) {
-            player.sendMessage("§9§lMiyukiSystem  §cEste comando não pode ser executado na versão atual do servidor.");
+            MessageManagerKt.sendCustomMessage(sender, "UnavailableCommand");
         }
 
         return true;

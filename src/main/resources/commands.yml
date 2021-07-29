@@ -105,7 +105,7 @@ Tpa:
 
 TpaToggle:
   Enabled: true
-  Command: 'tpatoggle|desativartpa|ativartpa'
+  Command: 'tpatoggle'
   Description: 'Comando para desativar as solicitações de teleporte.'
 
 TpAccept:
@@ -233,3 +233,8 @@ Colors:
   Enabled: true
   Command: 'colors|color|cores|cor'
   Description: 'Veja os códigos de cores existentes.'
+
+Enchant:
+  Enabled: true
+  Command: 'enchant'
+  Description: 'Encanta qualquer item com o nivel/encantamento que você queira.'

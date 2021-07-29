@@ -1,5 +1,6 @@
 package miyukisystem.commands.impl;
 
+import lombok.val;
 import miyukisystem.commands.CommandService;
 import miyukisystem.manager.impl.MessageManagerKt;
 import org.bukkit.command.CommandSender;
@@ -14,7 +15,7 @@ import java.util.List;
 public class FlashLightCommand extends CommandService {
 
     public FlashLightCommand() {
-        super("FlashLight", "miyukisystem.flaslight", false);
+        super("FlashLight", "miyukisystem.flashlight", false);
     }
 
     @Override
@@ -25,7 +26,7 @@ public class FlashLightCommand extends CommandService {
             return false;
         }
 
-        Player player = (Player) sender;
+        val player = (Player) sender;
 
         if (player.hasPotionEffect(PotionEffectType.NIGHT_VISION)) {
             player.removePotionEffect(PotionEffectType.NIGHT_VISION);

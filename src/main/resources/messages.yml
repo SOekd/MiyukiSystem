@@ -3,6 +3,7 @@
 NoPermission: '&cVocê não tem permissão para executar este comando.'
 NoConsole: '&cSomente jogadores podem executar esse comando.'
 PlayerOffline: '&cO jogador especificado não está online.'
+UnavailableCommand: '&cEsse comando não está dísponivel.'
 
 #
 # LISTENERS
@@ -265,7 +266,7 @@ WhitelistOnKick:
 # CheckIP Command
 
 IncorrectCheckIPCommand: '&cUso incorreto. Use: /checkip <player>.'
-CheckingIP: '&cIP de {player}: &e{ip}.'
+CheckingIP: '&cIP de {target}: &e{ip}.'
 
 # Colors Command
 
@@ -291,3 +292,8 @@ Colors:
   - ''
   - '&aOBS: Na 1.16+ você pode usar HEX: https://htmlcolorcodes.com/'
   - ''
+
+# Enchant Command
+
+IncorrectEnchantCommand: '&cUso incorreto. Use: /enchant <encantamento> <nivel>.'
+PutAItemInHand: '&cColoque um item em sua mão para poder encantar.'

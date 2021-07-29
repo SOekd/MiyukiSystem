@@ -20,8 +20,6 @@ public class VanishCommand extends CommandService {
         super("Vanish", "miyukisystem.vanish", false);
     }
 
-    // Em desenvolvimento, pode ocorrer vários bugs.
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

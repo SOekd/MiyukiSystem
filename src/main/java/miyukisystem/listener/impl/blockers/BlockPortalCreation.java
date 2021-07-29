@@ -8,7 +8,7 @@ import org.bukkit.event.world.PortalCreateEvent;
 
 public class BlockPortalCreation implements Listener {
 
-    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+    @EventHandler
     public void onPortalCreate(PortalCreateEvent event) {
 
         if (!ConfigManager.Companion.getConfig().config.getBoolean("Blockers.CreatePortal")) return;

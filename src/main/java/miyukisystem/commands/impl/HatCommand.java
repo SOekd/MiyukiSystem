@@ -18,9 +18,6 @@ public class HatCommand extends CommandService {
         super("Hat", "miyukisystem.hat", false);
     }
 
-    // Comando 90% feito
-    // Analisar possibilidade de /hat <material>, /hat <player>
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

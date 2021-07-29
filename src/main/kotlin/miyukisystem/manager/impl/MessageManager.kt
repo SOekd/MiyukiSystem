@@ -277,7 +277,7 @@ class MessageManager {
                     }
                 }
             }
-            "§9§lMiyukiSystem  §aForam carregadas ${paths.size} mensagens com sucesso.".sendToConsole()
+            "§9§lMiyukiSystem  §aForam carregadas §f${paths.size} §amensagens com sucesso.".sendToConsole()
         }
 
         fun getMessage(path: String): Array<String> {

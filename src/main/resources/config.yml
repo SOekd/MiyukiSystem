@@ -85,7 +85,7 @@ RepairBlockedNBTs: # Deixe com "[]" para não bloquear nenhum.
 RepairBlockedItems: # Deixe com "[]" para não bloquear nenhum.
   - 'DIAMOND_PICKAXE'
 
-Motd: # Lembrando que se deixar vaziu ele fica o default da server.properties. (Ignora o MaxPlayers também!)
+Motd: # Lembrando que se deixar vazio ele fica o default da server.properties. (Ignora o MaxPlayers também!)
   # Motd quando está em WHITELIST (Use \n para pular linha)
   WhitelistMotd: ''
   # Jogadores máximos quando está em WHITELIST. (Apenas estático)
@@ -103,6 +103,6 @@ BlockedCommands: # Use "/".
   - '/teste1'
   - '/teste2'
 
-BlockedCrafts:
+BlockedCrafts: []
 
 

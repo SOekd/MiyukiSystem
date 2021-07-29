@@ -18,8 +18,6 @@ public class TpAllCommand extends CommandService {
         super("TpAll", "miyukisystem.tpall", false);
     }
 
-    // Comando 100% feito.
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

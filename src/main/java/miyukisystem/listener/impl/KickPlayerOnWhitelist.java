@@ -17,10 +17,10 @@ public class KickPlayerOnWhitelist implements Listener {
         val player = e.getPlayer();
         val manager = WhitelistManager.Companion;
 
-        if(!manager.getState()) return;
+        if (!manager.getState()) return;
 
-        if(config.getBoolean("WhitelistState")) {
-            if(!manager.has(player.getName())) {
+        if (config.getBoolean("WhitelistState")) {
+            if (!manager.has(player.getName())) {
                 player.kickPlayer(String.join("\n", MessageManager.Companion.getMessage("WhitelistOnKick")));
             }
         }

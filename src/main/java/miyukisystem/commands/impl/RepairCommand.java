@@ -20,8 +20,6 @@ public class RepairCommand extends CommandService {
         super("Repair", "miyukisystem.repair", false);
     }
 
-    // Em desenvolvimento, pode ocorrer vários bugs.
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

@@ -9,11 +9,6 @@ import org.bukkit.event.entity.EntityChangeBlockEvent;
 
 public class BlockAnvilDecay implements Listener {
 
-    /*
-     * Código criado por iPyronic
-     * Link: https://www.spigotmc.org/threads/prevent-sand-from-falling-upon-placing-sand.133386/
-     */
-
     @EventHandler(ignoreCancelled = true)
     public void onEntityChangeBlock(EntityChangeBlockEvent event) {
 
@@ -26,4 +21,5 @@ public class BlockAnvilDecay implements Listener {
             }
         }
     }
+
 }

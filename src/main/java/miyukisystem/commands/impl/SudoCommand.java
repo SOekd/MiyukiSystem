@@ -20,9 +20,6 @@ public class SudoCommand extends CommandService {
         super("Sudo", "miyukisystem.sudo", false);
     }
 
-
-    // arrumar (nao t funfando obviamente)
-
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String[] args) {
 

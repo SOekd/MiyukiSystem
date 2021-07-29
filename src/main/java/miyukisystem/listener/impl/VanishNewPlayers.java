@@ -8,8 +8,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class VanishNewPlayers implements Listener {
 
-    // Esconder os jogadores de vanish para novos jogadores.
-
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         val player = e.getPlayer();
