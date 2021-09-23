@@ -91,7 +91,12 @@ TpAll:
 Spawn:
   Enabled: true
   Command: 'spawn'
-  Description: 'Comando para ir até o spawn'
+  Description: 'Comando para ir até o spawn.'
+
+Skull:
+  Enabled: true
+  Command: 'cabeca|head|skull'
+  Description: 'Comando para pegar cabeças customizadas ou de outros jogadores.'
 
 SetSpawn:
   Enabled: true
