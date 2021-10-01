@@ -231,6 +231,9 @@ class MessageManager {
             pathList.add("CheckingIP")
             // colors
             pathList.add("Colors")
+            // skull
+            pathList.add("SuccessGiveSkull")
+            pathList.add("InvalidSkullFormat")
 
             return pathList
         }

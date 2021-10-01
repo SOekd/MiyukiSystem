@@ -171,6 +171,11 @@ ForcedTeleportSpawn: '&aVocê foi forçado a ser teleportado pro spawn.'
 
 SettedSpawnSuccess: '&aO spawn foi setado em sua localização com sucesso.'
 
+# Skull Command
+
+InvalidSkullFormat: '&cO formato da cabeça está inválido! Use apenas o código depois do http://textures.minecraft.net/texture/ (Exemplo: link: http://textures.minecraft.net/texture/9b74cf008dcf4374740e587e3ad8a9f0a5f5427de2d69ffaf0620663f212bcde, código: 9b74cf008dcf4374740e587e3ad8a9f0a5f5427de2d69ffaf0620663f212bcde)'
+SuccessGiveSkull: '&aA cabeça foi entregada com sucesso.'
+
 # Clear Command
 
 AlreadyTargetCleared: '&cO inventário de {player} já está limpo.'

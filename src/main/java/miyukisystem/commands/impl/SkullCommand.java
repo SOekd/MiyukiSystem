@@ -29,7 +29,13 @@ public class SkullCommand extends CommandService {
 
         val player = (Player) sender;
 
-        player.getInventory().addItem(args[0].length() > 16 ? NBTEditor.getHead(args[0]) : SkullUtils.getSkull(Bukkit.getOfflinePlayer(args[0]).getUniqueId()));
+        if (args[0].contains("http") || args[0].contains("texture") || args[0].length() > 64) {
+            MessageManagerKt.sendCustomMessage(player, "InvalidSkullFormat");
+            return false;
+        }
+
+        player.getInventory().addItem(args[0].length() > 16 ? NBTEditor.getHead("http://textures.minecraft.net/texture/" + args[0]) : SkullUtils.getSkull(Bukkit.getOfflinePlayer(args[0]).getUniqueId()));
+        MessageManagerKt.sendCustomMessage(sender, "SuccessGiveSkull");
         return true;
     }
 
